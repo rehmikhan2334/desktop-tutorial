@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace and Remove Child in JAVASCRIPT</title>
+</head>
+<body>
+    <ul id="list">
+        <li>home</li>
+        <li>about</li>
+        <li>servics</li>
+        <li>contact</li>
+    </ul>
+</body>
+<script>
+    let newElement = document.createElement("li");
+    let newText = document.createTextNode("Wow new Text");
+
+    newElement.appendChild(newText);
+    let target = document.getElementById('list');
+    var oldElement = target.children[0];
+
+    target.replaceChild(newElement,oldElement);
+
+
+</script>
+</html>

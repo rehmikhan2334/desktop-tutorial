@@ -4,39 +4,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
-        .card {
-            width: 280px;
-            height: 300px;
-            margin: 20px;
+        @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+        /* Nav Start */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .section {
+            padding-block: 3rem;
+        }
+
+        nav {
+            padding: 10px 30px;
+            background-color: #788e9a75;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+            position: absolute;
+            width: 100%;
+
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            margin-top: -10px;
+
+        }
+
+        ul li {
+            list-style: none;
+
+        }
+
+        .logo img {
+            width: 200px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        ul li a:hover {
+            color: white;
+        }
+
+        .menu-icon {
+
+            font-size: 30px;
+            color: white;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        .serch button {
+            width: 185px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .serch button i {
+            margin-left: 15px;
+        }
+
+        @media screen and (max-width:860px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                align-items: center;
+                flex-direction: column;
+                overflow: hidden;
+                background-color: #94a0a8;
+                gap: 0;
+                transition: all 0.5s ease-in-out;
+            }
+
+            nav ul li {
+                padding: 20px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .serch button {
+                display: none;
+            }
+        }
+
+        /* Nav end */
+        .card{
+            width: 330px;
+            height: 320px;
             border: 1px solid #eee;
             box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
+            transition: 0.5s all ease-in-out;
+
+        }
+        .card:hover{
+            transform: scale();
+
         }
 
         .card-img-top {
             height: 160px;
-            object-fit: cover;
+            object-fit: fill;
+            object-position: center;
             width: 100%;
         }
 
+
+
         .card-body button {
-            padding: 5px;
-            /* margin: 3px; */
-            margin-left: 8px;
+            padding: 3px 5px;
+            margin: 11px;
             font-size: 14px;
             font-weight: 600;
-            color: #555;
+            color: white;
             border: none;
-            border-radius: 10px;
-
+            border-radius: 5px;
+            margin-left: -10px;
+            cursor: default;
+            margin-top: 0;
         }
 
         .card-body button:nth-child(1) {
@@ -54,13 +165,18 @@
         .card-title {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 25px;
         }
-         #toggle{
+
+        #toggle {
             cursor: pointer;
         }
 
         .card-title h1 {
-            margin: 6px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: 700;
+            /* font-style: italic; */
         }
 
         .card-title i {
@@ -74,10 +190,11 @@
             gap: 10px;
             margin-left: 10px;
         }
-         .Website-url a{
+
+        .Website-url a {
             list-style: none;
             text-decoration: none;
-         }
+        }
 
         .Website-url a:nth-child(1) {
             color: rgba(0, 181, 252, 0.977);
@@ -91,7 +208,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 10px;
+            margin: 14px;
             position: relative;
         }
 
@@ -108,100 +225,433 @@
             margin-top: -25px;
             margin-left: 15px;
             font-style: italic;
+            color: #2d7edf;
         }
-        .info{
+
+        .info {
             margin: 10px;
         }
-        .info p{
+
+        .info p {
             font-size: 17px;
             color: #555555;
 
         }
-        #information{
-             position: absolute;
-            width: 280px;
+
+        #information {
+            position: absolute;
+            width: 330px;
             transition: 0.3s all ease-in-out;
             background: white;
             height: 300px;
+            top: 100%;
         }
-        .need{
+
+        .need {
             margin: 10px;
             font-size: 18px;
             font-weight: 700;
         }
-        #cross{
+
+        #cross {
             cursor: pointer;
         }
-       
+
+
+        /* Hero section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D);
+            height: 100vh;
+            object-fit: cover;
+            object-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .hero-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-title h4 {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .hero-title h1 {
+            font-size: 40px;
+            font-weight: 700;
+
+        }
+
+        .hero-title button {
+            width: 150px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
     </style>
+
 </head>
 
 <body>
-    <h1>Hi i am js projects</h1>
-    <div class="card">
-        <img src="./images/calculator.png" class="card-img-top" alt="">
-        <div class="card-body">
-            <button>HTML</button>
-            <button>CSS</button>
-            <button>JAVASCRIPT</button>
+
+    <nav>
+        <div class="logo">
+            <img src="./images/logo.webp" alt="">
+        </div>
+        <ul id="menuList">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Servics</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+        <div class="serch">
+            <button class="btn btn-light">Seacrch <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+
         </div>
 
-        
-            <div class="card-title">
+    </nav>
+    <div class="hero-section">
+        <div class="hero-title">
+            <h4>The perfect choice for your business website</h4>
             <h1>
-                Calculator
-            </h1>
-            <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-        </div>
-        <div class="Website-url">
-            <a href=""><p>Website</p></a>
-            <a href=""><p>Github</p></a>
-        </div>
-<div id="information">
-        <div id="menu-icon">
-            <h2>Calculator</h2>
-            <i class="fa-solid fa-xmark" id="cross"></i>
-        </div>
-        <div class="in-devp">
-            <span></span> In Development </span>
-        </div>
-        <div class="info">
-            <p>
-                A calculator is a tool used to quickly and accurately perform basic or advanced mathematical
-                calculations.</p>
-        </div>
-       <div class="need">
-         <p>Need:</p>
-       </div>
-
+                Business Consulting Elementor WordPress Theme</h1>
+            <button class="btn btn-light">Buy Now</button>
         </div>
     </div>
 
+    <main>
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <!-- First Card -->
+                    <div class="col-md-4 pt-sm-3 pt-3">
+                        <div class="card">
+                            <img src="./images/calculator.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <button>HTML</button>
+                                <button>CSS</button>
+                                <button>JAVASCRIPT</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>
+                                    Calculator
+                                </h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Calculator.html">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>Calculator</h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span></span> In Development </span>
+                                </div>
+                                <div class="info">
+                                    <p>
+                                        A calculator is a tool used to quickly and accurately perform basic or advanced
+                                        mathematical
+                                        calculations.</p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Second Card -->
+                    <div class="col-md-4 pt-sm-3 pt-3">
+                        <div class="card">
+                            <img src="./images/Screenshot 2025-06-30 171942.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <button>HTML</button>
+                                <button>CSS</button>
+                                <button>JAVASCRIPT</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>
+                                    Instagram
+                                </h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Calculator.html">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>CLick Event</h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span>buttons</span>
+                                </div>
+                                <div class="info">
+                                    <h5>Add Project</h5>
+                                    <p>
+                                        Use the add button to submit your new project with required details.</p>
+                                    <h5>Remove Project</h5>
+                                    <p>Click remove to delete this project from your submitted list permanently.</p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Third CArd -->
+                    <div class="col-md-4 pt-sm-3 pt-3" >
+                        <div class="card">
+                            <img src="./images/Screenshot 2025-06-30 180836.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <button>HTML</button>
+                                <button>CSS</button>
+                                <button>JAVASCRIPT</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>
+                                    Mouse Over
+                                </h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Calculator.html">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>Mouse Cursor</h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span></span>Full Page Cursor</span>
+                                </div>
+                                <div class="info">
+                                    <p>
+                                        "Click to submit your project for review and approval."<br>
+
+                                        "Make sure all project details are complete before submitting."<br>
+
+                                        "Final step to upload your project for evaluation."</p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Forth CArd -->
+                     <div class="col-md-4 pt-sm-3 pt-3">
+                        <div class="card">
+                            <img src="./images/Screenshot 2025-06-30 181503.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <button>HTML</button>
+                                <button>CSS</button>
+                                <button>JAVASCRIPT</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>
+                                    Instagram Like
+                                </h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Calculator.html">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>Instagram Double Click</h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span>Add The Like</span>
+                                </div>
+                                <div class="info">
+                                    <p>
+                                       Double-clicking the post triggers a heart animation, allowing users to quickly express appreciation, just like Instagram’s like system.</p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fifth Card -->
+                     <div class="col-md-4 pt-sm-3 pt-3">
+                        <div class="card">
+                            <img src="./images/Screenshot 2025-06-30 184812.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <button>HTML</button>
+                                <button>CSS</button>
+                                <button>JAVASCRIPT</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>
+                                    Instagram Story
+                                </h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Calculator.html">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>Click the Story</h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span></span>Full Screen Show</span>
+                                </div>
+                                <div class="info">
+                                    <p>
+                                        Click the story to view it in full screen with complete details and submit your project easily.</p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Six Card -->
+                     <div class="col-md-4 pt-sm-3 pt-3">
+                        <div class="card">
+                            <img src="./images/Screenshot 2025-06-30 185245.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <button>HTML</button>
+                                <button>CSS</button>
+                                <button>JAVASCRIPT</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>
+                                    Mouse Over
+                                </h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Calculator.html">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>Mouse Cursor</h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span></span>Hovering Image Change </span>
+                                </div>
+                                <div class="info">
+                                    <p>
+                                       Hovering over the div changes the image, allowing interactive previews or visual feedback before clicking or selecting.</p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
     <script>
-      let information = document.getElementById("information");
-      let toggle = document.getElementById("toggle");
-      let cross = document.getElementById("cross");
-     
-     
-    
-      toggle.addEventListener("click",function(){
-        console.log(information,"clock")
-      information.style.top= 0;
-         });
+        document.querySelectorAll('.card').forEach(card => {
+            let information = card.querySelector('.information-section');
+            let toggle = card.querySelector('.card-title');
+            let cross = card.querySelector('#menu-icon');
 
-          cross.addEventListener("click",function(){
-            // console.log("hey");
-        information.style.top= "100%";
-      });
+            // Toggle open
+            toggle.addEventListener('click', () => {
+                information.style.top = '0';
+            });
 
-     
+            // Toggle close
+            cross.addEventListener('click', () => {
+                information.style.top = '100%';
+            });
+        });
+
+
+
+        //    Navigagtion ar
+        let menuList = document.getElementById("menuList");
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if (menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "300px";
+            } else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+
+
+
     </script>
 
 
 
 
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
