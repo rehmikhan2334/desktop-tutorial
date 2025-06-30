@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3rd Project in javascript</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            color: white;
+        }
+        #main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+        #main .cursor{
+            height: 20px;
+            width: 20px;
+            background-color: red;
+            transition: all linear 0.2s;
+            position: absolute;
+            border-radius: 50%;
+            mix-blend-mode: difference;
+
+        }
+        h1{
+            font-size: 100px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="cursor"></div>
+        <h1>Rehmi Khan</h1>
+    </div>
+    
+</body>
+<script>
+    let main = document.querySelector("#main");
+    let crsr = document.querySelector(".cursor");
+
+    main.addEventListener("mousemove",function(dets){
+        crsr.style.left =dets.x +"px"
+        crsr.style.top =dets.y +"px"
+    })
+</script>
+</html>
