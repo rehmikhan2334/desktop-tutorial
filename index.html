@@ -112,7 +112,7 @@
         }
 
         /* Nav end */
-        .card{
+        .card {
             width: 330px;
             height: 320px;
             border: 1px solid #eee;
@@ -123,7 +123,8 @@
             transition: 0.5s all ease-in-out;
 
         }
-        .card:hover{
+
+        .card:hover {
             transform: scale();
 
         }
@@ -427,7 +428,7 @@
                         </div>
                     </div>
                     <!-- Third CArd -->
-                    <div class="col-md-4 pt-sm-3 pt-3" >
+                    <div class="col-md-4 pt-sm-3 pt-3">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190931.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -473,7 +474,7 @@
                         </div>
                     </div>
                     <!-- Forth CArd -->
-                     <div class="col-md-4 pt-sm-3 pt-3">
+                    <div class="col-md-4 pt-sm-3 pt-3">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190919.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -505,7 +506,8 @@
                                 </div>
                                 <div class="info">
                                     <p>
-                                       Double-clicking the post triggers a heart animation, allowing users to quickly express appreciation, just like Instagram’s like system.</p>
+                                        Double-clicking the post triggers a heart animation, allowing users to quickly
+                                        express appreciation, just like Instagram’s like system.</p>
                                 </div>
                                 <div class="need">
                                     <p>Need:</p>
@@ -516,7 +518,7 @@
                     </div>
 
                     <!-- Fifth Card -->
-                     <div class="col-md-4 pt-sm-3 pt-3">
+                    <div class="col-md-4 pt-sm-3 pt-3">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190748.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -548,7 +550,8 @@
                                 </div>
                                 <div class="info">
                                     <p>
-                                        Click the story to view it in full screen with complete details and submit your project easily.</p>
+                                        Click the story to view it in full screen with complete details and submit your
+                                        project easily.</p>
                                 </div>
                                 <div class="need">
                                     <p>Need:</p>
@@ -559,7 +562,7 @@
                     </div>
 
                     <!-- Six Card -->
-                     <div class="col-md-4 pt-sm-3 pt-3">
+                    <div class="col-md-4 pt-sm-3 pt-3">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 185245.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -591,7 +594,8 @@
                                 </div>
                                 <div class="info">
                                     <p>
-                                       Hovering over the div changes the image, allowing interactive previews or visual feedback before clicking or selecting.</p>
+                                        Hovering over the div changes the image, allowing interactive previews or visual
+                                        feedback before clicking or selecting.</p>
                                 </div>
                                 <div class="need">
                                     <p>Need:</p>
@@ -615,7 +619,17 @@
             let cross = card.querySelector('#menu-icon');
 
             // Toggle open
+
             toggle.addEventListener('click', () => {
+                console.log(information, 'infomation')
+
+                document.querySelectorAll('.information-section').forEach(info => {
+
+                    if (info != information) {
+
+                        info.style.top = "100%";
+                    }
+                })
                 information.style.top = '0';
             });
 
