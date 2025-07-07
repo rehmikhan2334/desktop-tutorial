@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ccc;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            margin: 0 5px;
+            
+        }
+
+        ul li .fa-brands {
+            padding: 0;
+            margin: 0;
+            padding-right: 10px;
+            top: 30px;
+            color: #262626;
+            transition: 0.5s;
+        }
+
+        ul li a{
+            font-size: 25px;
+            text-decoration: none;
+            position: relative;
+            display: block;
+            width: 210px;
+            height: 80px;
+            background: #fff;
+            text-align: left;
+            padding-left: 20px;
+            transition: 0.5s all ease-in-out;
+            transform: rotate(-30deg) skew(25deg) translate(0, 0);
+            box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+            color: black;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        ul li a::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -18px;
+            height: 97%;
+            width: 20px;
+            background: #b1b1b1;
+            transform: rotate(-30deg) skew(-31deg);
+        }
+
+
+        ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: -19px;
+            left: -8px;
+            height: 20px;
+            width: 100%;
+            background: #b1b1b1;
+            transform: rotate(0deg) skew(-45deg);
+            transition: 0.5s;
+        }
+
+        ul li a:hover {
+            transform: rotate(-30deg) skew(25deg) translate(20px, -15px) scale(1);
+            box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        ul li:hover .fa-brands {
+            color: #fff;
+        }
+
+        /* 1 */
+        ul li:hover:nth-child(1) a {
+            background:#3e5ba3;
+        }
+
+        ul li:hover:nth-child(1) a::before {
+            background: rgb(87, 87, 153);
+        }
+
+        ul li:hover:nth-child(1) a::after {
+            background: rgb(53, 53, 116);
+        }
+
+        /* 2 */
+        ul li:hover:nth-child(2) a {
+            background: #6DC0DD;
+        }
+
+        ul li:hover:nth-child(2) a::before {
+            background: #6DC0DD;
+        }
+
+        ul li:hover:nth-child(2) a::after {
+            background: #38575f;
+        }
+
+        /* 3 */
+        ul li:hover:nth-child(3) a {
+            background: rgb(232, 91, 40);
+        }
+
+        ul li:hover:nth-child(3) a::before {
+            background: rgb(131, 80, 61);
+        }
+
+        ul li:hover:nth-child(3) a::after {
+            background: rgb(184, 69, 28);
+        }
+
+        /* 4 */
+        ul li:hover:nth-child(4) a {
+            background: #e4405f;
+        }
+
+        ul li:hover:nth-child(4) a::before {
+            background: #903445;
+        }
+
+        ul li:hover:nth-child(4) a::after {
+            background: #e46880;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href=""><i class="fa-brands fa-facebook-f"></i>  - Facebook</a></li>
+        <li><a href=""><i class="fa-brands fa-twitter"></i>  - Twitter</a></li>
+        <li><a href=""><i class="fa-brands fa-google"></i>  - Google</a></li>
+        <li><a href=""><i class="fa-brands fa-instagram"></i> - Instagram</a></li>
+    </ul>
+
+</body>
+
+</html>

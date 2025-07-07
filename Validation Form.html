@@ -206,15 +206,36 @@
             validate();
         });
 
-        const sendData = (sRate, count) => {
-            if (sRate === count) {
-                Swal.fire({
-                    title: "Good job! ", 
-                    text: "Registration Successfull!", 
-                    icon: "success"
-                });
-            }
-        }
+       
+
+        
+
+        
+       const sendData = (sRate, count) => {
+    if (sRate === count) {
+        Swal.fire({
+            title: "Good job! " + username.value,
+            text: "Registration Successful!",
+            icon: "success"
+        }).then(() => {
+            //  Clear form after success
+            form.reset();
+
+            //  Remove success/error styles
+            const allControls = document.querySelectorAll('.form-control');
+            allControls.forEach(control => {
+                control.classList.remove("success", "error");
+            });
+
+            //  Optional: blur all inputs
+            username.blur();
+            email.blur();
+            phone.blur();
+            password.blur();
+            cpassword.blur();
+        });
+    }
+};
 
         // for Final Validation 
         const successMsg = () => {
@@ -296,11 +317,9 @@
 
             // Validate cPassword
             if (cpasswordVal === "") {
-                // console.log(cpassword);
                 setErrorMsg(cpassword, 'confirm password cannot be blank');
             }
             else if (passwordVal != cpasswordVal) {
-                console.log(passwordVal, cpasswordVal)
                 setErrorMsg(cpassword, 'Password are not matching');
             } else {
                 setSuccessMsg(cpassword);
