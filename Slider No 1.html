@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link google icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
+    <!-- swipper slider link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Slider No 1 in javascript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to top, #ECEFFE, #CED6FB);
+
+        }
+        .card-wrapper{
+            max-width: 1100px;
+            margin: 0 60px 35px;
+            padding: 20px 10px;
+            overflow: hidden;
+        }
+
+        .card-list .card-item .card-link {
+           user-select: none;
+            display: block;
+            background: #fff;
+            padding: 13px;
+            text-decoration: none;
+            border-radius: 12px;
+            text-decoration: none;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+          
+
+        }
+
+        .card-list .card-item .card-link:hover {
+            border-color: #5372F0;
+
+        }
+
+        .card-list .card-item {
+            text-decoration: none;
+            list-style: none;
+
+        }
+
+        .card-list .card-item .card-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 10px;
+
+        }
+
+        .card-list .card-item .badge {
+            font-size: 1.1rem;
+            color: #5372F0;
+            width: fit-content;
+            padding: 8px 18px;
+            border-radius: 20px;
+            margin: 16px 0 18px;
+            background: #DDE4FF;
+        }
+
+        .card-list .card-link .card-title {
+            font-size: 1.19rem;
+            color: black;
+            font-weight: 600;
+        }
+
+        .card-list .card-link .card-button {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: 2px solid #5372F0;
+            cursor: pointer;
+            background: none;
+            margin: 30px 0 5px;
+            transform: rotate(-45deg);
+            transition: 0.5s ease;
+        }
+
+        .card-list .card-link:hover .card-button {
+            color: #fff;
+            background: #5372F0;
+        }
+
+        .card-list .card-link .badge.designer {
+            color: #B22485 !important;
+            background: #a78086 !important;
+        }
+
+        .card-list .card-link .badge.marketer {
+            color: #B25A2B;
+            background: #ecd1aa;
+        }
+
+        .card-list .card-link .badge.editor {
+            color: #856404;
+            background: #e7dcaf;
+        }
+
+        .card-list .card-link .badge.gamer {
+            color: #205C20;
+            background: #8e9f7d;
+        }
+        .card-wrapper  .swiper-pagination-bullet{
+            height: 13px;
+            width: 13px;
+            opacity: 0.5;
+            background: #5372F0;
+        }
+        .card-wrapper  .swiper-pagination-bullet-active{
+            opacity: 1;
+        }
+        .card-wrapper .slider-slide-button{
+            color: #5372F0;
+            margin-top: -35px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container swiper">
+        <div class="card-wrapper">
+            <ul class="card-list swiper-wrapper">
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="https://img.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg?semt=ais_hybrid&w=740"
+                            alt="" class="card-image">
+                        <p class="badge developer">Developer</p>
+                        <h2 class="card-title">This image carousel is dynamically generated using PHP. It loops through a list of image files and displays them in a Bootstrap slider</h2>
+                        <button class="card-button material-symbols-outlined">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="https://img.freepik.com/free-photo/logo-designer-working-computer-desktop_23-2149142153.jpg?semt=ais_items_boosted&w=740"
+                            alt="" class="card-image">
+                        <p class="badge designer">Designer</p>
+                            <h2 class="card-title">This is a clean, responsive image slider designed to showcase product visuals or portfolio items, Each slide smoothy.</h2>
+                            <button class="card-button material-symbols-outlined">
+                                arrow_forward
+                            </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQEUSL9mQj9AXLHTEGsRq_PTuUTz7sp8lFmQ&s"
+                            alt="" class="card-image">
+                        <p class="badge marketer">Marketer</p>
+                        <h2 class="card-title">Capture attention and drive engagement with this high-impact image slider. Perfect for showcasing products.</h2>
+                        <button class="card-button material-symbols-outlined">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYXwx2WQDo3TyBkRvI65QQkrDV_mq4J9rGhQ&s"
+                            alt="" class="card-image">
+                        <p class="badge editor">Editor</p>
+                        <h2 class="card-title">A responsive, editorial-style slider perfect for featuring stories, highlights, or key visuals with clean transitions and professional layout.</h2>
+                        <button class="card-button material-symbols-outlined">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+                <li class="card-item swiper-slide">
+                    <a href="" class="card-link">
+                        <img src="https://media.istockphoto.com/id/1448738634/photo/portrait-of-a-gamer-wearing-headphones-and-playing-online-game-on-personal-computer.jpg?s=612x612&w=0&k=20&c=CI3YD8muH24PqgsZKjreO2vBharqbfuECxHGk9o5o4o="
+                            alt="" class="card-image">
+                        <p class="badge gamer">Gamer</p>
+                        <h2 class="card-title">Slide into the action! This dynamic image carousel is built to showcase epic gameplay moments, character art, or tournament highlights</h2>
+                        <button class="card-button material-symbols-outlined">
+                            arrow_forward
+                        </button>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const titles = document.querySelectorAll('.card-title');
+    const charLimit = 50; // ✅ Change this to desired character count
+
+    titles.forEach(title => {
+      const text = title.innerText.trim();
+      if (text.length > charLimit) {
+        title.innerText = text.slice(0, charLimit) + "...";
+      }
+    });
+  });
+
+  // Swiper init
+  new Swiper('.card-wrapper', {
+    loop: true,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+
+</html>
