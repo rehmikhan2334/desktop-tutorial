@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techno-web website</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+
+        body {
+            overflow-x: hidden;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: "Dancing Script", cursive;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 90vh;
+        }
+
+        .section-container {
+            padding-block: 3.5rem;
+
+        }
+
+        .card-body img {
+            min-width: 50%;
+            max-height: 200px;
+        }
+        .nav-item .nav-link:hover{
+            color: blue !important;        
+        }
+
+      
+
+    
+        li{
+            list-style: none;
+        }
+     a{
+            text-decoration: none;
+        }
+        .mybtn{
+            border-radius:20rem;
+            width: 100%;
+        }
+      
+        .rounded-circle{
+            border: 1px solid blue;
+            padding: 10px;;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 fixed-top bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand fs-1 fw-bold" href="#">Meta <span class="text-primary">Titians</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-5 mb-lg-0 fs-5 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#team">Out Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bzs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner p-3 mt-5">
+                <div class="carousel-item active">
+                    <img src="../bootstrap-images/6fed2710-3799-46d8.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-md-block fs-3">
+                        <h3>Clean & Professional</h3>
+                        <p>Designs that elevate your brand and engage your audience.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../bootstrap-images/ab1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption  d-md-block fs-3">
+                        <h3>Professional & modern</h3>
+                        <p>Custom solutions designed to engage users and drive growth.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../bootstrap-images/banner2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption  d-md-block fs-3">
+                        <h3>Sleek & Professional</h3>
+                        <p>Crafting clean, professional designs that elevate your brand.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
+    <!-- All  section at here-->
+    <!-- about section -->
+    <section class="section-container" id="about">
+        <div class="container my-5">
+            <div>
+                <h1 class="text-center" data-aos="zoom-in" data-aos-offset="200">About <span
+                        class="text-primary">me</span></h1>
+                <hr class="w-25 m-auto">
+            </div>
+            <div class="row">
+                <!-- text col -->
+                <div class="col-sm-12 col-md-6 col-12 " data-aos="fade-up" data-aos-offset="200">
+                    <h1>What do you <span class="text-primary">want to known?</span></h1>
+                    <p>We’re here to answer all your questions! Whether you’re curious about our services, pricing,
+                        timelines, or custom solutions, we’re ready to help. Need guidance, support, or design advice?
+                        Just ask! Your ideas matter, and we’re excited to bring them to life. Let’s connect today!
+                    </p>
+                    <button class="btn btn-light mb-5">More about me</button>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne" data-aos="zoom-in-left" data-aos-offset="200">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    My Hobbies
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    My Qualification
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    My Dream
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                                    until the collapse plugin adds the appropriate classes that we use to style each
+                                    element. These classes control the overall appearance, as well as the showing and
+                                    hiding via CSS transitions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- image col -->
+                <div class="col-sm-12 col-lg-6 col-12 m-auto text-center" data-aos="fade-left" data-aos-offset="200">
+                    <img src="../bootstrap-images/s4.jpg" class="img-fluid img-fluid rounded-circle" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section class="section-container bg-light" id="services">
+        <div class="container my-5">
+            <h1 class="text-center">Our <span class="text-primary">Services</span></h1>
+            <hr class="w-25 m-auto">
+        </div>
+        <!-- Cards  -->
+        <!-- First row -->
+        <div class="row mx-5" data-aos="zoom-in-up" data-aos-offset="200">
+            <!-- card 1 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card">
+                    <div class="card-body mycard">
+                        <i class="fa fa-users bg-primary p-2 text-white rounded fs-3"></i>
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 2 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card bg-primary text-white">
+                    <div class="card-body mycard">
+                        <i class="fa-solid fa-pen-ruler p-2 bg-white text-dark mb-2"></i>
+                        <h5 class="card-title">App Development</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 3 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card">
+                    <div class="card-body mycard">
+                        <i class="fa-duotone fa-solid fa-earth-europe fs-3 text-white p-2 bg-primary"></i>
+                        <h5 class="card-title">Graphics Design</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2nd row -->
+        <div class="row mx-5 my-5" data-aos="zoom-in-down" data-aos-offset="200">
+            <!-- card 4 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card">
+                    <div class="card-body mycard">
+                        <i class="fa-solid fa-earth-americas bg-primary fs-3 p-2 text-white"></i>
+                        <h5 class="card-title">Web Development</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- card 5 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card bg-primary text-white">
+                    <div class="card-body mycard">
+                        <i class="fa-solid fa-bowling-ball fs-3 bg-white text-dark mb-2 p-2"></i>
+                        <h5 class="card-title">App Development</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card ">
+                    <div class="card-body mycard">
+                        <i class="fa-solid fa-file-code text-white p-2 bg-primary rounded fs-3"></i>
+                        <h5 class="card-title">Graphics Design</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Book Now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Ouer team -->
+
+    <section class="section-container text-cener" id="team">
+        <div class="container py-5">
+            <h1 class="text-center">Our <span class="text-primary">Team</span></h1>
+            <hr class="w-25 m-auto">
+        </div>
+        <div class="row mx-5">
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card" data-aos="zoom-in-up" data-aos-offset="200">
+                    <!-- 1 -->
+                    <div class="card-body text-center mycard">
+                        <img src="../bootstrap-images/s2.jpg" class="img-fluid rounded-circle border border-primary p-1"
+                            alt="">
+                        <h5 class="card-title mt-4">Andrew</h5>
+                        <p class="card-text">Fron-end Developer</p>
+                        <a href="#" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card text-center " data-aos="zoom-in-down" data-aos-offset="200">
+                    <!-- 2 -->
+                    <div class="card-body mycard">
+                        <img src="../bootstrap-images/s3.jpg" class="img-fluid rounded-circle border border-primary p-1"
+                            alt="">
+                        <h5 class="card-title">Keraen D'souza</h5>
+                        <p class="card-text">Back-end Deveoper</p>
+                        <a href="#" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- 3 -->
+            <div class="col-sm-12 col-lg-4 col-12">
+                <div class="card text-center" data-aos="zoom-in-left" data-aos-offset="200">
+                    <div class="card-body mycard">
+                        <img src="../bootstrap-images/s1.jpg" class="img-fluid rounded-circle border border-primary p-1"
+                            alt="">
+                        <h5 class="card-title ">Kristina</h5>
+                        <p class="card-text">Graphics Designer</p>
+                        <a href="#" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Feel Free -->
+    <section class="section-container" id="contact">
+        <div class="container py-5">
+            <h1 class="text-center">Feel Free <span class="text-primary"> to Contact</span></h1>
+            <hr class="w-25 m-auto">
+        </div>
+        <div class="row px-5">
+            <div class="col-sm-12  col-lg-6 col-12" data-aos="fade-up-left" data-aos-offset="200">
+                <form class="row g-3">
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="inputAddress2" class="form-label">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2"
+                            placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>Pakistan</option>
+                            <option>India</option>
+                            <option>America</option>
+                            <option>Bangladash</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Zip</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Sign in</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-12  col-lg-6 col-12 m-auto text-center p-4 mb-3" data-aos="fade-up-right"
+                data-aos-offset="200">
+                <img src="../bootstrap-images/s6.jpg" class="img-fluid img-fluid rounded-circle p-2" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-section py-3" style="background-color: #009388;">
+        <div class="container">
+            <div class="row py-3 ">
+                <div class="col-sm-6 col-lg-3 col-6 justify-content-center">
+                    <h4 class="text-white fw-bold">Media Links</h4>
+                    </a>
+                    <a href="" class="ms-2"><i class="fa-brands fa-instagram text-white fs-3"></i></a>
+                    <a href="" class="ms-2"><i class="fa-brands fa-square-twitter text-white fs-3"></i></a>
+                    <a href="" class="ms-2"><i class="fa-brands fa-square-youtube text-white fs-3"></i></a>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-6 justify-content-center">
+                    <h4 class="text-white fw-bold">Website</h4>
+                        <a href="">
+                            <li class="text-white">How It Works</li>
+                            <li class="text-white">Contact Us</li>
+                            <li class="text-white">Safety</li>
+                            <li class="text-white">Diversity</li>
+                            <li class="text-white">Inculuion</li>
+                        </a>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-6 justify-content-center">
+                    <h4 class="text-white fw-bold">Compney</h4>
+                        <a href="">
+                            <li class="text-white">About Us</li>
+                            <li class="text-white">Our Offering</li>
+                            <li class="text-white">Newsroom</li>
+                            <li class="text-white">Invertors</li>
+                            <li class="text-white">Blog</li>
+                        </a>
+                </div>
+                <div class="col-sm-6 col-lg-3 col-6 justify-content-center">
+                    <h4 class="text-white fw-bold">Products</h4>
+                        <a href="">
+                            <li class="text-white">Ride</li>
+                            <li class="text-white">Drive</li>
+                            <li class="text-white">Eat</li>
+                            <li class="text-white">User for Business</li>
+                            <li class="text-white">Uber Freight</li>
+                        </a>
+                        <button class="btn w-100 btn-light my-3 text-uppercase mybtn">Click Here</button>
+                </div>
+
+            </div>
+            <hr class="w-100 bg-white">
+            <div class="col text-white text-center py-3 fs-5">
+            Copyright &copy; 2025.Metatitians@gamil.com All Reseverd
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
