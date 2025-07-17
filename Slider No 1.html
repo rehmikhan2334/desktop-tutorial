@@ -48,6 +48,7 @@
 
         .card-list .card-item .card-link:hover {
             border-color: #5372F0;
+            cursor: grabbing;
 
         }
 
@@ -207,10 +208,11 @@
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const titles = document.querySelectorAll('.card-title');
-    const charLimit = 50; // ✅ Change this to desired character count
+    const charLimit = 50;
 
     titles.forEach(title => {
       const text = title.innerText.trim();
@@ -218,26 +220,31 @@
         title.innerText = text.slice(0, charLimit) + "...";
       }
     });
-  });
 
-  // Swiper init
-  new Swiper('.card-wrapper', {
-    loop: true,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
-    }
+    // 🔴 Swiper init with autoplay added here
+    new Swiper('.card-wrapper', {
+      loop: true,
+      spaceBetween: 30,
+      autoplay: {               // 🔴 Autoplay settings START
+        delay: 2000,            // 🔴 3 seconds delay between slides
+        disableOnInteraction: false // 🔴 Keeps autoplay running after user interaction
+      },                        // 🔴 Autoplay settings END
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
   });
 </script>
 
