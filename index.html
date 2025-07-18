@@ -312,46 +312,83 @@
             }
 
         }
-        .tab-header{
+
+        .tab-header {
             background-color: #555555;
             width: fit-content;
             margin: auto;
             border-radius: 50px;
         }
-          .tabs{
-            max-width: 1100px;
+
+        .tabs {
+            max-width: 100%;
             padding: 15px 20px;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
             gap: 20px;
-           
+            transition: 0.5s ease;
+            flex-wrap: wrap;
+
+
         }
 
-        .tabs .tabslinks{
+        .tabs .tabslinks {
             border: none;
             outline: none;
             padding: 8px 16px;
             background: transparent;
             font-size: 23px;
             color: white;
-            font-family: bold;
-            /* background-color: #434354; */
+            font-weight: bold;
+
         }
-        .tabs .tabslinks.active{
+
+        .tabs .tabslinks.active {
             background-color: #2d7edf;
             border-radius: 50px;
+
         }
-        .tabs .tabslinks:hover{
+
+        .tabs .tabslinks:hover {
             background-color: #434354;
             border-radius: 50px;
         }
-         .tab-content{
+
+        .tab-content {
             display: flex;
             justify-content: center;
             width: 100%;
-         }
-        
+        }
+
+        @media screen and (max-width:664px) {
+            .tabs {
+                max-width: 100%;
+                padding: 13px 22px;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 27px;
+                transition: 0.5s ease;
+            }
+
+            .tabs .tabslinks {
+                border: none;
+                outline: none;
+                padding: 8px 2px;
+                background: transparent;
+                font-size: 23px;
+                color: white;
+                font-weight: bold;
+            }
+                .tabs .tabslinks.active {
+            /* background-color: #2d7edf; */
+            border-radius: 50px;
+            padding: 10px 25px;
+
+        }
+
+        }
     </style>
 
 </head>
@@ -388,15 +425,15 @@
     </div>
 
     <main>
-        
+
         <section class="section">
             <div class="tab-header">
-                 <div class="tabs">
-        <button class="tabslinks active" data-tab="all">ALL</button>
-        <button class="tabslinks" data-tab="tab2">HTML CSS</button>
-        <button class="tabslinks" data-tab="tab3">BOOtSTRAP</button>
-        <button class="tabslinks" data-tab="tab4">JAVASCRIPT</button>
-    </div>
+                <div class="tabs">
+                    <button class="tabslinks active" data-tab="all">ALL</button>
+                    <button class="tabslinks" data-tab="tab2">HTML CSS</button>
+                    <button class="tabslinks" data-tab="tab3">BOOtSTRAP</button>
+                    <button class="tabslinks" data-tab="tab4">JAVASCRIPT</button>
+                </div>
             </div>
             <div class="container">
                 <div class="row">
@@ -823,7 +860,7 @@
                     </div>
                     <!-- CArd no ten -->
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4" >
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 160704.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -872,7 +909,7 @@
                     </div>
 
                     <!-- Card Eleven -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3" >
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 175812.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -921,7 +958,7 @@
                     </div>
 
                     <!-- Card 12 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3" >
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 183631.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -1020,34 +1057,34 @@
 
 
 
-     let tabButtons = document.querySelectorAll(".tabslinks");
+        let tabButtons = document.querySelectorAll(".tabslinks");
 
-tabButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        const tabName = this.dataset.tab;
+        tabButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const tabName = this.dataset.tab;
 
-        // Show or hide content
-        let allTabContent = document.querySelectorAll(".tab-content");
-        allTabContent.forEach(content => {
-            if (tabName === "all") {
-                content.style.display = "block";
-            } else {
-                if (content.classList.contains(tabName)) {
-                    content.style.display = "block";
-                } else {
-                    content.style.display = "none";
-                }
-            }
+                // Show or hide content
+                let allTabContent = document.querySelectorAll(".tab-content");
+                allTabContent.forEach(content => {
+                    if (tabName === "all") {
+                        content.style.display = "block";
+                    } else {
+                        if (content.classList.contains(tabName)) {
+                            content.style.display = "block";
+                        } else {
+                            content.style.display = "none";
+                        }
+                    }
+                });
+
+                // Set active button
+                tabButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+            });
         });
 
-        // Set active button
-        tabButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
-    });
-});
-
-// Trigger default click on "All"
-document.querySelector('.tabslinks[all]').click();
+        // Trigger default click on "All"
+        document.querySelector('.tabslinks[all]').click();
 
 
 
