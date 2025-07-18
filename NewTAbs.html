@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horizontal Scrollable & Draggable Tab Navigation Menu | With Tab Content - Html, Css</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-        *{
+
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-             font-family: "Poppins", sans-serif;
-            
+            font-family: "Poppins", sans-serif;
+
         }
-        :root{
-            --first-color:#2e2e41;
-            --second-color:#5b85ff;
-            --third-color:#434354;
-            --text-color:#fff;
-            --box-shadow:0 5px 5px rgb(2,2,2,0.1);
-            --text-shadow:0 5px 5px rgb(2,2,2,0.1);
-         }
-         body{
+
+        :root {
+            --first-color: #2e2e41;
+            --second-color: #5b85ff;
+            --third-color: #434354;
+            --text-color: #fff;
+            --box-shadow: 0 5px 5px rgb(2, 2, 2, 0.1);
+            --text-shadow: 0 5px 5px rgb(2, 2, 2, 0.1);
+        }
+
+        body {
             background-color: var(--first-color);
-         }
-         .main-container{
+        }
+
+        .main-container {
             position: relative;
             margin: 0 80px;
             transition: 0.5s;
-         }
-         .tab-nav-bar{
+        }
+
+        .tab-nav-bar {
             position: relative;
             margin: 65px 10px 40px 10px;
-         }
-         .tab-navigation{
+        }
+
+        .tab-navigation {
             position: relative;
             display: flex;
             justify-content: center;
@@ -42,8 +51,9 @@
             max-width: fit-content;
             margin: 0 auto;
 
-         }
-         .tab-menu{
+        }
+
+        .tab-menu {
             color: var(--text-color);
             list-style: none;
             background-color: var(--third-color);
@@ -55,15 +65,18 @@
             box-shadow: var(--box-shadow);
             overflow-x: hidden;
             scroll-behavior: smooth;
-         }
-         .tab-menu.dragging{
+        }
+
+        .tab-menu.dragging {
             scroll-behavior: unset;
             cursor: grab;
-         }
-         .tab-menu.dragging .tab-btn{
+        }
+
+        .tab-menu.dragging .tab-btn {
             pointer-events: none;
-         }
-         .tab-btn{
+        }
+
+        .tab-btn {
             color: var(--text-color);
             display: inline-block;
             font-size: 1em;
@@ -75,14 +88,18 @@
             cursor: pointer;
             user-select: none;
             transition: 0.4s ease;
-         }
-         .tab-btn:hover{
+        }
+
+        .tab-btn:hover {
             background-color: var(--first-color);
-         }
-         .tab-btn.active{
+        }
+
+        .tab-btn.active {
             background-color: var(--second-color);
-         }
-         .left-btn , .right-btn{
+        }
+
+        .left-btn,
+        .right-btn {
             position: absolute;
             color: var(--text-color);
             font-size: 1.3em;
@@ -90,28 +107,31 @@
             cursor: pointer;
             height: 100%;
             line-height: 44px;
-         }
-         .left-btn {
+        }
+
+        .left-btn {
             left: 0;
-            background:linear-gradient(to left, transparent,var(--first-color) 80%) ;
+            background: linear-gradient(to left, transparent, var(--first-color) 80%);
             border-bottom-left-radius: 30px;
             border-top-left-radius: 30px;
             display: none;
-         }
-         .right-btn {
+        }
+
+        .right-btn {
             right: 0;
-            background:linear-gradient(to right, transparent,var(--first-color) 80%) ;
+            background: linear-gradient(to right, transparent, var(--first-color) 80%);
             border-bottom-right-radius: 30px;
             border-top-right-radius: 30px;
-         }
+        }
 
-         .tab-content{
+        .tab-content {
             position: relative;
             display: flex;
             justify-content: center;
             width: 100%;
-         }
-         .tab{
+        }
+
+        .tab {
             max-width: 1100px;
             padding: 15px 50px;
             margin: auto;
@@ -124,14 +144,16 @@
             content-visibility: hidden;
             opacity: 0;
         }
-        .tab.active{
+
+        .tab.active {
             transform: translateX(0);
             content-visibility: visible;
             opacity: 1;
             transition: 1s ease;
 
         }
-         .tab .image-card{
+
+        .tab .image-card {
             position: relative;
             width: 450px;
             max-width: 450px;
@@ -141,8 +163,9 @@
             justify-content: center;
             align-items: center;
             box-shadow: var(--box-shadow);
-         }
-         .tab .row{
+        }
+
+        .tab .row {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -151,38 +174,45 @@
             gap: 30px;
 
 
-         }
-         .tab .image-card img{
+        }
+
+        .tab .image-card img {
             width: 100%;
 
-         }
-         .left-colum{
+        }
+
+        .left-colum {
             max-width: 800px;
 
-         }
-         .info, .city, .info .descipation p{
+        }
+
+        .info,
+        .city,
+        .info .descipation p {
             color: var(--text-color);
             margin-bottom: 10px;
-         }
-         .info  .city{
+        }
+
+        .info .city {
             font-size: 2em;
-         }
-         .country{
+        }
+
+        .country {
             font-size: 5em;
             color: var(--third-color);
             font-weight: 700;
             text-align: center;
             text-shadow: var(--text-shadow);
-         }
-
+        }
     </style>
 </head>
+
 <body>
     <div class="main-container">
         <div class="tab-nav-bar">
-            
+
             <div class="tab-navigation">
-               <i class="fa-solid fa-angle-left left-btn"></i>
+                <i class="fa-solid fa-angle-left left-btn"></i>
                 <i class="fa-solid fa-angle-right right-btn"></i>
                 <ul class="tab-menu">
                     <li class="tab-btn active">Tokya</li>
@@ -202,21 +232,23 @@
     </div>
 
     <div class="tab-content">
-
-        
         <div class="tab active">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2YT4FRz7SeUcAB8FTMODcOJQ8iSTdupypvSFjju0meHn0maure2BJ5w3x-8iAVjyQyU&usqp=CAU" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2YT4FRz7SeUcAB8FTMODcOJQ8iSTdupypvSFjju0meHn0maure2BJ5w3x-8iAVjyQyU&usqp=CAU"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Tokyo</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -224,19 +256,23 @@
             <h1 class="country">Japan</h1>
         </div>
 
-            <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoxUyES3ymQBhuLd8CkXt_EU_yrbcIMoW9w&s" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzoxUyES3ymQBhuLd8CkXt_EU_yrbcIMoW9w&s"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Cairo</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -244,61 +280,73 @@
             <h1 class="country">Egypy</h1>
         </div>
 
-            <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://i0.wp.com/globalgrasshopper.com/wp-content/uploads/2011/04/Cinque-Terre-Italy.jpg?resize=840%2C559&ssl=1" alt="">
+                        <img src="https://i0.wp.com/globalgrasshopper.com/wp-content/uploads/2011/04/Cinque-Terre-Italy.jpg?resize=840%2C559&ssl=1"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Rome</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
             </div>
             <h1 class="country">Italy</h1>
-            </div>
+        </div>
 
 
-             <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3M5CmmtpNUaL8UY39KYDnF0KZsGEU2aRO6Q&s" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3M5CmmtpNUaL8UY39KYDnF0KZsGEU2aRO6Q&s"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Paris</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <h1 class="country">France</h1>
-            </div>
-            
-            <div class="tab">
+        </div>
+
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://cdn.contexttravel.com/image/upload/w_1500,q_60/v1683045973/blog/Traveler%27s%20Guide%20to%20the%20Best%20Things%20to%20Do%20in%20Mexico%20City/38.jpg" alt="">
+                        <img src="https://cdn.contexttravel.com/image/upload/w_1500,q_60/v1683045973/blog/Traveler%27s%20Guide%20to%20the%20Best%20Things%20to%20Do%20in%20Mexico%20City/38.jpg"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Maxico City</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -306,19 +354,23 @@
             <h1 class="country">southern North America</h1>
         </div>
 
-            <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAnvYeFTuCNy3wZFim9x4YRjakAS3tI5CETA&s" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAnvYeFTuCNy3wZFim9x4YRjakAS3tI5CETA&s"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Florence</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -326,19 +378,23 @@
             <h1 class="country">Italy</h1>
         </div>
 
-             <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMobIoayWpuXIJbYEdGAx9H9c5Ck3Q85kSuw&s" alt="">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMobIoayWpuXIJbYEdGAx9H9c5Ck3Q85kSuw&s"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">New York</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -346,19 +402,23 @@
             <h1 class="country">United State</h1>
         </div>
 
-             <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://t4.ftcdn.net/jpg/01/42/06/41/360_F_142064118_5Pw0f7uNXfsfZUn5QzjkOqggBMYT9W44.jpg" alt="">
+                        <img src="https://t4.ftcdn.net/jpg/01/42/06/41/360_F_142064118_5Pw0f7uNXfsfZUn5QzjkOqggBMYT9W44.jpg"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Mosow</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -366,19 +426,23 @@
             <h1 class="country">Mosow</h1>
         </div>
 
-            <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/170220102107-sydney-habour.jpg?q=x_4,y_209,h_2351,w_4178,c_crop/h_833,w_1480" alt="">
+                        <img src="https://media.cnn.com/api/v1/images/stellar/prod/170220102107-sydney-habour.jpg?q=x_4,y_209,h_2351,w_4178,c_crop/h_833,w_1480"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Sydney</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
@@ -386,45 +450,53 @@
             <h1 class="country">Sydney</h1>
         </div>
 
-             <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://delivery-cqucontenthub.stylelabs.cloud/api/public/content/Sydney-Opera-House-and-Harbour-Bridge-full-page.jpg?v=d0a86cb2" alt="">
+                        <img src="https://delivery-cqucontenthub.stylelabs.cloud/api/public/content/Sydney-Opera-House-and-Harbour-Bridge-full-page.jpg?v=d0a86cb2"
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">San Franciso</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
             </div>
             <h1 class="country">San Franciso</h1>
         </div>
-             <div class="tab">
+        <div class="tab">
             <div class="row">
                 <div class="left-colum">
                     <div class="image-card">
-                        <img src="https://content.r9cdn.net/rimg/dimg/12/98/b1e36771-city-2258-163f4d7f814.jpg?crop=true&width=1020&height=498  " alt="">
+                        <img src="https://content.r9cdn.net/rimg/dimg/12/98/b1e36771-city-2258-163f4d7f814.jpg?crop=true&width=1020&height=498  "
+                            alt="">
                     </div>
                 </div>
                 <div class="right-colum">
                     <div class="info">
                         <h2 class="city">Amsterdam</h2>
                         <div class="descipation">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem consectetur animi incidunt neque id voluptates.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio nobis impedit dolor!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis labore dolorum dolore
+                                dolores atque iste dicta tempore repellat illum, nostrum quod nobis ex dolorem
+                                consectetur animi incidunt neque id voluptates.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nihil incidunt odio
+                                nobis impedit dolor!</p>
                         </div>
                     </div>
                 </div>
             </div>
             <h1 class="country">Amsterdam</h1>
         </div>
-        
+
     </div>
 </body>
 <script>
@@ -433,34 +505,34 @@
     let btnRight = document.querySelector(".right-btn ");
     let tabMenu = document.querySelector('.tab-menu');
 
-    let IconVisibilty = () =>{
+    let IconVisibilty = () => {
         let scrollLeftValue = Math.ceil(tabMenu.scrollLeft);
         // console.log(scrollLeftValue);
-        let  scrollableWidth = tabMenu.scrollWidth - tabMenu.clientWidth;
+        let scrollableWidth = tabMenu.scrollWidth - tabMenu.clientWidth;
 
         btnLeft.style.display = scrollLeftValue > 0 ? 'block' : 'none';
         btnRight.style.display = scrollableWidth > scrollLeftValue ? 'block' : 'none';
     }
 
-    btnRight.addEventListener('click', ()=>{
-        tabMenu.scrollLeft +=150;
+    btnRight.addEventListener('click', () => {
+        tabMenu.scrollLeft += 150;
         // IconVisibilty();
-        setTimeout(() => IconVisibilty(),50);
+        setTimeout(() => IconVisibilty(), 50);
     });
 
-    btnLeft.addEventListener('click', ()=>{
-        tabMenu.scrollLeft -=150;
+    btnLeft.addEventListener('click', () => {
+        tabMenu.scrollLeft -= 150;
         // IconVisibilty();
-         setTimeout(() => IconVisibilty(),50);
+        setTimeout(() => IconVisibilty(), 50);
     });
 
-    window.onload = function(){
+    window.onload = function () {
         btnRight.style.display = tabMenu.scrollWidth > tabMenu.clientWidth || tabMenu.scrollWidth >= window.innerWidth ? 'block' : 'none';
-        btnLeft.style.display = tabMenu.scrollWidth >= window.innerWidth ? "" :'none';
+        btnLeft.style.display = tabMenu.scrollWidth >= window.innerWidth ? "" : 'none';
     }
-    window.onresize= function(){
+    window.onresize = function () {
         btnRight.style.display = tabMenu.scrollWidth > tabMenu.clientWidth || tabMenu.scrollWidth >= window.innerWidth ? 'block' : 'none';
-        btnLeft.style.display = tabMenu.scrollWidth >= window.innerWidth ? "" :'none';
+        btnLeft.style.display = tabMenu.scrollWidth >= window.innerWidth ? "" : 'none';
 
         let scrollLeftValue = Math.round(tabMenu.scrollLeft);
         btnLeft.style.display = scrollLeftValue > 0 ? "block" : 'none';
@@ -468,21 +540,21 @@
 
     let activeDreg = false;
 
-    tabMenu.addEventListener('mousemove', (drag)=>{
-        if(!activeDreg) return;
+    tabMenu.addEventListener('mousemove', (drag) => {
+        if (!activeDreg) return;
         tabMenu.scrollLeft -= drag.movementX;
-          IconVisibilty();
-          tabMenu.classList.add('dragging');
+        IconVisibilty();
+        tabMenu.classList.add('dragging');
     });
 
-    document.addEventListener('mouseup', ()=>{
+    document.addEventListener('mouseup', () => {
         activeDreg = false;
         tabMenu.classList.remove('dragging');
-      
-        
+
+
     });
 
-    tabMenu.addEventListener("mousedown", () =>{
+    tabMenu.addEventListener("mousedown", () => {
         activeDreg = true;
     });
 
@@ -490,11 +562,11 @@
     let tabs = document.querySelectorAll('.tab');
     let tabBtns = document.querySelectorAll('.tab-btn');
 
-    let tab_Nav = function(tabBtnClick){
-        tabBtns.forEach((tabBtn)=>{
+    let tab_Nav = function (tabBtnClick) {
+        tabBtns.forEach((tabBtn) => {
             tabBtn.classList.remove("active");
         });
-        tabs.forEach((tab)=>{
+        tabs.forEach((tab) => {
             tab.classList.remove('active');
         })
 
@@ -505,12 +577,13 @@
         tabs[tabBtnClick].classList.add('active');
     }
 
-    tabBtns.forEach((tabBtns,i)=>{
-        tabBtns.addEventListener('click',() =>{
+    tabBtns.forEach((tabBtns, i) => {
+        tabBtns.addEventListener('click', () => {
             tab_Nav(i);
         })
     })
 
 
 </script>
+
 </html>

@@ -22,6 +22,8 @@
 
         .section {
             padding-block: 3rem;
+            background-color: #2e2e41;
+
         }
 
         nav {
@@ -113,7 +115,7 @@
 
         /* Nav end */
         .card {
-            width: 330px;
+            width: 100%;
             height: 320px;
             border: 1px solid #eee;
             box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
@@ -310,6 +312,46 @@
             }
 
         }
+        .tab-header{
+            background-color: #555555;
+            width: fit-content;
+            margin: auto;
+            border-radius: 50px;
+        }
+          .tabs{
+            max-width: 1100px;
+            padding: 15px 20px;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 20px;
+           
+        }
+
+        .tabs .tabslinks{
+            border: none;
+            outline: none;
+            padding: 8px 16px;
+            background: transparent;
+            font-size: 23px;
+            color: white;
+            font-family: bold;
+            /* background-color: #434354; */
+        }
+        .tabs .tabslinks.active{
+            background-color: #2d7edf;
+            border-radius: 50px;
+        }
+        .tabs .tabslinks:hover{
+            background-color: #434354;
+            border-radius: 50px;
+        }
+         .tab-content{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+         }
+        
     </style>
 
 </head>
@@ -346,17 +388,20 @@
     </div>
 
     <main>
-         <div class="tabs">
-        <button class="tabslinks" data-tab="tab1">ALL</button>
-        <button class="tabslinks" data-tab="tab1">HTML CSS</button>
-        <button class="tabslinks" data-tab="tab2">BOOtSTRAP</button>
-        <button class="tabslinks" data-tab="tab3">JAVASCRIPT</button>
-    </div>
+        
         <section class="section">
+            <div class="tab-header">
+                 <div class="tabs">
+        <button class="tabslinks active" data-tab="all">ALL</button>
+        <button class="tabslinks" data-tab="tab2">HTML CSS</button>
+        <button class="tabslinks" data-tab="tab3">BOOtSTRAP</button>
+        <button class="tabslinks" data-tab="tab4">JAVASCRIPT</button>
+    </div>
+            </div>
             <div class="container">
                 <div class="row">
                     <!-- First Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12  pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12  pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 191358.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -400,7 +445,7 @@
                         </div>
                     </div>
                     <!-- Second Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3  tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190905.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -445,7 +490,7 @@
                         </div>
                     </div>
                     <!-- Third CArd -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190931.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -491,7 +536,7 @@
                         </div>
                     </div>
                     <!-- Forth CArd -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190919.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -535,7 +580,7 @@
                     </div>
 
                     <!-- Fifth Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 190748.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -579,7 +624,7 @@
                     </div>
 
                     <!-- Six Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-06-30 185245.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -623,7 +668,7 @@
                     </div>
 
                     <!-- Seventh Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-07 195912.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -673,7 +718,7 @@
                     </div>
 
                     <!-- Eight Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab2">
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-07 200302.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -726,13 +771,13 @@
                     </div>
                     <!-- CArd no Nine -->
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 155727.png" class="card-img-top" alt="">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
-                                <!-- <button>JAVASCRIPT</button> -->
+                                <button>JAVASCRIPT</button>
                             </div>
                             <div class="card-title">
                                 <h1>Slider</h1>
@@ -776,9 +821,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- CArd no Nine -->
+                    <!-- CArd no ten -->
 
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4" >
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 160704.png" class="card-img-top" alt="">
                             <div class="card-body">
@@ -827,13 +872,13 @@
                     </div>
 
                     <!-- Card Eleven -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3" >
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 175812.png" class="card-img-top" alt="">
                             <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
+                                <!-- <button>HTML</button> -->
+                                <!-- <button>CSS</button> -->
+                                <button>BOOTSTRAP</button>
                             </div>
                             <div class="card-title">
                                 <h1>Home Page</h1>
@@ -876,13 +921,13 @@
                     </div>
 
                     <!-- Card 12 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3">
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3" >
                         <div class="card">
                             <img src="./images/Screenshot 2025-07-16 183631.png" class="card-img-top" alt="">
                             <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
+                                <!-- <button>HTML</button> -->
+                                <!-- <button>CSS</button> -->
+                                <button>BOOtSTRAP</button>
                             </div>
                             <div class="card-title">
                                 <h1>Furniture</h1>
@@ -970,7 +1015,42 @@
             } else {
                 menuList.style.maxHeight = "0px";
             }
-        }
+        };
+
+
+
+
+     let tabButtons = document.querySelectorAll(".tabslinks");
+
+tabButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        const tabName = this.dataset.tab;
+
+        // Show or hide content
+        let allTabContent = document.querySelectorAll(".tab-content");
+        allTabContent.forEach(content => {
+            if (tabName === "all") {
+                content.style.display = "block";
+            } else {
+                if (content.classList.contains(tabName)) {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        });
+
+        // Set active button
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
+
+// Trigger default click on "All"
+document.querySelector('.tabslinks[all]').click();
+
+
+
 
 
 
