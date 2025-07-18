@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs in javascript</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #e7e7e7;
+        }
+        .tabs{
+            width: 500px;
+            overflow: hidden;
+        }
+        .tabs button{
+            background-color: #90cafa;
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: grabbing;
+            transition: 0.3s;
+        }
+        .tabs button:hover{
+            background-color: #74aedd;
+        }
+        .tabs button.active{
+            background: #fff;
+        }
+        .tab-content{
+            background-color: #fff;
+            width: 500px;
+            padding: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 21px;
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <button class="tabslinks" data-tab="tab1">Tab 1</button>
+        <button class="tabslinks" data-tab="tab2">Tab 2</button>
+        <button class="tabslinks" data-tab="tab3">Tab 3</button>
+    </div>
+    <div id="tab1" class="tab-content">
+        <h2>TAB 1</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis laudantium soluta, architecto numquam doloribus
+        ullam in corrupti beatae qui illum odit veritatis repudiandae est a reiciendis voluptatem? Deserunt, et.
+    </div>
+     <div id="tab2" class="tab-content">
+        <h2>TAB 2</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis laudantium soluta, architecto numquam doloribus
+        ullam in corrupti beatae qui illum odit veritatis repudiandae est a reiciendis voluptatem? Deserunt, et.
+    </div>
+     <div id="tab3" class="tab-content">
+        <h2>TAB 3</h2>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis laudantium soluta, architecto numquam doloribus
+        ullam in corrupti beatae qui illum odit veritatis repudiandae est a reiciendis voluptatem? Deserunt, et.
+    </div>
+</body>
+
+<script>
+    let tabButtons = document.querySelectorAll(".tabslinks");
+
+    for(let i=0; i < tabButtons.length; i++){
+        tabButtons[i].addEventListener('click',function(){
+            var tabName = this.dataset.tab;
+            var tabContent = document.getElementById(tabName);
+
+            let allTabContent = document.querySelectorAll(".tab-content");
+            let alltabButtons = document.querySelectorAll(".tabslinks");
+
+            for(var j=0; j < allTabContent.length; j++){
+                allTabContent[j].style.display = 'none';
+            }
+
+             for(var k=0; k < alltabButtons.length; k++){
+                alltabButtons[k].classList.remove("active");
+            }
+            
+
+            
+
+
+            tabContent.style.display= "block";
+            this.classList.add("active");
+        })
+    }
+    document.querySelector(".tabslinks").click();
+
+</script>
+
+</html>
