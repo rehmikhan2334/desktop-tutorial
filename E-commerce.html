@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture WEbsite</title>
+    <!-- fontawesome Links Cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootstrap Cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Dancing+Script:wght@400..700&family=Imperial+Script&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap');
+
+        * {
+            font-family: "Merriweather Sans", serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: #388b6f;
+            border-radius: 10px;
+        }
+
+        html::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        body {
+            background: white;
+        }
+
+        /* header start */
+        .header {
+            background: white;
+            width: 100%;
+            box-shadow: 0px 1px 1px black;
+        }
+
+        .header nav {
+            position: relative;
+            display: flex;
+            max-width: calc(100% - 200px);
+            margin: 0 auto;
+            height: 70px;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        nav .content {
+            display: flex;
+            align-items: center;
+            /* position: fixed; */
+        }
+
+        nav .content .links {
+            margin-left: 80px;
+            display: flex;
+            
+        }
+
+        nav .content .logo a img {
+            width: 110px;
+
+        }
+
+        nav .content .links li {
+            list-style: none;
+            line-height: 70px;
+
+        }
+
+        #first {
+            color: #388b6f;
+        }
+
+        .content .links li a,
+        .content .links li label {
+            color: black;
+            font-size: 18px;
+            padding: 9px 17px;
+            font-weight: bold;
+            border-radius: 5px;
+            list-style: none;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+
+        }
+
+        .content .links li label {
+            display: none;
+        }
+
+        .content .links li a:hover,
+        .content .links li label:hover {
+            color: #388b6f;
+        }
+
+        .header .search-icon,
+        .header .menu-icon {
+            color: #388b6f;
+            font-size: 18px;
+            line-height: 70px;
+            width: 70px;
+            text-align: center;
+            cursor: pointer;
+
+
+        }
+
+        .header .menu-icon {
+            display: none;
+        }
+
+        .header #show-search:checked~.search-icon i::before {
+            content: "\f00d";
+
+        }
+
+        .header .search-box {
+            position: absolute;
+            height: 100%;
+            max-width: calc(100% - 50px);
+            width: 100%;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .header #show-search:checked~.search-box {
+            opacity: 1;
+            pointer-events: auto;
+
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 17px;
+            color: black;
+            background: white;
+
+        }
+
+        .search-box input::placeholder {
+            color: black;
+        }
+
+        .links {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box .go-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 60px;
+            width: 70px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #388b6f;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .header input[type="checkbox"] {
+            display: none;
+        }
+
+        /* responsive */
+        @media screen and (max-width:1250px) {
+            .header nav {
+                max-width: 100%;
+                padding: 0px 20px;
+
+            }
+
+            nav .content .links {
+                margin-left: 30px;
+            }
+
+            .content .links a {
+                padding: 8px 13px;
+            }
+
+            .header .search-box {
+                max-width: calc(100% - 100px);
+            }
+
+            .header .search-box input {
+                padding: 0 100px 0 15px;
+            }
+        }
+
+        @media screen and (max-width:900px) {
+            .header .menu-icon {
+                display: block;
+
+            }
+
+            .header #show-menu:checked~.menu-icon i::before {
+                content: "\f00d";
+            }
+
+            nav .content .links {
+                display: block;
+                position: fixed;
+                background: white;
+                height: 100%;
+                width: 100%;
+                color: black;
+                top: 70px;
+                left: -100%;
+                margin-left: 0;
+                max-width: 350px;
+                overflow: auto;
+                padding-bottom: 100px;
+                transition: all 0.3s ease;
+            }
+
+            nav #show-menu:checked~.content .links {
+                left: 0%;
+            }
+
+            .content .links li {
+                margin: 15px 20px;
+
+            }
+
+            .content .links li a,
+            .content .links li label {
+                line-height: 40px;
+                font-size: 20px;
+                display: block;
+                padding: 8px 18px;
+                cursor: pointer;
+
+            }
+
+            .content .links li a.destop-links {
+                display: none;
+
+            }
+
+        }
+
+        /* hero-divider */
+        .container {
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSli_IdRFEGvUegAJ0BXoODEAnATWvcNPkY2s81JEV6jrcPX6nJCvc0NOxlZAu73jfMFqQ&usqp=CAU) no-repeat;
+            height: 40rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: 100%;
+        }
+
+        .main-text h1 {
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+            align-items: center;
+            justify-content: center;
+            margin-top: 13%;
+        }
+
+        .main-text p {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+        .btn {
+            color: white;
+            outline: none;
+            width: 14rem;
+            border: 3px solid #2ab889;
+            font-size: 20px;
+            background: transparent;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .btn:hover {
+            background-color: #2ab889;
+            color: white;
+            border: none;
+        }
+
+        .icon {
+            gap: 0;
+            font-size: 60px;
+            color: #025539;
+
+        }
+
+        .section-container {
+            padding-block: 4rem;
+        }
+
+        .img {
+            width: 35rem;
+            border-radius: 10px;
+        }
+
+        .text h2 {
+            color: #025539;
+            margin-top: 30px;
+            align-items: center;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .par {
+            font-size: 20px;
+        }
+
+        .mybtn {
+            color: #388b6f;
+            outline: none;
+            width: 14rem;
+            border: 4px solid #2ab889;
+            background-color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto;
+            margin-top: 25px;
+            margin-left: 25%;
+
+        }
+
+        .test h1 {
+            color: #388b6f;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .mycard img {
+            border: none;
+            background-color: rgb(206, 206, 206);
+            width: 100%;
+            height: 175px;
+            border-radius: 10px;
+        }
+
+        .mycard {
+            width: 100%;
+            border: none;
+
+        }
+        .mycard:hover{
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-btn {
+            color: #388b6f;
+            outline: none;
+            width: 8rem;
+            border: 2px solid #2ab889;
+            background-color: white;
+            font-weight: bold;
+            border-radius: 10px;
+            padding: 2px;
+        }
+
+        .card-btn:hover {
+            background-color: #025539;
+            color: white;
+            border: none;
+        }
+
+        .containr {
+            background: url(https://media.furniturevillage.co.uk/i/fv/PRODZFRSP000000000055803_bing_fabric-swivel-chair__lifestyle?$medium$&fmt=auto&fmt=auto&w=579) no-repeat;
+            height: 30rem;
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: 100%;
+            margin: 13px;
+            border-radius: 10px;
+        }
+
+        .main-txt .para {
+            letter-spacing: 2px;
+            margin-top: 10%;
+        }
+
+        .main-txt {
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10%;
+
+        }
+
+        .main-txt h1 {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .imgw {
+            border: none;
+            width: 100%;
+            height: 14rem;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+
+        .imgw:hover {
+            transform: scale(.98);
+            transition: all 0.3s ease;
+        }
+
+        .touch {
+            color: #025539;
+        }
+
+        #exampleInputEmail1 {
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0px 5px 6px black;
+
+        }
+
+        #exampleInputPassword1 {
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            box-shadow: 0px 5px 6px black;
+        }
+
+        form textarea {
+            border: none;
+            border-radius: 10px;
+            resize: none;
+            box-shadow: 0px 5px 6px black;
+            height: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .submit {
+            width: 10rem;
+            padding: 2px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #3ba280;
+            border-radius: 10px;
+            border: none;
+
+        }
+
+        .submit:hover {
+            width: 12rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #025539;
+
+        }
+
+        .main h1 {
+            color: #025539;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .customr-card {
+            margin: 10px;
+            border-radius: 10px;
+            background-color: rgb(224, 222, 222);
+        }
+        .customr-card:hover{
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-body img {
+            min-width: 50%;
+            max-height: 200px;
+        }
+
+        .imges {
+            width: 12rem;
+        }
+
+        footer {
+            background-color: #d5d5d5;
+        }
+
+        .media-links a:hover {
+            color: #025539;
+
+        }
+
+        .media-links a {
+            color: black;
+        }
+        .arrow{
+            position: fixed;
+            color: #025539;
+            background-color:#025539 ;
+            border-radius: 50px;
+            height: 50px;
+            bottom: 40px;
+            text-decoration: none;
+            text-align: center;
+            right: 50px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header start -->
+    <div class="header">
+        <nav class="fixed-top">
+            <input type="checkbox" id="show-search">
+            <input type="checkbox" name="" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            <div class="content">
+                <div class="logo"><a href="./E-commerce.html"><img src="../bootstrap images/furniture.jpeg"
+                            class=".imge" alt=""></a></div>
+                <ul class="links">
+                    <li><a href="" id="first">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Product</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Reviews</a></li>
+                </ul>
+            </div>
+            <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
+            <form action="#" class="search-box">
+                <input type="text" name="" id="" placeholder="Search" required>
+                <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+            </form>
+        </nav>
+    </div>
+    <section>
+        <div class="container">
+            <div class="row ">
+                <div class="col-12">
+                    <div class="main-text text-center">
+                        <h1 class="text-white">Discover The Best
+                            <br>Funiture For You
+                        </h1>
+                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo neque cumque
+                            dolorem aut sit quis eveniet quod,<br> facere nihil voluptatibus hic debitis voluptatum
+                            quidem consequatur, excepturi deserunt possimus optio iusto?</p>
+                        <button class="btn btn-light">View More</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="containor px-5" style="background-color: #d2d2d2;">
+            <div class="row">
+                <div class=" col-sm-12 col-md-3 col-12">
+                    <div class="icon">
+                        <i class="fa-solid fa-car-side"></i>
+                        <h5 class="text-dark fw-bold ">Free Delivery</h5>
+                        <p class="text-dark lead mb-4">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-3 col-12">
+                    <div class="icon">
+                        <i class="fa-solid fa-headset"></i>
+                        <h5 class="text-dark fw-bold">Support 24/7</h5>
+                        <p class="text-dark lead ">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-3 col-12">
+                    <div class="icon">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <h5 class="text-dark fw-bold">30 Day Return</h5>
+                        <p class="text-dark lead ">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class=" col-sm-12 col-md-3 col-12">
+                    <div class="icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h5 class="text-dark fw-bold">Secore Shopping</h5>
+                        <p class="text-dark lead ">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- header End -->
+    <!-- All Section Start Now  -->
+    <main>
+        <section class="section-container">
+            <div class="containor">
+                <div class="row px-5">
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <img src="../bootstrap images/bedrom.jpeg" class="img" alt="">
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-12">
+                        <div class="text m-auto">
+                            <h2 class="text-center ">Funiture Services About Us</h2>
+                            <p class="text-dark text-center par">Lorem ipsum dolor sit, amet consectetur adipisicing
+                                elit. Perspiciatis
+                                fuga qui officiis perferendis ea vitae fugit optio, non nam earum porro quasi
+                                repellendus a minima sequi vel vero quibusdam quia animi, veniam voluptates. Tempora
+                                quas aliquam culpa amet minima repellendus cupiditate molestiae natus in? Libero
+                                assumenda doloribus possimus nostrum inventore!</p>
+
+                        </div>
+                        <button class="btn btn-light mybtn">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-container">
+            <div class="test">
+                <h1 class="text-center">PRODUCTS</h1>
+            </div>
+            <div class="containor py-5">
+                <div class="row px-5">
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/sofa.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 Card -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/chia.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 Card -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/chair.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4 Card  -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/chi.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next Row 4 Cards -->
+                <div class="row py-5 px-5">
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/cha.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 Card -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem;height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/chairs.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 Card -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/chair.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4 Card  -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/1.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold mt-3" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+        <section class="">
+            <div class="containr">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-txt text-center">
+                            <p class="text-white fs-5 para">Get Discout Up to 50%</p>
+                            <h1 class="text-white">Best Deal For Weak</h1>
+                            <p class="text-white fs-5">Get up to 50% off this weak and get offer <br>Don't miss</p>
+                            <button class="btn btn-light okbtn">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-container">
+            <div class="test">
+                <h1 class="text-center">50% OFF PRODUCTS</h1>
+            </div>
+            <div class="containor">
+                <div class="row py-5 px-5">
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/cha.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 Card -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem;height: 22rem;">
+
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/2.jpeg" class="card-img-top" alt="...">
+                                <h4 class="card-title fs-2 fw-bold" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3 Card -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/3.jpeg" class="card-img-top" alt="...">
+                                <h4 class="card-title fs-2 fw-bold" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4 Card  -->
+                    <div class="col-md-3 col-sm-12 col-12">
+                        <div class="card" style="width: 20rem; height: 22rem;">
+                            <div class="card-body mycard">
+                                <img src="../bootstrap images/3.jpeg" class="card-img-top" alt="...">
+
+                                <h4 class="card-title fs-2 fw-bold" style="color: #025539;">Chairs</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet.
+                                    <br><span class="fs-4 fw-bold">Price $999</span>
+                                </p>
+                                <button class=" btn-light card-btn">Order Now</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-container">
+            <div class="test">
+                <h1 class="text-center">OUR GALLARY</h1>
+            </div>
+            <div class="containor">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-12">
+                        <img src="../bootstrap images/5.jpeg" class="img" alt="">
+                    </div>
+                    <div class="col-md-5 col-sm-12 py-5 col-12">
+                        <img src="../bootstrap images/okok.jpeg" class="imgw py-1" alt="">
+                        <img src="../bootstrap images/okkk.jpeg" class="imgw py-1" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-container">
+            <div class="containor">
+                <div class="row">
+                    <div class="col-md-6 px-5 col-12 col-sm-12">
+                        <div class="form-text">
+                            <h2 class="fs-1 fw-bold  text-dark">Get In <span class="touch">Touch</span></h2>
+                            <p class="fs-5 text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+                                hic. <br>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, quam?
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, vero?</p>
+                            <a href="#" class="touch fs-5">. +09200000000000</a><br>
+                            <a href="#" class="touch fs-5">. example@gmail.com</a> <br>
+                            <a href="#" class="touch fs-5">. Pakistan Sindh Karachi</a>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 col-12 col-sm-12">
+                        <form class="px-5 ">
+                            <div class="mb-3">
+                                <input type="text" class="form-control py-2" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Name">
+                            </div>
+                            <div class="mb-4">
+                                <input type="phone" class="form-control py-2" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Phone">
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control py-2" id="exampleInputPassword1"
+                                    placeholder="Enter Youe email">
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control" rows="6" cols="12" placeholder="Message"
+                                    id="floatingTextarea2"></textarea>
+                                <button class="submit">Send</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="section-container">
+            <div class="main">
+                <h1 class="text-center">CUSTOMERS REVIEW</h1>
+            </div>
+            <div class="row px-5 py-5">
+                <div class="col-sm-12 col-md-4 col-12">
+                    <div class="card ">
+                        <!-- 1 -->
+                        <div class="card-body text-center customr-card">
+                            <img src="../bootstrap images/s4.jpg" class="imag-fluid rounded-circle" alt="">
+                            <div class="rating-star">
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                            </div>
+                            <h5 class="card-title mt-2 fw-bold ">Elon Musk</h5>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.Temporibus,
+                                corrupti.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-lg-4 col-12">
+                    <div class="card">
+                        <!-- 1 -->
+                        <div class="card-body text-center customr-card">
+                            <img src="../bootstrap images/member.png" class="img-fluid rounded-circle" alt="">
+                            <div class="rating-star">
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                            </div>
+                            <h5 class="card-title mt-2 fw-bold">Elon Musk</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, omnis.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-lg-4 col-12">
+                    <div class="card">
+                        <!-- 1 -->
+                        <div class="card-body text-center customr-card">
+                            <img src="../bootstrap images/s2.jpg" class="img-fluid rounded-circle" alt="">
+                            <div class="rating-star">
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                                <i class="fa-solid fa-star text-warning fs-4 mt-3"></i>
+                            </div>
+                            <h5 class="card-title mt-2 fw-bold">Elon Musk</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, omnis.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            </div>
+        </section>
+        <footer>
+            <div class="containor">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img src="../bootstrap images/footerlogo.jpg" class="imges" alt="">
+                        <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sed voluptatem
+                            laboriosam voluptate <br> sapiente perferendis fugiat vitae magni facere iusto!</p>
+                    </div>
+                    <div class="col-12 text-center">
+                        <div class="media-links fs-1 mb-5">
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-youtube"></i></a>
+                            <a href="">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <p class="fs-4">Design By <a href="" style="color: #1a9e72;">
+                                    SA CODING
+                                </a></p>
+                            <p class="fs-6 fw-bold "> Copyright &copy; 2025.Metatitians@gamil.com All Reseverd</p>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <a href="#" class="arrow"><i><img src="../bootstrap images/arrow.png" alt="" width="50px"></i></a>
+        <!-- <i class="fa-solid fa-upload fs-1"></i> -->
+    </main>
+</body>
+
+</html>
