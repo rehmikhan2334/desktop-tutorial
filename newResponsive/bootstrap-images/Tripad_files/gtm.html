@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!-- saved from url=(0125)https://www.jscache.com/static/gtm/gtm.html?gtmParams=&parentDomain=https%3A%2F%2Fwww.tripadvisor.com&enableGTMConsentV2=true -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async="" src="./main.MWY1YTg3NzcyMQ.js.download" data-id="CEQM6BJC77U4LISUBOEG"></script><script src="./bat.js.download" async=""></script><script type="text/javascript" async="" src="./events.js.download"></script><script type="text/javascript" async="" src="./main.MWY1YTg3NzcyMQ.js.download" data-id="CEQM6BJC77U4LISUBOEG"></script><script src="./bat.js.download" async=""></script><script type="text/javascript" async="" src="./events.js.download"></script><script type="text/javascript" async="" src="./main.MWY1YTg3NzcyMQ.js.download" data-id="CEQM6BJC77U4LISUBOEG"></script><script src="./bat.js.download" async=""></script><script type="text/javascript" async="" src="./events.js.download"></script><script type="text/javascript" async="" src="./main.MWY1YTg3NzcyMQ.js.download" data-id="CEQM6BJC77U4LISUBOEG"></script><script src="./bat.js.download" async=""></script><script type="text/javascript" async="" src="./events.js.download"></script><script type="text/javascript" async="" src="./identify_45dd5971.js.download"></script><script src="./token_create.js.download"></script><script type="text/javascript" async="" src="./main.MWY1YTg3NzcyNQ.js.download" data-id="CEQM6BJC77U4LISUBOEG"></script><script async="" src="./main.8821a9da.js.download"></script><script src="./bat.js.download" async=""></script><script type="text/javascript" async="" src="./events.js.download"></script><script type="text/javascript" async="" src="./destination"></script><script type="text/javascript" async="" src="./destination(1)"></script><script async="" src="./core.js.download"></script><script type="text/javascript" async="" src="./js"></script><script async="" src="./gtm.js.download"></script><script>
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        const gtmParams = params['gtmParams'] || "";
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                          'gtm.start':
+                              new Date().getTime(), event: 'gtm.js'
+                      });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl + gtmParams;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KHCNJRC');
+    </script>
+    <!-- End Google Tag Manager -->
+<script type="text/javascript" async="" src="./f.txt"></script><script type="text/javascript" async="" src="./f(1).txt"></script><script type="text/javascript" async="" src="./f(2).txt"></script><script type="text/javascript" async="" src="./f(3).txt"></script><script src="./5566266.js.download" type="text/javascript" async="" data-ueto="ueto_bd7750ed61"></script><script type="text/javascript" src="./f(4).txt"></script><meta http-equiv="origin-trial" content="A7JYkbIvWKmS8mWYjXO12SIIsfPdI7twY91Y3LWOV/YbZmN1ZhYv8O+Zs6/IPCfBE99aV9tIC8sWZSCN09vf7gkAAACWeyJvcmlnaW4iOiJodHRwczovL2N0LnBpbnRlcmVzdC5jb206NDQzIiwiZmVhdHVyZSI6IkRpc2FibGVUaGlyZFBhcnR5U3RvcmFnZVBhcnRpdGlvbmluZzIiLCJleHBpcnkiOjE3NDIzNDIzOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script type="text/javascript" async="" src="./f(5).txt"></script><script type="text/javascript" async="" src="./f(6).txt"></script><script type="text/javascript" async="" src="./f(7).txt"></script><script type="text/javascript" async="" src="./f(8).txt"></script><script src="./5566266.js.download" type="text/javascript" async="" data-ueto="ueto_64b31a65b1"></script><script type="text/javascript" async="" src="./f(9).txt"></script><script type="text/javascript" async="" src="./f(10).txt"></script><script type="text/javascript" async="" src="./f(11).txt"></script><script type="text/javascript" async="" src="./f(12).txt"></script><script src="./5566266.js.download" type="text/javascript" async="" data-ueto="ueto_951c274828"></script></head>
+<body>
+<!-- Message Communication between iframe and TA main document-->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    // Domain from which the script is invoked
+    // Eg: webml, hare ,etc
+    const parentDomain = params['parentDomain'];
+    let messagePort; // ref to store message port for gtm communication
+    window.addEventListener('message', onMessage);
+
+    function onGTMMessage(e) {
+        window.dataLayer.push(e.data);
+    }
+
+    function onMessage(msg) {
+        if (msg.origin === parentDomain && msg.ports && msg.ports[0] && msg.data === "initGTMMessagePort") {
+            // To be removed once GTMConsentV2 is rolled out.
+            messagePort = msg.ports[0];
+            messagePort.onmessage = onGTMMessage;
+        } else if (msg.origin === parentDomain && msg.ports && msg.ports[0] && params['enableGTMConsentV2'] && msg.data && msg.data.type === "initGTMMessagePort") {
+            messagePort = msg.ports[0];
+            messagePort.onmessage = onGTMMessage;
+            gtag('consent', 'default', msg.data.consentParams);
+        }
+    }
+
+    // Do not modify/rename/remove this function. This is used by gtm template which is accessible from gtm portal(Google tag manager monitoring)
+    // https://tagmanager.google.com/#/container/accounts/6007416528/containers/67750165/workspaces/18/templates
+    function gtmMetricsCallback(data) {
+        if (messagePort) {
+            messagePort.postMessage(data);
+        }
+    }
+</script><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739368208358" height="0" width="0" src="./1070639009.html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739368208374" height="0" width="0" src="./1070639009(1).html" style="display: none; visibility: hidden;"></iframe><iframe height="0" width="0" style="display: none; visibility: hidden;" src="./saved_resource.html"></iframe>
+
+<div style="display: none; visibility: hidden;">
+  
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  
+  
+    <script type="text/javascript">!function(b){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var a=window.pintrk;a.queue=[];a.version="3.0";a=document.createElement("script");a.async=!0;a.src=b;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}}("https://s.pinimg.com/ct/core.js");pintrk("load","2618658214153");pintrk("page");</script>
+  
+
+</div><div style="display: none; visibility: hidden;">
+
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript">function sanitize(b){if(b)return(b+"").replace(/</g,"\x26lt;").replace(/>/g,"\x26gt;")}function computeAudienceCustomVariables(b){void 0===b&&(b=[]);for(var d="",f=7,e=[16062,16841,16842,16843,16844,16845,16846,16847,16848,16849,16850,16851,16853,16854,16855,16856,16857,16858,16859,16860,16862,15309,15441,15299,16891,16893,16895,16897,16899,16901,16903,17384,17399,17400,17401,17402,17403,17019],c=0;c<e.length;c++)if(b.includes(e[c])){var g=c+f;d+=";u"+g+"\x3dt"}return d}
+var axel=Math.random()+"",a=1E13*axel,url="https://6498008.fls.doubleclick.net/activityi;src\x3d6498008;type\x3dinvmedia;cat\x3dta_tr00;u2\x3d"+sanitize(google_tag_manager["rm"]["67750165"](77))+";u3\x3d"+sanitize(google_tag_manager["rm"]["67750165"](78))+";u4\x3d"+sanitize(google_tag_manager["rm"]["67750165"](79))+";u5\x3d"+sanitize(google_tag_manager["rm"]["67750165"](80))+";u6\x3d"+sanitize(google_tag_manager["rm"]["67750165"](81))+sanitize(computeAudienceCustomVariables(google_tag_manager["rm"]["67750165"](82)))+";dc_lat\x3d;dc_rdid\x3d;tag_for_child_directed_treatment\x3d;tfua\x3d;npa\x3d;gdpr\x3d${GDPR};gdpr_consent\x3d${GDPR_CONSENT_755};ord\x3d"+
+a+"?";document.write('\x3ciframe src\x3d"'+url+'" width\x3d"1" height\x3d"1" frameborder\x3d"0" style\x3d"display:none"\x3e\x3c/iframe\x3e');</script><iframe src="./activityi.html" width="1" height="1" frameborder="0" style="display:none"></iframe>
+
+
+
+</div><div style="display: none; visibility: hidden;">
+	<script>!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CEQM6BJC77U4LISUBOEG");a.page()}(window,document,"ttq");</script>
+	
+</div><div style="display: none; visibility: hidden;">
+  
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  
+  
+    <script type="text/javascript">var eventNames={geo:google_tag_manager["rm"]["67750165"](83),country:google_tag_manager["rm"]["67750165"](84),region:google_tag_manager["rm"]["67750165"](85),"aud-id":google_tag_manager["rm"]["67750165"](86)},eventCode="pagevisit";"ENTER_DATES"===google_tag_manager["rm"]["67750165"](87)?eventCode="lead":"CLICKOUT"===google_tag_manager["rm"]["67750165"](88)&&(eventCode="addtocart");pintrk("track",eventCode,eventNames);</script>
+  
+</div>
+  
+    <img src="./tr" height="1" width="1">
+    
+        <img src="./tr(1)" height="1" width="1">
+  
+
+  
+    <img src="./p" height="1" width="1" alt="TAPS_COMSCORE_PIXEL">
+  
+
+  
+    <img src="./srv" height="1" width="1">  
+  
+
+  
+    <img src="./srv(1)" height="1" width="1">  
+  
+
+  
+    <img src="./tr(2)" height="1" width="1">
+  
+
+  
+    <img src="./tr(3)" height="1" width="1">
+  
+
+
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript" id="" charset="">(function(c,d,f,g,e){c[e]=c[e]||[];var h=function(){var b={ti:"5566266"};b.q=c[e];c[e]=new UET(b);c[e].push("pageLoad")};var a=d.createElement(f);a.src=g;a.async=1;a.onload=a.onreadystatechange=function(){var b=this.readyState;b&&"loaded"!==b&&"complete"!==b||(h(),a.onload=a.onreadystatechange=null)};d=d.getElementsByTagName(f)[0];d.parentNode.insertBefore(a,d)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+var fullUrl=google_tag_manager["rm"]["67750165"](127),productId=null,detailPageServlets=["Hotel_Review","HotelHighlight","ShowUserReviewsHotels","ShowUserReviews"];detailPageServlets.includes(google_tag_manager["rm"]["67750165"](129))&&(productId="d"+google_tag_manager["rm"]["67750165"](130)+google_tag_manager["rm"]["67750165"](131));window.uetq.push("event","page_url_event",{event_label:fullUrl});window.uetq.push("event","",{ecomm_prodid:productId,ecomm_pagetype:google_tag_manager["rm"]["67750165"](135)});</script>
+
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-1067478494/kC-SCNmj25cYEN7bgf0D" data-load-time="1739368217498" height="0" width="0" src="./1067478494.html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739368219509" height="0" width="0" src="./1070639009(2).html" style="display: none; visibility: hidden;"></iframe><div style="display: none; visibility: hidden;"><script async="null" src="./ytag.js.download"></script>
+<script>window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"yss_retargeting",config:{yahoo_ss_retargeting_id:"1000997915"}});</script></div><div id="batBeacon179893927077" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon420304315336" width="0" height="0" alt="" src="./0" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon713928449820" width="0" height="0" alt="" src="./0(1)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon242312738658" width="0" height="0" alt="" src="./0(2)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon376387058751" width="0" height="0" alt="" src="./0(3)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon751765571381" width="0" height="0" alt="" src="./0(4)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon444217077676" width="0" height="0" alt="" src="./0(5)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon904016670290" width="0" height="0" alt="" src="./0(6)" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div><div style="display: none; visibility: hidden;">
+
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript">function sanitize(b){if(b)return(b+"").replace(/</g,"\x26lt;").replace(/>/g,"\x26gt;")}function computeAudienceCustomVariables(b){void 0===b&&(b=[]);for(var d="",f=7,e=[16062,16841,16842,16843,16844,16845,16846,16847,16848,16849,16850,16851,16853,16854,16855,16856,16857,16858,16859,16860,16862,15309,15441,15299,16891,16893,16895,16897,16899,16901,16903,17384,17399,17400,17401,17402,17403,17019],c=0;c<e.length;c++)if(b.includes(e[c])){var g=c+f;d+=";u"+g+"\x3dt"}return d}
+var axel=Math.random()+"",a=1E13*axel,url="https://6498008.fls.doubleclick.net/activityi;src\x3d6498008;type\x3dinvmedia;cat\x3dta_tr00;u2\x3d"+sanitize(google_tag_manager["rm"]["67750165"](201))+";u3\x3d"+sanitize(google_tag_manager["rm"]["67750165"](202))+";u4\x3d"+sanitize(google_tag_manager["rm"]["67750165"](203))+";u5\x3d"+sanitize(google_tag_manager["rm"]["67750165"](204))+";u6\x3d"+sanitize(google_tag_manager["rm"]["67750165"](205))+sanitize(computeAudienceCustomVariables(google_tag_manager["rm"]["67750165"](206)))+";dc_lat\x3d;dc_rdid\x3d;tag_for_child_directed_treatment\x3d;tfua\x3d;npa\x3d;gdpr\x3d${GDPR};gdpr_consent\x3d${GDPR_CONSENT_755};ord\x3d"+
+a+"?";document.write('\x3ciframe src\x3d"'+url+'" width\x3d"1" height\x3d"1" frameborder\x3d"0" style\x3d"display:none"\x3e\x3c/iframe\x3e');</script><iframe src="./activityi(1).html" width="1" height="1" frameborder="0" style="display:none"></iframe>
+
+
+
+</div><div style="display: none; visibility: hidden;">
+	<script>!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CEQM6BJC77U4LISUBOEG");a.page()}(window,document,"ttq");</script>
+	
+</div><div style="display: none; visibility: hidden;">
+  
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  
+  
+    <script type="text/javascript">var eventNames={geo:google_tag_manager["rm"]["67750165"](207),country:google_tag_manager["rm"]["67750165"](208),region:google_tag_manager["rm"]["67750165"](209),"aud-id":google_tag_manager["rm"]["67750165"](210)},eventCode="pagevisit";"ENTER_DATES"===google_tag_manager["rm"]["67750165"](211)?eventCode="lead":"CLICKOUT"===google_tag_manager["rm"]["67750165"](212)&&(eventCode="addtocart");pintrk("track",eventCode,eventNames);</script>
+  
+</div>
+  
+    <img src="./tr(4)" height="1" width="1">
+    
+        <img src="./tr(5)" height="1" width="1">
+  
+
+  
+    <img src="./p(1)" height="1" width="1" alt="TAPS_COMSCORE_PIXEL">
+  
+
+  
+    <img src="./srv" height="1" width="1">  
+  
+
+  
+    <img src="./srv(1)" height="1" width="1">  
+  
+
+  
+    <img src="./tr(2)" height="1" width="1">
+  
+
+  
+    <img src="./tr(3)" height="1" width="1">
+  
+
+
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript" id="" charset="">(function(c,d,f,g,e){c[e]=c[e]||[];var h=function(){var b={ti:"5566266"};b.q=c[e];c[e]=new UET(b);c[e].push("pageLoad")};var a=d.createElement(f);a.src=g;a.async=1;a.onload=a.onreadystatechange=function(){var b=this.readyState;b&&"loaded"!==b&&"complete"!==b||(h(),a.onload=a.onreadystatechange=null)};d=d.getElementsByTagName(f)[0];d.parentNode.insertBefore(a,d)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+var fullUrl=google_tag_manager["rm"]["67750165"](251),productId=null,detailPageServlets=["Hotel_Review","HotelHighlight","ShowUserReviewsHotels","ShowUserReviews"];detailPageServlets.includes(google_tag_manager["rm"]["67750165"](253))&&(productId="d"+google_tag_manager["rm"]["67750165"](254)+google_tag_manager["rm"]["67750165"](255));window.uetq.push("event","page_url_event",{event_label:fullUrl});window.uetq.push("event","",{ecomm_prodid:productId,ecomm_pagetype:google_tag_manager["rm"]["67750165"](259)});</script>
+
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-1067478494/kC-SCNmj25cYEN7bgf0D" data-load-time="1739368835557" height="0" width="0" src="./1067478494(1).html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739368835564" height="0" width="0" src="./1070639009(3).html" style="display: none; visibility: hidden;"></iframe><div style="display: none; visibility: hidden;"><script async="null" src="./ytag.js.download"></script>
+<script>window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"yss_retargeting",config:{yahoo_ss_retargeting_id:"1000997915"}});</script></div><div style="display: none; visibility: hidden;">
+
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript">function sanitize(b){if(b)return(b+"").replace(/</g,"\x26lt;").replace(/>/g,"\x26gt;")}function computeAudienceCustomVariables(b){void 0===b&&(b=[]);for(var d="",f=7,e=[16062,16841,16842,16843,16844,16845,16846,16847,16848,16849,16850,16851,16853,16854,16855,16856,16857,16858,16859,16860,16862,15309,15441,15299,16891,16893,16895,16897,16899,16901,16903,17384,17399,17400,17401,17402,17403,17019],c=0;c<e.length;c++)if(b.includes(e[c])){var g=c+f;d+=";u"+g+"\x3dt"}return d}
+var axel=Math.random()+"",a=1E13*axel,url="https://6498008.fls.doubleclick.net/activityi;src\x3d6498008;type\x3dinvmedia;cat\x3dta_tr00;u2\x3d"+sanitize(google_tag_manager["rm"]["67750165"](325))+";u3\x3d"+sanitize(google_tag_manager["rm"]["67750165"](326))+";u4\x3d"+sanitize(google_tag_manager["rm"]["67750165"](327))+";u5\x3d"+sanitize(google_tag_manager["rm"]["67750165"](328))+";u6\x3d"+sanitize(google_tag_manager["rm"]["67750165"](329))+sanitize(computeAudienceCustomVariables(google_tag_manager["rm"]["67750165"](330)))+";dc_lat\x3d;dc_rdid\x3d;tag_for_child_directed_treatment\x3d;tfua\x3d;npa\x3d;gdpr\x3d${GDPR};gdpr_consent\x3d${GDPR_CONSENT_755};ord\x3d"+
+a+"?";document.write('\x3ciframe src\x3d"'+url+'" width\x3d"1" height\x3d"1" frameborder\x3d"0" style\x3d"display:none"\x3e\x3c/iframe\x3e');</script><iframe src="./activityi(2).html" width="1" height="1" frameborder="0" style="display:none"></iframe>
+
+
+
+</div><div style="display: none; visibility: hidden;">
+	<script>!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CEQM6BJC77U4LISUBOEG");a.page()}(window,document,"ttq");</script>
+	
+</div><div style="display: none; visibility: hidden;">
+  
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  
+  
+    <script type="text/javascript">var eventNames={geo:google_tag_manager["rm"]["67750165"](331),country:google_tag_manager["rm"]["67750165"](332),region:google_tag_manager["rm"]["67750165"](333),"aud-id":google_tag_manager["rm"]["67750165"](334)},eventCode="pagevisit";"ENTER_DATES"===google_tag_manager["rm"]["67750165"](335)?eventCode="lead":"CLICKOUT"===google_tag_manager["rm"]["67750165"](336)&&(eventCode="addtocart");pintrk("track",eventCode,eventNames);</script>
+  
+</div>
+  
+    <img src="./tr" height="1" width="1">
+    
+        <img src="./tr(1)" height="1" width="1">
+  
+
+  
+    <img src="./p(2)" height="1" width="1" alt="TAPS_COMSCORE_PIXEL">
+  
+
+  
+    <img src="./srv" height="1" width="1">  
+  
+
+  
+    <img src="./srv(1)" height="1" width="1">  
+  
+
+  
+    <img src="./tr(2)" height="1" width="1">
+  
+
+  
+    <img src="./tr(3)" height="1" width="1">
+  
+
+
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript" id="" charset="">(function(c,d,f,g,e){c[e]=c[e]||[];var h=function(){var b={ti:"5566266"};b.q=c[e];c[e]=new UET(b);c[e].push("pageLoad")};var a=d.createElement(f);a.src=g;a.async=1;a.onload=a.onreadystatechange=function(){var b=this.readyState;b&&"loaded"!==b&&"complete"!==b||(h(),a.onload=a.onreadystatechange=null)};d=d.getElementsByTagName(f)[0];d.parentNode.insertBefore(a,d)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+var fullUrl=google_tag_manager["rm"]["67750165"](375),productId=null,detailPageServlets=["Hotel_Review","HotelHighlight","ShowUserReviewsHotels","ShowUserReviews"];detailPageServlets.includes(google_tag_manager["rm"]["67750165"](377))&&(productId="d"+google_tag_manager["rm"]["67750165"](378)+google_tag_manager["rm"]["67750165"](379));window.uetq.push("event","page_url_event",{event_label:fullUrl});window.uetq.push("event","",{ecomm_prodid:productId,ecomm_pagetype:google_tag_manager["rm"]["67750165"](383)});</script>
+
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-1067478494/kC-SCNmj25cYEN7bgf0D" data-load-time="1739369644092" height="0" width="0" src="./1067478494(2).html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739369644102" height="0" width="0" src="./1070639009(4).html" style="display: none; visibility: hidden;"></iframe><div style="display: none; visibility: hidden;"><script async="null" src="./ytag.js.download"></script>
+<script>window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"yss_retargeting",config:{yahoo_ss_retargeting_id:"1000997915"}});</script></div><div id="batBeacon988756080142" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon552335591014" width="0" height="0" alt="" src="./0(7)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon302300743993" width="0" height="0" alt="" src="./0(8)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon869832616647" width="0" height="0" alt="" src="./0(9)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon254338817035" width="0" height="0" alt="" src="./0(10)" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon866989480620" width="0" height="0" alt="" src="./0(11)" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div><div style="display: none; visibility: hidden;">
+
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript">function sanitize(b){if(b)return(b+"").replace(/</g,"\x26lt;").replace(/>/g,"\x26gt;")}function computeAudienceCustomVariables(b){void 0===b&&(b=[]);for(var d="",f=7,e=[16062,16841,16842,16843,16844,16845,16846,16847,16848,16849,16850,16851,16853,16854,16855,16856,16857,16858,16859,16860,16862,15309,15441,15299,16891,16893,16895,16897,16899,16901,16903,17384,17399,17400,17401,17402,17403,17019],c=0;c<e.length;c++)if(b.includes(e[c])){var g=c+f;d+=";u"+g+"\x3dt"}return d}
+var axel=Math.random()+"",a=1E13*axel,url="https://6498008.fls.doubleclick.net/activityi;src\x3d6498008;type\x3dinvmedia;cat\x3dta_tr00;u2\x3d"+sanitize(google_tag_manager["rm"]["67750165"](449))+";u3\x3d"+sanitize(google_tag_manager["rm"]["67750165"](450))+";u4\x3d"+sanitize(google_tag_manager["rm"]["67750165"](451))+";u5\x3d"+sanitize(google_tag_manager["rm"]["67750165"](452))+";u6\x3d"+sanitize(google_tag_manager["rm"]["67750165"](453))+sanitize(computeAudienceCustomVariables(google_tag_manager["rm"]["67750165"](454)))+";dc_lat\x3d;dc_rdid\x3d;tag_for_child_directed_treatment\x3d;tfua\x3d;npa\x3d;gdpr\x3d${GDPR};gdpr_consent\x3d${GDPR_CONSENT_755};ord\x3d"+
+a+"?";document.write('\x3ciframe src\x3d"'+url+'" width\x3d"1" height\x3d"1" frameborder\x3d"0" style\x3d"display:none"\x3e\x3c/iframe\x3e');</script><iframe src="./activityi(3).html" width="1" height="1" frameborder="0" style="display:none"></iframe>
+
+
+
+</div><div style="display: none; visibility: hidden;">
+	<script>!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CEQM6BJC77U4LISUBOEG");a.page()}(window,document,"ttq");</script>
+	
+</div><div style="display: none; visibility: hidden;">
+  
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  
+  
+    <script type="text/javascript">var eventNames={geo:google_tag_manager["rm"]["67750165"](455),country:google_tag_manager["rm"]["67750165"](456),region:google_tag_manager["rm"]["67750165"](457),"aud-id":google_tag_manager["rm"]["67750165"](458)},eventCode="pagevisit";"ENTER_DATES"===google_tag_manager["rm"]["67750165"](459)?eventCode="lead":"CLICKOUT"===google_tag_manager["rm"]["67750165"](460)&&(eventCode="addtocart");pintrk("track",eventCode,eventNames);</script>
+  
+</div>
+  
+    <img src="./tr(6)" height="1" width="1">
+    
+        <img src="./tr(7)" height="1" width="1">
+  
+
+  
+    <img src="./p(3)" height="1" width="1" alt="TAPS_COMSCORE_PIXEL">
+  
+
+  
+    <img src="./srv" height="1" width="1">  
+  
+
+  
+    <img src="./srv(1)" height="1" width="1">  
+  
+
+  
+    <img src="./tr(2)" height="1" width="1">
+  
+
+  
+    <img src="./tr(3)" height="1" width="1">
+  
+
+
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript" id="" charset="">(function(c,d,f,g,e){c[e]=c[e]||[];var h=function(){var b={ti:"5566266"};b.q=c[e];c[e]=new UET(b);c[e].push("pageLoad")};var a=d.createElement(f);a.src=g;a.async=1;a.onload=a.onreadystatechange=function(){var b=this.readyState;b&&"loaded"!==b&&"complete"!==b||(h(),a.onload=a.onreadystatechange=null)};d=d.getElementsByTagName(f)[0];d.parentNode.insertBefore(a,d)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+var fullUrl=google_tag_manager["rm"]["67750165"](499),productId=null,detailPageServlets=["Hotel_Review","HotelHighlight","ShowUserReviewsHotels","ShowUserReviews"];detailPageServlets.includes(google_tag_manager["rm"]["67750165"](501))&&(productId="d"+google_tag_manager["rm"]["67750165"](502)+google_tag_manager["rm"]["67750165"](503));window.uetq.push("event","page_url_event",{event_label:fullUrl});window.uetq.push("event","",{ecomm_prodid:productId,ecomm_pagetype:google_tag_manager["rm"]["67750165"](507)});</script>
+
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-1067478494/kC-SCNmj25cYEN7bgf0D" data-load-time="1739436231286" height="0" width="0" src="./1067478494(3).html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739436231301" height="0" width="0" src="./1070639009(5).html" style="display: none; visibility: hidden;"></iframe><div style="display: none; visibility: hidden;"><script async="null" src="./ytag.js.download"></script>
+<script>window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"yss_retargeting",config:{yahoo_ss_retargeting_id:"1000997915"}});</script></div><div style="display: none; visibility: hidden;">
+
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript">function sanitize(b){if(b)return(b+"").replace(/</g,"\x26lt;").replace(/>/g,"\x26gt;")}function computeAudienceCustomVariables(b){void 0===b&&(b=[]);for(var d="",f=7,e=[16062,16841,16842,16843,16844,16845,16846,16847,16848,16849,16850,16851,16853,16854,16855,16856,16857,16858,16859,16860,16862,15309,15441,15299,16891,16893,16895,16897,16899,16901,16903,17384,17399,17400,17401,17402,17403,17019],c=0;c<e.length;c++)if(b.includes(e[c])){var g=c+f;d+=";u"+g+"\x3dt"}return d}
+var axel=Math.random()+"",a=1E13*axel,url="https://6498008.fls.doubleclick.net/activityi;src\x3d6498008;type\x3dinvmedia;cat\x3dta_tr00;u2\x3d"+sanitize(google_tag_manager["rm"]["67750165"](573))+";u3\x3d"+sanitize(google_tag_manager["rm"]["67750165"](574))+";u4\x3d"+sanitize(google_tag_manager["rm"]["67750165"](575))+";u5\x3d"+sanitize(google_tag_manager["rm"]["67750165"](576))+";u6\x3d"+sanitize(google_tag_manager["rm"]["67750165"](577))+sanitize(computeAudienceCustomVariables(google_tag_manager["rm"]["67750165"](578)))+";dc_lat\x3d;dc_rdid\x3d;tag_for_child_directed_treatment\x3d;tfua\x3d;npa\x3d;gdpr\x3d${GDPR};gdpr_consent\x3d${GDPR_CONSENT_755};ord\x3d"+
+a+"?";document.write('\x3ciframe src\x3d"'+url+'" width\x3d"1" height\x3d"1" frameborder\x3d"0" style\x3d"display:none"\x3e\x3c/iframe\x3e');</script><iframe src="./activityi(4).html" width="1" height="1" frameborder="0" style="display:none"></iframe>
+
+
+
+</div><div style="display: none; visibility: hidden;">
+	<script>!function(d,g,e){d.TiktokAnalyticsObject=e;var a=d[e]=d[e]||[];a.methods="page track identify instances debug on off once ready alias group enableCookie disableCookie".split(" ");a.setAndDefer=function(b,c){b[c]=function(){b.push([c].concat(Array.prototype.slice.call(arguments,0)))}};for(d=0;d<a.methods.length;d++)a.setAndDefer(a,a.methods[d]);a.instance=function(b){b=a._i[b]||[];for(var c=0;c<a.methods.length;c++)a.setAndDefer(b,a.methods[c]);return b};a.load=function(b,c){var f="https://analytics.tiktok.com/i18n/pixel/events.js";
+a._i=a._i||{};a._i[b]=[];a._i[b]._u=f;a._t=a._t||{};a._t[b]=+new Date;a._o=a._o||{};a._o[b]=c||{};c=document.createElement("script");c.type="text/javascript";c.async=!0;c.src=f+"?sdkid\x3d"+b+"\x26lib\x3d"+e;b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)};a.load("CEQM6BJC77U4LISUBOEG");a.page()}(window,document,"ttq");</script>
+	
+</div><div style="display: none; visibility: hidden;">
+  
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+  
+  
+    <script type="text/javascript">var eventNames={geo:google_tag_manager["rm"]["67750165"](579),country:google_tag_manager["rm"]["67750165"](580),region:google_tag_manager["rm"]["67750165"](581),"aud-id":google_tag_manager["rm"]["67750165"](582)},eventCode="pagevisit";"ENTER_DATES"===google_tag_manager["rm"]["67750165"](583)?eventCode="lead":"CLICKOUT"===google_tag_manager["rm"]["67750165"](584)&&(eventCode="addtocart");pintrk("track",eventCode,eventNames);</script>
+  
+</div>
+  
+    <img src="./tr" height="1" width="1">
+    
+        <img src="./tr(1)" height="1" width="1">
+  
+
+  
+    <img src="./p(4)" height="1" width="1" alt="TAPS_COMSCORE_PIXEL">
+  
+
+  
+    <img src="./srv" height="1" width="1">  
+  
+
+  
+    <img src="./srv(1)" height="1" width="1">  
+  
+
+  
+    <img src="./tr(2)" height="1" width="1">
+  
+
+  
+    <img src="./tr(3)" height="1" width="1">
+  
+
+
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+
+<script type="text/javascript" id="" charset="">(function(c,d,f,g,e){c[e]=c[e]||[];var h=function(){var b={ti:"5566266"};b.q=c[e];c[e]=new UET(b);c[e].push("pageLoad")};var a=d.createElement(f);a.src=g;a.async=1;a.onload=a.onreadystatechange=function(){var b=this.readyState;b&&"loaded"!==b&&"complete"!==b||(h(),a.onload=a.onreadystatechange=null)};d=d.getElementsByTagName(f)[0];d.parentNode.insertBefore(a,d)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+var fullUrl=google_tag_manager["rm"]["67750165"](623),productId=null,detailPageServlets=["Hotel_Review","HotelHighlight","ShowUserReviewsHotels","ShowUserReviews"];detailPageServlets.includes(google_tag_manager["rm"]["67750165"](625))&&(productId="d"+google_tag_manager["rm"]["67750165"](626)+google_tag_manager["rm"]["67750165"](627));window.uetq.push("event","page_url_event",{event_label:fullUrl});window.uetq.push("event","",{ecomm_prodid:productId,ecomm_pagetype:google_tag_manager["rm"]["67750165"](631)});</script>
+
+<iframe allow="join-ad-interest-group" data-tagging-id="AW-1067478494/kC-SCNmj25cYEN7bgf0D" data-load-time="1739436255023" height="0" width="0" src="./1067478494(4).html" style="display: none; visibility: hidden;"></iframe><iframe allow="join-ad-interest-group" data-tagging-id="AW-1070639009" data-load-time="1739436255034" height="0" width="0" src="./1070639009(6).html" style="display: none; visibility: hidden;"></iframe><div style="display: none; visibility: hidden;"><script async="null" src="./ytag.js.download"></script>
+<script>window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"yss_retargeting",config:{yahoo_ss_retargeting_id:"1000997915"}});</script></div><div id="batBeacon406647366486" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon986472964715" width="0" height="0" alt="" src="./0(12)" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div></body></html>

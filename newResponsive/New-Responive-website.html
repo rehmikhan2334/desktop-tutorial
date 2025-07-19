@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome Cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap Cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <!-- slick Slider  css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="../Yaho Baba Course/new-responsive-website.css">
+    <title>Responsive Website</title>
+    <style>
+                @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .section-bg {
+            background-color: #f6f6f7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif;
+        }
+
+        /*Navigation Section Start  */
+        #navigation {
+            top: 20px;
+            padding: 0;
+            transition: 0.5s all;
+        }
+
+        #navigation .logo {
+            padding: 17px 30px;
+            background-color: #009970;
+        }
+
+        #navigation .logo a {
+            font-size: 26px;
+            padding: 0;
+            line-height: 1;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            font-family: "Poppins", sans-serif;
+        }
+
+        #navbarNavDropdown {
+            background-color: #fff;
+
+        }
+
+        #navigation #navbarNavDropdown a {
+            display: block;
+            position: relative;
+            color: #36343a;
+            padding: 20px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-family: "Poppins", sans-serif;
+            transition: 0.4s all;
+        }
+
+        #navigation #navbarNavDropdown:hover {
+            color: #00cc95;
+            text-decoration: none;
+        }
+
+        #navigation #get-started a {
+            background-color: #009970;
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 15px;
+            margin: 10px 15px;
+
+        }
+
+        #navigation #get-started a:hover {
+            color: #fff;
+            background-color: #00805d;
+        }
+
+        #navigation.nav-scroll {
+            background-color: #fff;
+            top: 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #navigation #navbarNavDropdown .nav-link.active{
+            color: #009970;
+        }
+
+
+        /*Navigation Section End  */
+
+        /* Banner Section Start */
+        /* Banner Section End */
+        section {
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+
+        #hero {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://cdn.prod.website-files.com/660739d2e6e8ec9445dd91a2/66430dbcfc6b6bcdcdb8c334_What%20is%20a%20software%20house%20.webp);
+            background-repeat: repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .banner-container {
+            padding-top: 80px;
+        }
+
+        #hero h1 {
+            font-size: 55px;
+            font-weight: 700;
+            color: white;
+            line-height: 56px;
+            margin: 0 0 10px 0;
+
+        }
+
+        #hero h2 {
+            color: #eee;
+            margin-bottom: 50px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Open Sans", sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+        }
+
+        #hero .btn_get_started {
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            letter-spacing: 1px;
+            border-radius: 50px;
+            margin: 10px;
+            background-color: transparent;
+            color: #fff;
+            padding: 8px 28px;
+            transition: 0.5s ease all;
+            font-family: "Poppins", sans-serif;
+            border: 2px solid #fff;
+            cursor: pointer;
+        }
+
+        #hero .btn_get_started:hover {
+            background-color: #009970;
+            border: 2px solid #009970;
+
+        }
+
+        /* Banner Section End */
+
+        /* Client Secton */
+        .Clients {
+            /* background-color: #f6f6f6; */
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        .Clients img {
+            width: 60%;
+            filter: grayscale(100);
+            display: inline-block;
+            margin: 0 auto;
+            transition: 0.4s ease-in-out;
+
+        }
+
+        .Clients img:hover {
+            filter: none;
+            transform: scale(1.1);
+        }
+
+        /* Client Section End */
+
+        /* About Section Start */
+        .about .content h2 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 60px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .about .content h3 {
+            font-weight: 500;
+            line-height: 32px;
+            font-size: 24px;
+        }
+
+        .about .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about .content ul li {
+            padding: 10px 0 0 20px;
+            display: flex;
+        }
+
+        .about .content ul li p {
+            margin-bottom: 0;
+        }
+
+        .about .content ul li i {
+            font-size: 20px;
+            color: #009970;
+            margin-right: 7px;
+            font-weight: bold;
+        }
+
+        /* About Section End */
+
+        /* Counter Section Start */
+        .counts {
+            background-color: #009970;
+            padding: 40px 0 20px 0;
+            color: #fff;
+        }
+
+        .counts .counters span {
+            font-size: 45px;
+            display: block;
+            font-weight: 700;
+            letter-spacing: 2px;
+
+        }
+
+        .counts .counters p {
+            padding: 0 0 20px 0;
+            font-family: "Raleway", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Counter Section End */
+
+        /* Why-Section Section Start  */
+        .why_us .content {
+            padding: 30px;
+            background-color: #009970;
+            border-radius: 4px;
+            color: #fff;
+
+        }
+
+        .why_us .content h3 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 30px;
+
+        }
+
+        .why_us .content p {
+            margin-bottom: 30px;
+        }
+
+        .why_us .content .more-btn {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 30px 8px 30px;
+            border-radius: 50px;
+            transition: 0.4s ease-in-out;
+            color: #fff;
+        }
+
+        .why_us .content .more-btn:hover {
+            color: #009970;
+            background-color: #fff;
+
+        }
+
+        .why_us .icon_boxes .icon_box {
+            text-align: center;
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 40px 30px;
+            width: 100%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .why_us .icon_boxes .icon_box:hover {
+            box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.15);
+
+        }
+
+        .why_us .icon_boxes .icon_box i {
+            font-size: 40px;
+            color: #009970;
+            margin-bottom: 30px;
+        }
+
+        .why_us .icon_boxes .icon_box h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 30px 0;
+        }
+
+        .why_us .icon_boxes .icon_box p {
+            font-size: 15px;
+            color: #848484;
+
+        }
+
+        /* Why-Section Section end  */
+
+
+        /* cta Section start  */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://cdn.builtin.com/cdn-cgi/image/f=auto,fit=cover,w=1200,h=635,q=80/https://builtin.com/sites/www.builtin.com/files/2023-05/largest%20software%20companies.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .cta h3 {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .cta p {
+            color: #fff;
+
+        }
+
+        .cta .cta-btn {
+            font-family: "Raleway", sans-serif;
+            text-transform: uppercase;
+            font-size: 15px;
+            border-radius: 25px;
+            margin-top: 10px;
+            border: 2px solid #fff;
+            color: white;
+            letter-spacing: 1px;
+            padding: 8px 28px;
+            display: inline-block;
+            font-weight: 600;
+            transition: 0.5s ease-in-out;
+
+        }
+
+        .cta .cta-btn:hover {
+            background-color: #009970;
+            border: 2px solid #009970;
+            transform: scale(1);
+        }
+
+        /* cta Section end  */
+
+        /* Servies section start */
+        .section-title {
+            padding-bottom: 30px;
+        }
+
+        .section-title p {
+            margin-bottom: 0;
+            ont-family: "Open Sans", sans-serif;
+            color: #444444;
+
+        }
+
+        .section-title h2 {
+            font-weight: bold;
+            font-size: 32px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            position: relative;
+
+        }
+
+        .section-title h2::after {
+            content: " ";
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #009970;
+            bottom: 8px;
+            left: 0;
+        }
+
+        .services .iconbox {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            transition: 0.6s ease-in-out;
+            cursor: pointer;
+        }
+
+        .services .iconbox:hover {
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .services .iconbox .icon {
+            margin: 0 auto;
+            width: 64px;
+            height: 64px;
+            background-color: #fff;
+            border: 1px solid #009970;
+            border-radius: 50px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin-bottom: 20px;
+            color: #009970;
+            transition: 0.3s ease-in-out
+        }
+
+        .services .iconbox .icon i {
+            font-size: 28px;
+        }
+
+        .services .iconbox:hover .icon {
+            color: #fff;
+            background-color: #009970;
+
+        }
+
+        .services .iconbox h4 {
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 15px;
+
+        }
+
+        .services .iconbox h4 a {
+            color: #36343a;
+            transition: 0.3s ease-in-out;
+        }
+
+        .services .iconbox:hover h4 a {
+            color: #009970;
+        }
+
+        .services .iconbox p {
+            line-height: 24px;
+            font-family: "Open Sans", sans-serif;
+            color: #444;
+            font-size: 14px;
+            margin-bottom: 0;
+
+        }
+
+
+        /* Servies section end */
+
+
+        /* Portfoloi start */
+        .portfolio .portfolio_item {
+            margin-bottom: 30px;
+        }
+
+        .portfolio_item .portfolio_wrap {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            background-color: rgba(54, 52, 58, 0.6);
+            transition: 0.3s ease-in-out;
+        }
+
+        .portfolio_item .portfolio_wrap::before {
+            content: " ";
+            background-color: rgba(54, 52, 58, 0.6);
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 2;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+
+        }
+
+        .portfolio_item .portfolio_wrap .portfolio-info {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .portfolio_item .portfolio_wrap img {
+            width: 100%;
+            height: 200px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+
+        .portfolio_item .portfolio_wrap:hover img {
+            transform: scale(1.1);
+        }
+
+
+
+        .portfolio_item .portfolio_wrap .portfolio-info h4 {
+            font-size: 25px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .portfolio_item .portfolio_wrap .portfolio-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+            font-style: italic;
+
+        }
+
+        .portfolio_item .portfolio_wrap:hover::before {
+            opacity: 1;
+        }
+
+        .portfolio_item .portfolio_wrap:hover .portfolio-info {
+            opacity: 1;
+        }
+
+        /* Portfoloi End*/
+
+        /* Testimonial Section Start */
+        .Testimonial .testimonial_slider .testimonial_item {}
+           .slider {
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    .slick-slide {
+      margin: 0 10px; /* space between slides */
+    }
+
+    .slick-list {
+      margin: 0 -10px; /* compensate outer space */
+    }
+
+        .Testimonial .testimonial_item {
+            padding: 30px;
+            margin: 30px 0px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
+            background-color: #fff;
+
+        }
+
+        .Testimonial .testimonial_item .testimonial_img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .Testimonial .testimonial_item p {
+            font-style: italic;
+        }
+
+        .Testimonial .testimonial_item i {
+            font-size: 22px;
+            color: #00cc95;
+        }
+
+        .Testimonial .testimonial_item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 10px 0 5px 0;
+            color: #111;
+
+        }
+
+        .Testimonial .testimonial_item h4 {
+            font-size: 14px;
+
+        }
+
+        .slick-dots .testimonial_slider li {
+            margin: 0 3px;
+
+        }
+
+        .testimonial_slider .slick-dots li button:before {
+
+            font-size: 16px;
+            color: #009970 !important;
+        }
+
+        /* Testimonial Section End */
+
+
+        /* Over Team Section Start */
+
+        .team .member {
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .team .member img {
+            height: 150px;
+        }
+
+        .team .member .pic {
+            width: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+        }
+
+        .team .member .member-info h4 {
+            font-size: 20px;
+            color: #36343a;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .team .member .member-info span {
+            display: block;
+            font-size: 15px;
+            padding-bottom: 10px;
+            position: relative;
+            font-weight: 500;
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+        }
+
+        .team .member .member-info span::after {
+            content: " ";
+            bottom: 0;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background-color: #b5b3ba;
+
+        }
+
+        .team .member .member-info p {
+            margin: 10px 0 0 0;
+            op
+            font-size: 14px;
+            font-family: "Open Sans", sans-serif;
+            color: #444444;
+        }
+
+        .team .member .member-info .social {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team .member .member-info .social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #a8a5ae;
+            margin: 0 3px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .team .member .member-info .social a:hover {
+            background-color: #009970;
+        }
+
+        .team .member .member-info .social a i {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Over Team Section End */
+
+        /* Contact Section Start */
+        .contact .info {
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+        }
+
+        .contact .info-inner {
+            padding-left: 15px;
+        }
+
+        .contact .info i {
+            font-size: 20px;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            background-color: #009970;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .contact .info i:hover {
+            background-color: #00805d;
+        }
+
+        .contact .info-inner h4 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #36343a;
+        }
+
+        .contact .info-inner p {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: #686470;
+            font-family: "Open Sans", sans-serif;
+
+        }
+
+        .contact .email-form {
+            padding: 30px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .contact .email-form input {
+            height: 44px;
+        }
+
+        .contact .email-form input,
+        .contact .email-form textarea {
+            border-radius: 0;
+            font-size: 14px;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .contact .email-form button {
+            border: none;
+            background-color: #009970;
+            padding: 10px 30px;
+            color: #fff;
+            border-radius: 50px;
+            transition: 0.3s ease-in-out;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        .contact .email-form button:hover {
+            background-color: #00805d;
+
+        }
+
+        /* Contact Section End*/
+
+        /* Footer Section Start */
+        #footer {
+            background-color: #f1f0f2;
+            font-size: 14px;
+            color: #444444;
+        }
+
+        #footer .footer-top {
+            padding: 60px 0 30px 0;
+            background-color: #f9f8f8;
+        }
+
+        #footer .footer-contact,
+        #footer .footer-links {
+            margin-bottom: 30px;
+
+        }
+
+        #footer .footer-top .footer-contact p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: "Raleway", sans-serif;
+            color: #777777;
+        }
+
+        #footer .footer-top h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #444444;
+            padding-bottom: 12px;
+        }
+
+        #footer .footer-top .footer-links ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #footer .footer-top .footer-links li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #footer .footer-top .footer-links li:first-child {
+            padding-top: 0;
+        }
+
+        #footer .footer-top .footer-links ul i {
+            padding-right: 6px;
+            color: #00c28c;
+            font-size: 10px;
+
+        }
+
+        #footer .footer-top .footer-links ul a {
+            color: #777777;
+            font-family: "Open Sans", sans-serif;
+            display: inline-block;
+            line-height: 1;
+            transition: 0.3s ease-in-out;
+        }
+
+        #footer .footer-top .footer-links ul a:hover {
+            color: #009970;
+        }
+
+        #footer .footer-top .footer-newsletter {
+            font-size: 15px;
+        }
+
+        #footer .footer-top .footer-newsletter form {
+            display: flex;
+            height: 44px;
+            margin-top: 30px;
+            background-color: #fff;
+            border-radius: 50px;
+            border: 1px solid #e4e3e6;
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="email"] {
+
+            border: 0;
+            padding: 4px 23px;
+            width: 100%;
+            border-radius: 50px;
+
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="email"]:focus {
+            outline: none;
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="submit"] {
+            font-size: 16px;
+            border: none;
+            padding: 0 20px;
+            background-color: #009970;
+            color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            transition: 0.3s ease-in-out;
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+            background-color: #00805d;
+        }
+
+        #footer .copyright {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        #footer .credits {
+            padding-top: 5px;
+            font-size: 13px;
+            color: #444444;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        #footer .credits a {
+            color: #0bb386;
+        }
+
+        #footer .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #footer .social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #009970;
+            margin: 0 3px;
+            transition: 0.3s ease-in-out;
+        }
+
+        #footer .social a:hover {
+            background-color: #68c8ae;
+        }
+
+        #footer .social a i {
+            color: white;
+            font-size: 16px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            visibility: hidden;
+            opacity: 1;
+            right: 15px;
+            bottom: 15px;
+            z-index: 999;
+            background-color: #009970;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: 0.4s all;
+        }
+
+        .back-to-top i {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .back-to-top i:hover {
+            background-color: #00c28c;
+        }
+
+        .back-to-top.show_btn {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Footer Section End */
+
+
+        /* Responsive Website Media Quary All Section */
+        @media screen and (max-width: 991px) {
+            #navigation {
+                background-color: #009970;
+                top: 0;
+                box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            #navigation #navbarNavDropdown {
+                background-color: #009970;
+            }
+            #navigation #navbarNavDropdown .navbar-nav{
+                padding-bottom: 15px;;
+            }
+            #navigation .logo{
+                padding: 17px 0 17px 0;
+            }
+             #navigation  .navbar-toggler span{
+                color: #fff;
+                font-size: 21px;
+                border: 2px solid ba;
+             }
+        }
+   
+    </style>
+   
+</head>
+
+<body>
+    <!-- Navigation Bar Section Start -->
+    <nav id="navigation" class="navbar navbar-expand-lg fixed-top">
+        <div class="container align-items-stretch">
+            <div class="container-fluid">
+                <div class="logo"><a class="navbar-brand" href="../Yaho Baba Course/New-Responive-website.html">WEdev</a></div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Yaho Baba Course/New-Responive-website.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Yaho Baba Course/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Yaho Baba Course/services.html">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Yaho Baba Course/Portfolio.html">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Yaho Baba Course/Team.html">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Yaho Baba Course/Contact.html">Contact</a>
+                        </li>
+                        <li id="get-started" class="nav-item">
+                            <a class="nav-link" href="#">Get Started</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar Section End -->
+
+    <!-- Banner Section Start -->
+    <section id="hero" class="d-flex align-items-center ">
+        <div class="container banner-container text-center" data-aos="fade-in" data-aos-delay="200">
+            <h1>Your New Presence with Webdev</h1>
+            <h2>WE ARE OF TALANTED DESIGNERS MAKING WEBSITES WITH BOOTSTRAP</h2>
+            <a href="" class="btn_get_started">Get Started</a>
+        </div>
+    </section>
+    <!-- Banner Section End -->
+
+    <!-- Client Section Start -->
+
+    <section id="" class="Clients">
+        <div class="container">
+            ,<div class="row">
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center" data-aos="zoom-in"
+                    data-aos-delay="100">
+                    <img src="../bootstrap-images/client-1.png" class="img-fluid" alt="image">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center" data-aos="zoom-in"
+                    data-aos-delay="200">
+                    <img src="../bootstrap-images/client-2.jpeg" class="img-fluid" alt="image">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center" data-aos="zoom-in"
+                    data-aos-delay="300">
+                    <img src="../bootstrap-images/treelogo+.png" class="img-fluid" alt="image">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center" data-aos="zoom-in"
+                    data-aos-delay="400">
+                    <img src="../bootstrap-images/client-4.png" class="img-fluid" alt="image">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center" data-aos="zoom-in"
+                    data-aos-delay="500">
+                    <img src="../bootstrap-images/client-5.jpg" class="img-fluid" alt="image">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center text-center" data-aos="zoom-in"
+                    data-aos-delay="600">
+                    <img src="../bootstrap-images/client-6.png" class="img-fluid" alt="image">
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- Client Section End -->
+
+
+    <!-- About Section Start -->
+    <section class="about">
+        <div class="container">
+            <div class="row content">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <h2>EUM IPSAM LABRUM DEENITI VELITENA</h2>
+                    <H3>Voluptatem dignissimos provident quasi corporsii vlouptatem sit assum perenda sruem jonee trave
+                    </H3>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="100">
+                    <p>
+                        Welcome to my portfolio! I’m a creative developer and designer crafting intuitive websites and
+                        digital experiences. With a passion for clean code and elegant design, I bring ideas to life.
+                        Explore my work, learn about my process, and let’s build something amazing together.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequ</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequ</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequ</p>
+                        </li>
+                    </ul>
+                    <p class="font-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores porro
+                        perspiciatis architecto nihil repellendus nesciunt autem vitae esse.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Counter Section Start -->
+    <section class="counts">
+        <div class="container">
+            <div class="row counters">
+                <div class="col-lg-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <span>232</span>
+                    <p>Clients</p>
+                </div>
+
+                <div class="col-lg-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <span>520</span>
+                    <p>Projects</p>
+                </div>
+                <div class="col-lg-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <span>1,463</span>
+                    <p>Hours of Supports</p>
+                </div>
+                <div class="col-lg-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <span>12</span>
+                    <p>Hard Workers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Counter Section End -->
+
+    <!-- Why-Section Section Start -->
+    <section class="why_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right" data-aos-delay="100">
+                    <div class="content">
+                        <h3>Why Choose Webdev for your compney websites?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, excepturi? Doloribus fugiat
+                            repudiandae nemo esse exercitationem quam ex, quod illo hic quae impedit delectus neque
+                            suscipit dicta ipsum quia sint, quos placeat blanditiis ullam totam sapiente! Quidem magnam
+                            asperiores eligendi!</p>
+                        <div class="text-center">
+                            <a href="#" class="more-btn">learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-flex align-items-stretch">
+                    <div class="icon_boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="icon_box mt-4 mt-xl-0">
+                                    <i class="fa-solid fa-address-card"></i>
+                                    <h4>Corporis voluptates sit</h4>
+                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboirs misi ut
+                                        aliquisp</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="icon_box mt-4 mt-xl-0">
+                                    <i class="fa fa-cube"></i>
+                                    <h4>Corporis voluptates sit</h4>
+                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboirs misi ut
+                                        aliquisp</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="icon_box mt-4 mt-xl-0">
+                                    <i class="fa-solid fa-camera-retro"></i>
+                                    <h4>Corporis voluptates sit</h4>
+                                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboirs misi ut
+                                        aliquisp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why-Section Section End -->
+
+    <!--CTA  Section Start -->
+    <section class="cta">
+        <div class="container">
+            <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Call To Action</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, quae atque! Praesentium aut quos
+                    quidem vel veritatis modi. At ullam deserunt commodi temporibus alias repudiandae illum vero
+                    sapiente harum amet consectetur fugiat beatae, consequatur repellendus aperiam cum iste labore?
+                    Atque?</p>
+                <a href="#" class="cta-btn">Call To Action</a>
+
+            </div>
+
+        </div>
+    </section>
+    <!--CTA  Section End -->
+
+    <!--Services  Section start -->
+    <section class="services section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="section-title">
+                        <h2>Services</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum accusantium nihil quo vitae
+                            nesciunt ut blanditiis esse sapiente corrupti ipsa!</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6 d-flex align-items-stretch">
+                            <div class="iconbox" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="icon">
+                                    <i class="fa-solid fa-basketball"></i>
+                                </div>
+                                <h4><a href="#">Lorem Ipsum</a></h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, et.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                            <div class="iconbox" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="icon">
+                                    <i class="fa fa-file"></i>
+                                </div>
+                                <h4><a href="#">Sed ut perspiciatis</a></h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, et.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="iconbox" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="icon">
+                                    <i class="fa-solid fa-gauge"></i>
+                                </div>
+                                <h4><a href="#">Magni Dolores</a></h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, et.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="iconbox" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="icon">
+                                    <i class="fa fa-globe"></i>
+                                </div>
+                                <h4><a href="#">Nemo Enim</a></h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, et.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--Services  Section End -->
+
+    <!--Port Folio  Section start -->
+    <section class="portfolio">
+        <div class="container">
+            <div class="section-title" data-aos="fade-left">
+                <h2>Portfolio</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quidem cum, sint reprehenderit autem
+                    reiciendis tenetur facere aperiam non ea dolore. Nemo quisquam fugit corrupti? Et temporibus cum
+                    voluptas.</p>
+            </div>
+            <div class="row portfolio_container">
+                <div class="col-lg-4 col-md-6 portfolio_item">
+                    <div class="portfolio_wrap" data-aos="fade-up" data-aos-delay="100">
+                        <img src="../bootstrap-images/port-8.jpeg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Heading</h4>
+                            <p>Text</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio_item">
+                    <div class="portfolio_wrap" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="../bootstrap-images/port-2.webp" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Heading</h4>
+                            <p>Text</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio_item">
+                    <div class="portfolio_wrap" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="../bootstrap-images/port-3.webp" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Heading</h4>
+                            <p>Text</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio_item">
+                    <div class="portfolio_wrap" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="../bootstrap-images/port-7.jpeg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Heading</h4>
+                            <p>Text</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio_item">
+                    <div class="portfolio_wrap" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="../bootstrap-images/port-5.jpeg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Heading</h4>
+                            <p>Text</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio_item">
+                    <div class="portfolio_wrap" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="../bootstrap-images/port-6.jpeg" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>Heading</h4>
+                            <p>Text</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Port Folio  Section End -->
+
+    <!--Testimonial  Section start -->
+    <section class="Testimonial section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-title" data-aos="fade-right">
+                        <h2>Testimonial</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos at velit possimus commodi
+                            harum? Repellendus voluptatem consequuntur quae incidunt debitis.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-up  " data-aos-delay="100">
+                    <div class="testimonial_slider">
+                        <div class="testimonial_item">
+                            <p>
+                                <i class="fa fa-quote-left"></i>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum similique dignissimos
+                                ullam consequatur nisi, quidem dolorum mollitia sint asperiores consectetur, tempore ex
+                                ipsam accusantium nobis.
+                                <i class="fa fa-quote-right"></i>
+                            </p>
+                            <img src="../bootstrap-images/testimonial-1.jpeg" class="testimonial_img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                        </div>
+                        <div class="testimonial_item">
+                            <p>
+                                <i class="fa fa-quote-left"></i>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum similique dignissimos
+                                ullam consequatur nisi, quidem dolorum mollitia sint asperiores consectetur, tempore ex
+                                ipsam accusantium nobis.
+                                <i class="fa fa-quote-right"></i>
+                            </p>
+                            <img src="../bootstrap-images/testimonial-2.jpg" class="testimonial_img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                        </div>
+                        <div class="testimonial_item">
+                            <p>
+                                <i class="fa fa-quote-left"></i>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum similique dignissimos
+                                ullam consequatur nisi, quidem dolorum mollitia sint asperiores consectetur, tempore ex
+                                ipsam accusantium nobis.
+                                <i class="fa fa-quote-right"></i>
+                            </p>
+                            <img src="../bootstrap-images/testimonial-3.jpg" class="testimonial_img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                        </div>
+                        <div class="testimonial_item">
+                            <p>
+                                <i class="fa fa-quote-left"></i>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum similique dignissimos
+                                ullam consequatur nisi, quidem dolorum mollitia sint asperiores consectetur, tempore ex
+                                ipsam accusantium nobis.
+                                <i class="fa fa-quote-right"></i>
+                            </p>
+                            <img src="../bootstrap-images/testimonial-4.jpg" class="testimonial_img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                        </div>
+                        <div class="testimonial_item">
+                            <p>
+                                <i class="fa fa-quote-left"></i>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum similique dignissimos
+                                ullam consequatur nisi, quidem dolorum mollitia sint asperiores consectetur, tempore ex
+                                ipsam accusantium nobis.
+                                <i class="fa fa-quote-right"></i>
+                            </p>
+                            <img src="../bootstrap-images/testimonial-5.jpg" class="testimonial_img" alt="">
+                            <h3>Matt Brandon</h3>
+                            <h4>Freelancer</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Testimonial  Section End -->
+
+
+    <!-- Our Team Section Start -->
+    <section class="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-title" data-aos="fade-right ">
+                        <h2>Team</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, adipisci.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="pic">
+                                    <img src="../bootstrap-images/testimonial-1.jpeg" class="img-fluid" alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Walter White</h4>
+                                    <span>Chief Executive Officer</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <div class="social">
+                                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-4 mt-lg-0">
+                            <div class="member" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="pic">
+                                    <img src="../bootstrap-images/testimonial-2.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Walter White</h4>
+                                    <span>Chief Executive Officer</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <div class="social">
+                                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-4">
+                            <div class="member" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="pic">
+                                    <img src="../bootstrap-images/testimonial-3.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Walter White</h4>
+                                    <span>Chief Executive Officer</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <div class="social">
+                                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-4">
+                            <div class="member" data-aos="zoom-in" data-aos-delay="400">
+                                <div class="pic">
+                                    <img src="../bootstrap-images/testimonial-4.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="member-info">
+                                    <h4>Walter White</h4>
+                                    <span>Chief Executive Officer</span>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <div class="social">
+                                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Team Section End -->
+
+    <!-- Contact Section Start -->
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-title" data-aos="fade-right">
+                        <h2>CONTACT</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum laudantium magnam reiciendis
+                            ea! Et consequuntur consectetur totam atque velit neque maiores vitae minima iure. Vitae,
+                            reprehenderit accusantium. Rerum laborum.</p>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13593.135076438259!2d74.31370835439117!3d31.598683286847606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b79807d5f9d%3A0x724de831330d72e3!2sBadami%20Bagh%2C%20Lahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1748428754296!5m2!1sen!2s"
+                        style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="info mt-4" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa fa-map-marker"></i>
+                        <div class="info-inner">
+                            <h4>Location</h4>
+                            <p>Badami Bagh Lahore.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mt-4">
+                            <div class="info" data-aos="fade-up" data-aos-delay="300">
+                                <i class="fa fa-envelope"></i>
+                                <div class="info-inner">
+                                    <h4>Email</h4>
+                                    <p>info@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                            <div class="info w-100 mt-4">
+                                <i class="fa fa-phone"></i>
+                                <div class="info-inner">
+                                    <h4>Call:</h4>
+                                    <p>+1234567890</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <form action="" class="email-form mt-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                    required>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="email" name="email" class="form-control" id="email"
+                                    placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject"
+                                required>
+
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Message" rows="5"></textarea>
+
+                        </div>
+                        <div class="text-center">
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Contact Section End -->
+
+
+    <!-- Footer Sectio STart -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Webdev</h3>
+                        <p>Badami <br> Bagh Lahore <br> Khorkhar Road 2333 <br><br>
+                            <strong>Phone:</strong> +1234567890 <br>
+                            <strong> Email:</strong> info@gmail.com
+
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Servces</h4>
+                        <ul>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Web Design</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Web Development</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Product Management</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Marketing</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Graphic Desiner</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Services</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Team of services</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde.</p>
+                        <form>
+                            <input type="email" name="email" id="" placeholder="Search">
+                            <input type="submit" name="email" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-md-flex py-4">
+            <div class="mr-md-auto text-center text-md-left">
+                <div class="copyright">
+                    <p class="md-0">&#169; Copyright <strong>webdev.</strong> All Right Reserved</p>
+                </div>
+                <div class="credits">
+                    <p class="md-0">
+                        Design By <a href="#">Webdev</a>
+                    </p>
+                </div>
+            </div>
+            <div class="social py-3 pt-md-0">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- bACK TO TOP BUTTON START-->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+    <!-- bACK TO TOP BUTTON END-->
+
+
+
+
+
+
+
+
+
+    <script>
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 10) {
+                $(".navbar").addClass("nav-scroll");
+                $(".back-to-top").addClass("show_btn");
+            } else {
+                $(".navbar").removeClass("nav-scroll");
+                $(".back-to-top").removeClass("show_btn");
+            }
+
+        });
+        $(document).ready(function () {
+            $('.testimonial_slider').slick({
+                dots: true,
+                arrows: false,
+                autoplay: true,
+                infinite: true,
+                speed: 100,
+
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+            AOS.init();
+        })
+
+
+    </script>
+
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <!-- slick Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</body>
+
+</html>
+
