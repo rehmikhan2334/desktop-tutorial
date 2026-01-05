@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Document</title>
+    <title>Rehmat's Digital Studio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
@@ -33,24 +30,24 @@
             padding: 10px 30px;
             background-color: #788e9a75;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             color: white;
             position: absolute;
             width: 100%;
-
+            flex-wrap: wrap;
         }
 
         nav ul {
             display: flex;
             gap: 30px;
-            margin-top: -10px;
-
+            margin: 0;
+            padding: 0;
+            transition: all 0.5s ease-in-out;
         }
 
         ul li {
             list-style: none;
-
         }
 
         .logo img {
@@ -62,6 +59,7 @@
             color: white;
             font-size: 20px;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         ul li a:hover {
@@ -69,13 +67,10 @@
         }
 
         .menu-icon {
-
             font-size: 30px;
             color: white;
-        }
-
-        .menu-icon {
             display: none;
+            cursor: pointer;
         }
 
         .serch button {
@@ -83,16 +78,40 @@
             border-radius: 20px;
             font-size: 18px;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .serch button i {
             margin-left: 15px;
         }
 
-        @media screen and (max-width:860px) {
+        @media screen and (max-width: 992px) {
+            nav {
+                padding: 10px 20px;
+            }
+            
+            .logo img {
+                width: 150px;
+            }
+            
             nav ul {
-                position: absolute;
-                top: 70px;
+                gap: 20px;
+            }
+            
+            ul li a {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width:860px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul {
+                position: relative;
+                top: 0;
                 left: 0;
                 right: 0;
                 align-items: center;
@@ -100,19 +119,41 @@
                 overflow: hidden;
                 background-color: #94a0a8;
                 gap: 0;
-                transition: all 0.5s ease-in-out;
+                width: 100%;
+                max-height: 0;
+            }
+
+            nav ul.show {
+                max-height: 300px;
             }
 
             nav ul li {
-                padding: 20px;
+                padding: 15px;
+                width: 100%;
+                text-align: center;
             }
 
             .menu-icon {
                 display: block;
+                position: absolute;
+                right: 20px;
+                top: 15px;
             }
 
-            .serch button {
+            .serch {
+                width: 100%;
+                margin-top: 10px;
                 display: none;
+            }
+            
+            .serch.show {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .logo img {
+                width: 120px;
             }
         }
 
@@ -200,6 +241,7 @@
         .Website-url a {
             list-style: none;
             text-decoration: none;
+            color
         }
 
         .Website-url a:nth-child(1) {
@@ -286,20 +328,22 @@
         }
 
         .hero-title h4 {
-            font-size: 25px;
+            font-size: 35px;
+            letter-spacing: 3px;
             font-weight: 700;
         }
 
         .hero-title h1 {
             font-size: 40px;
             font-weight: 700;
+            letter-spacing: 2px;
 
         }
 
         .hero-title button {
             width: 150px;
             border-radius: 20px;
-            margin-top: 10px;
+            margin-top: 15px;
             font-size: 18px;
             font-weight: 600;
         }
@@ -317,23 +361,33 @@
         }
 
         .tab-header {
+            position: relative;
             background-color: #555555;
             width: fit-content;
             margin: auto;
             border-radius: 50px;
+            margin-bottom: 20px;
+            max-width: 95%;
         }
 
         .tabs {
             max-width: 100%;
-            padding: 15px 20px;
+            padding: 15px 50px;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
             gap: 20px;
             transition: 0.5s ease;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
-
+        .tabs::-webkit-scrollbar {
+            display: none;
         }
 
         .tabs .tabslinks {
@@ -345,7 +399,7 @@
             color: white;
             font-weight: bold;
             transition: 0.4s ease;
-
+            flex-shrink: 0;
         }
 
         .tabs .tabslinks.active {
@@ -366,13 +420,12 @@
             width: 100%;
         }
 
-
         @media screen and (max-width:664px) {
             .tabs {
                 max-width: 100%;
                 padding: 13px 22px;
                 display: flex !important;
-                justify-content: center !important;
+                justify-content: flex-start !important;
                 align-items: center !important;
                 gap: 27px;
 
@@ -397,6 +450,199 @@
             }
 
         }
+
+        /* Footer Section Start */
+        #footer {
+            background-color: #f1f0f2;
+            font-size: 14px;
+            color: #444444;
+        }
+
+        #footer .footer-top {
+            padding: 60px 0 30px 0;
+            background-color: #f9f8f8;
+        }
+
+        #footer .footer-contact,
+        #footer .footer-links {
+            margin-bottom: 30px;
+
+        }
+
+        #footer .footer-top .footer-contact p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: "Raleway", sans-serif;
+            color: #777777;
+        }
+
+        #footer .footer-top h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #444444;
+            padding-bottom: 12px;
+        }
+
+        #footer .footer-top .footer-links ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #footer .footer-top .footer-links li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #footer .footer-top .footer-links li:first-child {
+            padding-top: 0;
+        }
+
+        #footer .footer-top .footer-links ul i {
+            padding-right: 6px;
+            color: #00c28c;
+            font-size: 10px;
+
+        }
+
+        #footer .footer-top .footer-links ul a {
+            color: #777777;
+            font-family: "Open Sans", sans-serif;
+            display: inline-block;
+            line-height: 1;
+            transition: 0.3s ease-in-out;
+            font-size: 14px;
+        }
+
+        #footer .footer-top .footer-links ul a:hover {
+            color: #009970;
+        }
+
+        #footer .footer-top .footer-newsletter {
+            font-size: 15px;
+        }
+
+        #footer .footer-top .footer-newsletter form {
+            display: flex;
+            height: 44px;
+            margin-top: 30px;
+            background-color: #fff;
+            border-radius: 50px;
+            border: 1px solid #e4e3e6;
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="email"] {
+
+            border: 0;
+            padding: 4px 23px;
+            width: 100%;
+            border-radius: 50px;
+
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="email"]:focus {
+            outline: none;
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="submit"] {
+            font-size: 16px;
+            border: none;
+            padding: 0 20px;
+            background-color: #009970;
+            color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 50px;
+            transition: 0.3s ease-in-out;
+        }
+
+        #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
+            background-color: #00805d;
+        }
+
+        #footer .copyright {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        #footer .credits {
+            padding-top: 5px;
+            font-size: 13px;
+            color: #444444;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        #footer .credits a {
+            color: #0bb386;
+        }
+
+        #footer .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #footer .social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #009970;
+            margin: 0 3px;
+            transition: 0.3s ease-in-out;
+        }
+
+        #footer .social a:hover {
+            background-color: #68c8ae;
+        }
+
+        #footer .social a i {
+            color: white;
+            font-size: 16px;
+        }
+
+        /* TAB ARROWS STYLING */
+        .left-btn, .right-btn {
+            position: absolute;
+            color: white;
+            font-size: 24px;
+            padding: 10px 15px;
+            cursor: pointer;
+            height: 100%;
+            background: rgba(85, 85, 85, 0.8);
+            border: none;
+            top: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            transition: background 0.3s;
+            /* Default: hide on large screens */
+            display: none;
+        }
+
+        .left-btn:hover, .right-btn:hover {
+            background: rgba(85, 85, 85, 1);
+        }
+
+        .left-btn {
+            left: 0;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .right-btn {
+            right: 0;
+            border-radius: 0 50px 50px 0;
+        }
+
+        /* Show arrows only on mobile screens (860px and below) */
+        @media screen and (max-width: 860px) {
+            .left-btn, .right-btn {
+                display: flex;
+            }
+        }
     </style>
 
 </head>
@@ -405,7 +651,7 @@
 
     <nav>
         <div class="logo">
-            <img src="./images/logo.webp" alt="">
+            <img src="./images/logo.webp" alt="Rehmat's Digital Studio Logo">
         </div>
         <ul id="menuList">
             <li><a href="">Home</a></li>
@@ -414,42 +660,43 @@
             <li><a href="">Product</a></li>
             <li><a href="">Contact Us</a></li>
         </ul>
-        <div class="serch">
+        <div class="serch" id="searchContainer">
             <button class="btn btn-light">Seacrch <i class="fa-solid fa-arrow-right"></i></button>
         </div>
         <div class="menu-icon">
-            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
-
+            <i class="fa-solid fa-bars" id="menuToggle"></i>
         </div>
-
     </nav>
+
     <div class="hero-section">
         <div class="hero-title">
-            <h4>The perfect choice for your business website</h4>
+            <h4> Rehmat's Digital Studio</h4>
             <h1>
-                Business Consulting Elementor WordPress Theme</h1>
+                Web Development • Design • Innovation</h1>
             <button class="btn btn-light">Buy Now</button>
         </div>
     </div>
 
     <main>
-
         <section class="section">
             <div class="tab-header">
-
+                <i class="fa-solid fa-angle-left left-btn"></i>
+                <i class="fa-solid fa-angle-right right-btn"></i>
                 <div class="tabs">
                     <button class="tabslinks active" data-tab="all">ALL</button>
                     <button class="tabslinks" data-tab="tab2">HTML CSS</button>
                     <button class="tabslinks" data-tab="tab3">BOOtSTRAP</button>
                     <button class="tabslinks" data-tab="tab4">JAVASCRIPT</button>
+                    <button class="tabslinks" data-tab="tab5">PHP</button>
                 </div>
             </div>
+
             <div class="container">
                 <div class="row">
                     <!-- First Card -->
                     <div class="col-lg-4 col-md-6 col-sm-12  pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 191358.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-06-30 191358.png" class="card-img-top" alt="Calculator Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -493,7 +740,7 @@
                     <!-- Second Card -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3  tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190905.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-06-30 190905.png" class="card-img-top" alt="Instagram Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -538,7 +785,7 @@
                     <!-- Third CArd -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190931.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-06-30 190931.png" class="card-img-top" alt="Mouse Over Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -584,7 +831,7 @@
                     <!-- Forth CArd -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190919.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-06-30 190919.png" class="card-img-top" alt="Instagram Like Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -615,7 +862,7 @@
                                 <div class="info">
                                     <p>
                                         Double-clicking the post triggers a heart animation, allowing users to quickly
-                                        express appreciation, just like Instagram’s like system.</p>
+                                        express appreciation, just like Instagram's like system.</p>
                                 </div>
                                 <div class="need">
                                     <p>Need:</p>
@@ -628,7 +875,7 @@
                     <!-- Fifth Card -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190748.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-06-30 190748.png" class="card-img-top" alt="Instagram Story Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -672,7 +919,7 @@
                     <!-- Six Card -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 185245.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-06-30 185245.png" class="card-img-top" alt="Mouse Over Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -716,7 +963,7 @@
                     <!-- Seventh Card -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-07-07 195912.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-07-07 195912.png" class="card-img-top" alt="Validation Form Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -766,7 +1013,7 @@
                     <!-- Eight Card -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab2">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-07-07 200302.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-07-07 200302.png" class="card-img-top" alt="Button Hover Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -818,7 +1065,7 @@
                     <!-- CArd no Nine -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 155727.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-07-16 155727.png" class="card-img-top" alt="Slider Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -869,7 +1116,7 @@
                     <!-- CArd no 13 -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/tabs.png" class="card-img-top" alt="">
+                            <img src="./images/tabs.png" class="card-img-top" alt="Tabs Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -922,7 +1169,7 @@
 
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 160704.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-07-16 160704.png" class="card-img-top" alt="Slider Project">
                             <div class="card-body">
                                 <button>HTML</button>
                                 <button>CSS</button>
@@ -955,7 +1202,7 @@
                                 <div class="info">
                                     <p>
                                         From coding wizards to marketing strategists, our team blends passion and
-                                        expertise into everything we do. This slider highlights each individual’s role,
+                                        expertise into everything we do. This slider highlights each individual's role,
                                         skills
 
                                     </p>
@@ -971,7 +1218,7 @@
                     <!-- Card Eleven -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 175812.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-07-16 175812.png" class="card-img-top" alt="Home Page Project">
                             <div class="card-body">
                                 <!-- <button>HTML</button> -->
                                 <!-- <button>CSS</button> -->
@@ -1004,7 +1251,7 @@
                                 <div class="info">
                                     <p>
                                         We craft user-focused experiences with smart design, robust development, and
-                                        purposeful strategy. Whether you’re browsing our portfolio or exploring
+                                        purposeful strategy. Whether you're browsing our portfolio or exploring
                                         services, this is the place where innovation starts and quality speaks.
 
                                     </p>
@@ -1020,7 +1267,7 @@
                     <!-- Card 12 -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
                         <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 183631.png" class="card-img-top" alt="">
+                            <img src="./images/Screenshot 2025-07-16 183631.png" class="card-img-top" alt="Furniture Project">
                             <div class="card-body">
                                 <!-- <button>HTML</button> -->
                                 <!-- <button>CSS</button> -->
@@ -1071,7 +1318,7 @@
                     <!-- Card 13 -->
                     <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
                         <div class="card">
-                            <img src="./newResponsive/bootstrap-images/web.png" class="card-img-top" alt="">
+                            <img src="./newResponsive/bootstrap-images/web.png" class="card-img-top" alt="Web Dev Project">
                             <div class="card-body">
                                 <!-- <button>HTML</button> -->
                                 <!-- <button>CSS</button> -->
@@ -1119,21 +1366,230 @@
                             </div>
                         </div>
                     </div>
+                    <!-- card 14 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab5">
+                        <div class="card">
+                            <img src="./images/login-page.png" class="card-img-top" alt="Login Page Project">
+                            <div class="card-body">
+                                <!-- <button>HTML</button> -->
+                                <!-- <button>CSS</button> -->
+                                <!-- <button>BOOtSTRAP</button> -->
+                                <button>PHP</button>
+                            </div>
+                            <div class="card-title">
+                                <h1>Web Dev</h1>
+                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                            </div>
+                            <div class="Website-url">
+                                <a href="./Login_form/">
+                                    <p>Website</p>
+                                </a>
+                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
+                                    <p>Github</p>
+                                </a>
+                            </div>
+                            <div id="information" class="information-section">
+                                <div id="menu-icon">
+                                    <h2>Create Web Development Solutions
+
+
+
+                                    </h2>
+                                    <i class="fa-solid fa-xmark" id="cross"></i>
+                                </div>
+                                <div class="in-devp">
+                                    <span>Building Responsive, Modern, and User-Friendly Websites
+
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <p>
+                                        This website showcases the core principles and practices of professional web
+                                        development. It includes modern design techniques, responsive layouts for all
+                                        devices.
+
+
+                                    </p>
+                                </div>
+                                <div class="need">
+                                    <p>Need:</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                            <!-- card 15 -->
+                            <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab5">
+                                <div class="card">
+                                    <img src="./images/login-page.png" class="card-img-top" alt="CRM Project">
+                                    <div class="card-body">
+                                        <button>PHP</button>
+                                    </div>
+                                    <div class="card-title">
+                                        <h1>CRM System</h1>
+                                        <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                                    </div>
+                                    <div class="Website-url">
+                                        <a href="./CRM/">
+                                            <p>Website</p>
+                                        </a>
+                                        <a href="https://github.com/rehmikhan2334">
+                                            <p>Github</p>
+                                        </a>
+                                    </div>
+                                    <div id="information" class="information-section">
+                                        <div id="menu-icon">
+                                            <h2>CRM System</h2>
+                                            <i class="fa-solid fa-xmark" id="cross"></i>
+                                        </div>
+                                        <div class="in-devp">
+                                            <span>Customer Relationship Management (PHP & MySQL)</span>
+                                        </div>
+                                        <div class="info">
+                                            <p>
+                                                A simple CRM for user management and authentication. Includes login,
+                                                signup, dashboard, and database integration to manage customer records and
+                                                sessions.
+                                            </p>
+                                        </div>
+                                        <div class="need">
+                                            <p>Need:</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
 
 
                 </div>
             </div>
         </section>
     </main>
+    <!-- Footer Sectio STart -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h3>Rehmat's Digital</h3>
+                        <p>Badami <br> Bagh Lahore <br> Khorkhar Road 2333 <br><br>
+                            <strong>Phone:</strong> +1234567890 <br>
+                            <strong> Email:</strong> info@gmail.com
+
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Servces</h4>
+                        <ul>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Web Design</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Web Development</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Product Management</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Marketing</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Graphic Desiner</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">About Us</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Services</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Team of services</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-chevron-right"></i>
+                                <a href="#">Privacy policy</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Join Our Newsletter</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde.</p>
+                        <form>
+                            <input type="email" name="email" id="" placeholder="Search">
+                            <input type="submit" name="email" value="Subscribe">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-md-flex py-4">
+            <div class="mr-md-auto text-center text-md-left">
+                <div class="copyright">
+                    <p class="md-0">&#169; Copyright <strong>webdev.</strong> All Right Reserved</p>
+                </div>
+                <div class="credits">
+                    <p class="md-0">
+                        Design By <a href="#">Webdev</a>
+                    </p>
+                </div>
+            </div>
+            <div class="social py-3 pt-md-0">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
 
     <script>
+        // HEADER TOGGLE MENU
+        const menuToggle = document.getElementById('menuToggle');
+        const menuList = document.getElementById('menuList');
+        const searchContainer = document.getElementById('searchContainer');
+        
+        menuToggle.addEventListener('click', function() {
+            menuList.classList.toggle('show');
+            searchContainer.classList.toggle('show');
+            
+            // Change icon
+            if (menuList.classList.contains('show')) {
+                menuToggle.classList.remove('fa-bars');
+                menuToggle.classList.add('fa-times');
+            } else {
+                menuToggle.classList.remove('fa-times');
+                menuToggle.classList.add('fa-bars');
+            }
+        });
+
+        // CARD TOGGLE FUNCTIONALITY
         document.querySelectorAll('.card').forEach(card => {
             let information = card.querySelector('.information-section');
             let toggle = card.querySelector('.card-title');
             let cross = card.querySelector('#menu-icon');
 
             // Toggle open
-
             toggle.addEventListener('click', () => {
                 console.log(information, 'infomation')
 
@@ -1153,23 +1609,7 @@
             });
         });
 
-
-
-        //    Navigagtion ar
-        let menuList = document.getElementById("menuList");
-        menuList.style.maxHeight = "0px";
-
-        function toggleMenu() {
-            if (menuList.style.maxHeight == "0px") {
-                menuList.style.maxHeight = "300px";
-            } else {
-                menuList.style.maxHeight = "0px";
-            }
-        };
-
-
-
-
+        // TABS FILTERING
         let tabButtons = document.querySelectorAll(".tabslinks");
 
         tabButtons.forEach(button => {
@@ -1197,17 +1637,48 @@
         });
 
         // Trigger default click on "All"
-        document.querySelector('.tabslinks[all]').click();
+        document.querySelector('.tabslinks[data-tab="all"]').click();
 
-
-
-
-
-
+        // TAB ARROWS FUNCTIONALITY
+        let btnLeft = document.querySelector(".left-btn");
+        let btnRight = document.querySelector(".right-btn");
+        let tabMenu = document.querySelector('.tabs');
+        
+        // Update arrow visibility
+        const updateArrows = () => {
+            // Only update if on mobile screen
+            if (window.innerWidth <= 860) {
+                let scrollLeftValue = tabMenu.scrollLeft;
+                let scrollableWidth = tabMenu.scrollWidth - tabMenu.clientWidth;
+                
+                btnLeft.style.display = scrollLeftValue > 0 ? 'flex' : 'none';
+                btnRight.style.display = scrollableWidth > scrollLeftValue ? 'flex' : 'none';
+            } else {
+                // Hide arrows on large screens
+                btnLeft.style.display = 'none';
+                btnRight.style.display = 'none';
+            }
+        };
+        
+        // Right arrow click
+        btnRight.addEventListener('click', () => {
+            tabMenu.scrollLeft += 150;
+            setTimeout(updateArrows, 50);
+        });
+        
+        // Left arrow click
+        btnLeft.addEventListener('click', () => {
+            tabMenu.scrollLeft -= 150;
+            setTimeout(updateArrows, 50);
+        });
+        
+        // Initialize arrows
+        window.addEventListener('load', updateArrows);
+        window.addEventListener('resize', updateArrows);
+        
+        // Also update on scroll
+        tabMenu.addEventListener('scroll', updateArrows);
     </script>
-
-
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
