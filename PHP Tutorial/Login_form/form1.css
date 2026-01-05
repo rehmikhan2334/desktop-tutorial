@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
     margin: 0;
     padding: 0;
@@ -76,4 +77,84 @@ form .reg-btn:hover {
     font-size: 17px;
     border-radius: 5px;
     cursor: pointer;
+=======
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    background-color: #e2d7f7;
+}
+.form .head{
+    width: 400px !important;
+}
+.msg{
+    color: red;
+    font-size: 18px;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #e2d7f7;
+}
+.form form{
+    background-color: rgb(228, 228, 228);
+    text-align: center;
+    box-shadow: 0px 6px 20px rgb(144,144,144);
+    border-radius: 10px;
+    padding: 2rem;
+}
+.form form h2{
+    margin-bottom: 1.5rem;
+}
+.form form input{
+    padding: 10px 15px;
+    font-size: 15px;
+
+}
+.form form .reg-btn {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #783595;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    margin: 10px 0 0 !important;
+}
+
+form .reg-btn:hover {
+    background-color: #bc78d9 !important;
+    color: white !important;
+}
+
+.form form p{
+    font-size: 15px;
+    margin-top: 8px;
+}
+.user-page{
+    text-align: center;
+    margin-top: 15rem;
+    background-color: white;
+    padding: 1rem ;
+}
+.user-page p{
+    font-size: 18px;
+    margin-top: 2rem;
+}
+.user-page button{
+    margin-top: 15px;
+    color: white;
+    background-color: #783595;
+    padding: 10px 25px;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+>>>>>>> 2327da399a8fc7486d103895b98ec7f7a0e56f5e
 }

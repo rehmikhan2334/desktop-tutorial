@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container{
     margin-left: 10%;
     margin-right: 10%;
@@ -48,3 +49,55 @@ img{
     object-fit: cover;
 
 }
+=======
+.container{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.heading, .header h3{
+    color: orange;
+}
+.header{
+        display: flex;
+    justify-content: space-between;
+} 
+.header ul{
+list-style: none;
+display: flex;
+gap: 15px;
+
+}
+.header ul li a{
+    font-size: 17px;
+    color: black;
+}
+.header  ul li a{
+    text-decoration: none;
+}
+.footer{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.footer ul li {
+    padding: 5px;
+    
+}
+.footer ul li a{
+text-decoration: none;
+color: black;
+font-size: 17px;
+}
+img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+
+}
+>>>>>>> 2327da399a8fc7486d103895b98ec7f7a0e56f5e
