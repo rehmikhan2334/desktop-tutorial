@@ -1633,11 +1633,26 @@
         if (toggle) toggle.addEventListener('click', () => { toggle.classList.toggle('active'); navEl.classList.toggle('active'); });
         if (navEl) navEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (toggle) toggle.classList.remove('active'); navEl.classList.remove('active'); }));
 
-        function animateSkillBars() { document.querySelectorAll('.skill-bar').forEach(bar => { const pct = bar.getAttribute('data-pct'); if (pct) bar.style.width = pct + '%'; }); }
-        window.addEventListener('load', () => setTimeout(animateSkillBars, 300));
+        function animateSkillBars() {
+            const bars = document.querySelectorAll('.skill-bar');
+            bars.forEach((bar, index) => {
+                setTimeout(() => {
+                    const pct = bar.getAttribute('data-pct');
+                    if (pct) bar.style.width = pct + '%';
+                }, index * 200); // Stagger animation with 200ms delay between each bar
+            });
+        }
+        // Remove on load animation, only animate on scroll
         const skillsSection = document.getElementById('skills');
         let skillsAnimated = false;
-        const skillsObserver = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting && !skillsAnimated) { skillsAnimated = true; animateSkillBars(); } }); }, { threshold: 0.3 });
+        const skillsObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting && !skillsAnimated) {
+                    skillsAnimated = true;
+                    animateSkillBars();
+                }
+            });
+        }, { threshold: 0.3 });
         if (skillsSection) skillsObserver.observe(skillsSection);
 
         const revealObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } }); }, { threshold: 0.15 });
