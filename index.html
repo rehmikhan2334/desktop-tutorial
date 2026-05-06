@@ -1,1711 +1,1657 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Rehmat's Digital Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Rehmatullah | Full Stack Developer & UI/UX Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-
-        /* Nav Start */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: poppins, sans-serif;
         }
 
-        .section {
-            padding-block: 3rem;
-            background-color: #f8f9fa;
-
+        html {
+            scroll-behavior: smooth;
+            font-family: poppins, sans-serif;
         }
 
-        nav {
-            padding: 10px 30px;
-            background-color: white;
+        body {
+            font-family: poppins, sans-serif;
+            background: radial-gradient(circle at top center, rgba(0, 229, 255, 0.05), transparent 32%),
+                linear-gradient(180deg, #080b14 0%, #05070f 100%);
+            color: #f0f4ff;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── AMBIENT BLOBS ── */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            pointer-events: none;
+            z-index: 0;
+            animation: drift 18s ease-in-out infinite alternate;
+        }
+
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: #00e5ff;
+            top: -180px;
+            left: -120px;
+            opacity: 0.10;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: #7f56f0;
+            bottom: 5%;
+            right: -120px;
+            opacity: 0.10;
+            animation-delay: -8s;
+        }
+
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: #ec4899;
+            top: 45%;
+            left: 35%;
+            opacity: 0.07;
+            animation-delay: -15s;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(35px, 25px) scale(1.06);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #080b14;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7f56f0;
+            border-radius: 2px;
+        }
+
+        /* ============================================
+           HEADER - FULLY RESPONSIVE, FIXED WIDTH ON SCROLL
+           ============================================ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: transparent;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        header nav {
+            pointer-events: auto;
+            max-width: 1200px;
+            width: calc(100% - 3rem);
+            margin: 0 1.5rem;
+            padding: 1rem 1.8rem;
+            display: flex;
             align-items: center;
-            color: black;
-            position: absolute;
-            width: 100%;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border-radius: 999px;
+            background: transparent;
+            backdrop-filter: none;
+            border: none;
         }
 
-        nav ul {
+        /* Scrolled state: fixed width pill, centered, with border */
+        header.scrolled {
+            top: 16px;
+            left: 0;
+            right: 0;
+        }
+
+        header.scrolled nav {
+            /* max-width: 860px; */
+            /* width: auto; */
+            min-width: 280px;
+            background: rgba(8, 11, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 229, 255, 0.08);
+            padding: 0.55rem 1.6rem;
+            border-radius: 999px;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(90deg, #00e5ff 0%, #7f56f0 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
             display: flex;
-            gap: 30px;
-            margin: 0;
-            padding: 0;
-            transition: all 0.5s ease-in-out;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: #080b14;
+            background: linear-gradient(135deg, #00e5ff, #7f56f0);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+            flex-shrink: 0;
         }
 
-        ul li {
+        .nav-links {
+            display: flex;
+            gap: 2rem;
             list-style: none;
         }
 
-        .logo img {
-            width: 200px;
-        }
-
-        ul li a {
-            text-decoration: none;
-            color: black;
-            font-size: 20px;
-            font-weight: 600;
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #8892a4;
+            transition: color 0.25s;
+            position: relative;
             white-space: nowrap;
         }
 
-        ul li a:hover {
-            color: #007bff;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #00e5ff;
+            box-shadow: 0 0 8px #00e5ff;
+            transition: width 0.3s;
         }
 
-        .menu-icon {
-            font-size: 30px;
-            color: black;
-            display: none;
+        .nav-links a:hover {
+            color: #00e5ff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-hire {
+            padding: 0 18px;
+            height: 36px;
+            border: none;
             cursor: pointer;
+            background: linear-gradient(135deg, #00e5ff, #7f56f0);
+            color: #080b14;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-radius: 999px;
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .serch button {
-            width: 185px;
-            border-radius: 20px;
-            font-size: 18px;
+        .btn-hire:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 35px rgba(0, 229, 255, 0.5);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: #f0f4ff;
+            border-radius: 2px;
+            transition: all 0.3s;
+            display: block;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 6rem 1.5rem;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00e5ff;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-heading {
+            max-width: 680px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .section-heading h2 span {
+            background: linear-gradient(135deg, #00e5ff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.18);
+        }
+
+        .section-heading p {
+            color: #8892a4;
+            font-size: 1rem;
+        }
+
+        .divider {
+            width: 56px;
+            height: 3px;
+            background: linear-gradient(135deg, #00e5ff, #7f56f0, #ec4899);
+            border-radius: 2px;
+            margin: 0.9rem auto 1.4rem;
+            box-shadow: 0 0 14px rgba(0, 229, 255, 0.4);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── HERO SECTION ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 7rem 1.5rem 4rem;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.18), transparent 24%),
+                radial-gradient(circle at 70% 30%, rgba(127, 86, 240, 0.12), transparent 18%),
+                radial-gradient(circle at 30% 78%, rgba(236, 72, 153, 0.07), transparent 20%),
+                linear-gradient(180deg, #070b13 0%, #05060d 100%);
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            background: rgba(0, 229, 255, 0.05);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: #00e5ff;
+            margin-bottom: 2rem;
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00ff94;
+            box-shadow: 0 0 8px #00ff94;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.3);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+            animation: fadeUp 0.7s 0.1s ease both;
+            color: #ffffff;
+        }
+
+        .hero h1 .line-top {
+            color: #ffffff;
+            display: block;
+        }
+
+        .hero h1 .line-name {
+            display: block;
+            background: linear-gradient(90deg, #00e5ff 0%, #a78bfa 60%, #7f56f0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(0, 229, 255, 0.4), 0 0 60px rgba(127, 86, 240, 0.3);
+        }
+
+        .typing-container {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(1rem, 2.5vw, 1.35rem);
+            color: #00e5ff;
+            background: rgba(0, 229, 255, 0.08);
+            display: inline-block;
+            padding: 0.25rem 1.5rem;
+            border-radius: 40px;
+            backdrop-filter: blur(4px);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+            animation: fadeUp 0.7s 0.2s ease both;
+        }
+
+        #typed-text {
+            background: linear-gradient(135deg, #00e5ff, #a855f7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             font-weight: 600;
+        }
+
+        .typed-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: #00e5ff;
+            margin-left: 6px;
+            vertical-align: middle;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .hero p {
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            color: #8892a4;
+            line-height: 1.85;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+            animation: fadeUp 0.7s 0.3s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            animation: fadeUp 0.7s 0.4s ease both;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0 2rem;
+            height: 50px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00e5ff, #7f56f0);
+            color: #080b14;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px rgba(0, 229, 255, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #f0f4ff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-outline:hover {
+            border-color: #00e5ff;
+            color: #00e5ff;
+            background: rgba(0, 229, 255, 0.05);
+            transform: translateY(-3px);
+        }
+
+        .hero-socials {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeUp 0.7s 0.5s ease both;
+        }
+
+        .hero-socials a {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+            color: #8892a4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-socials a:hover {
+            border-color: #00e5ff;
+            color: #00e5ff;
+            background: rgba(0, 229, 255, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+        }
+
+        /* ── RESPONSIVE GRIDS (unchanged, fully responsive) ── */
+        .about-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img-frame {
+            position: relative;
+            border-radius: 24px;
+        }
+
+        .about-img-frame::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 26px;
+            background: linear-gradient(135deg, #00e5ff, #7f56f0, #ec4899);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .about-img-frame img {
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            display: block;
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -18px;
+            right: -18px;
+            padding: 1rem 1.3rem;
+            border-radius: 16px;
+            background: rgba(8, 11, 20, 0.88);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            backdrop-filter: blur(16px);
+        }
+
+        .fc-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: #8892a4;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .fc-value {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
+            background: linear-gradient(90deg, #00e5ff, #7f56f0, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-content h2 {
+            font-size: clamp(1.7rem, 3.5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            color: #ffffff;
+        }
+
+        .about-content h2 span {
+            background: linear-gradient(90deg, #00e5ff, #7f56f0, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-content p {
+            color: #8892a4;
+            font-size: 0.98rem;
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            padding: 1.3rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(0, 229, 255, 0.3);
+            background: rgba(0, 229, 255, 0.04);
+            transform: translateY(-3px);
+        }
+
+        .stat-icon-wrap {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: rgba(0, 229, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.7rem;
+            color: #00e5ff;
+            font-size: 0.95rem;
+        }
+
+        .stat-num {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-lbl {
+            font-size: 0.82rem;
+            color: #8892a4;
+            font-weight: 500;
+        }
+
+        .skills-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-box {
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem 2rem;
+        }
+
+        .skill-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-name {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .skill-pct {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #00e5ff;
+        }
+
+        .skill-track {
+            width: 100%;
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.07);
+            overflow: hidden;
+        }
+
+        .skill-bar {
+            height: 100%;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #00e5ff, #7f56f0);
+            box-shadow: 0 0 14px rgba(0, 229, 255, 0.5);
+            width: 0%;
+            transition: width 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 229, 255, 0.3);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 16px;
+            background: rgba(0, 229, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #00e5ff;
+            font-size: 1.4rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #8892a4;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 229, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-thumb {
+            position: relative;
+            overflow: hidden;
+            height: 240px;
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(127, 86, 240, 0.14));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-thumb img {
+            transform: scale(1.06);
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .project-body h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .project-body p {
+            color: #8892a4;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .tag {
+            padding: 0.25rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(0, 229, 255, 0.07);
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #00e5ff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1rem;
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 0.3rem;
+            background: linear-gradient(135deg, #00e5ff, #7f56f0);
+            color: #080b14;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #00e5ff 0%, #7f56f0 60%, rgba(127, 86, 240, 0.1) 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.8rem;
+            margin-bottom: 4rem;
+            align-items: start;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #00e5ff;
+            border: 3px solid #080b14;
+            box-shadow: 0 0 14px rgba(0, 229, 255, 0.7);
+            margin-top: 0.5rem;
+            z-index: 2;
+            transition: all 0.3s;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.2);
+            box-shadow: 0 0 22px #00e5ff;
+        }
+
+        .tl-card {
+            padding: 1.5rem 1.8rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        .timeline-item.visible .tl-card,
+        .tl-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(0, 229, 255, 0.25);
+            box-shadow: 0 12px 28px -8px rgba(0, 229, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.65rem;
+            color: #ffffff;
+        }
+
+        .timeline-desc {
+            color: #a0a8bb;
+            font-size: 0.89rem;
+            line-height: 1.75;
+        }
+
+        .timeline-desc ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        .timeline-date-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #00e5ff;
+            background: rgba(0, 229, 255, 0.12);
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            border: 1px solid rgba(0, 229, 255, 0.3);
             white-space: nowrap;
         }
 
-        .serch button i {
-            margin-left: 15px;
+        .contact-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 1.8rem;
         }
 
-        @media screen and (max-width: 992px) {
-            nav {
-                padding: 10px 20px;
+        .contact-info,
+        .contact-form-wrap {
+            padding: 2rem;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+        }
+
+        .contact-info {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-card {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 1.1rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            background: rgba(0, 229, 255, 0.12);
+            color: #00e5ff;
+            font-size: 1.1rem;
+        }
+
+        .contact-card div p {
+            margin: 0 0 0.15rem;
+            color: #8892a4;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .contact-card div strong {
+            display: block;
+            color: #ffffff;
+            font-size: 1rem;
+            margin-top: 0.2rem;
+            font-weight: 700;
+        }
+
+        .contact-form-wrap {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-field {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .form-field label {
+            color: #8892a4;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1rem 1.1rem;
+            color: #f0f4ff;
+            font-size: 0.95rem;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        .form-field textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #00e5ff, #7f56f0);
+            color: #080b14;
+            font-weight: 700;
+            padding: 0 1.8rem;
+            height: 54px;
+            border-radius: 16px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 0.95rem;
+            border: none;
+        }
+
+        .btn-submit i {
+            transform: translateY(1px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #00e5ff, #7f56f0);
+            color: #080b14;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ========== FULL RESPONSIVE BREAKPOINTS ========== */
+        @media (max-width: 900px) {
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
 
-            .logo img {
-                width: 150px;
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            nav ul {
-                gap: 20px;
-            }
-
-            ul li a {
-                font-size: 18px;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        @media screen and (max-width:860px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
+        @media (max-width: 780px) {
+            .timeline::before {
+                left: 8px;
             }
 
-            nav ul {
-                position: relative;
+            .timeline-item {
+                grid-template-columns: auto 1fr;
+                gap: 1rem;
+            }
+
+            .timeline-item .timeline-left,
+            .timeline-item .timeline-right {
+                order: unset !important;
+                text-align: left !important;
+            }
+
+            .timeline-item .timeline-left {
+                display: none;
+            }
+
+            .timeline-dot {
+                order: 1;
+                margin-left: 0;
+            }
+
+            .timeline-right {
+                order: 2;
+            }
+
+            .timeline-date-badge {
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
-                align-items: center;
-                flex-direction: column;
-                overflow: hidden;
-                background-color: white;
-                gap: 0;
-                width: 100%;
+                bottom: 0;
+                background: rgba(8, 11, 20, 0.98);
+                backdrop-filter: blur(20px);
                 max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+                z-index: 200;
             }
 
-            nav ul.show {
-                max-height: 300px;
+            .nav-links.active {
+                max-height: 100vh;
+                padding: 2rem;
             }
 
-            nav ul li {
-                padding: 15px;
+            .nav-links li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding: 0.9rem 0;
                 width: 100%;
                 text-align: center;
             }
 
-            .menu-icon {
-                display: block;
-                position: absolute;
-                right: 20px;
-                top: 15px;
-            }
-
-            .serch {
-                width: 100%;
-                margin-top: 10px;
+            .btn-hire {
                 display: none;
             }
 
-            .serch.show {
-                display: block;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header.scrolled nav {
+                min-width: auto;
+                width: auto;
+                padding: 0.5rem 1.2rem;
             }
         }
 
-        @media screen and (max-width: 576px) {
-            .logo img {
-                width: 120px;
-            }
-        }
-
-        /* Nav end */
-        .card {
-            width: 100%;
-            height: 320px;
-            border: 1px solid #eee;
-            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            transition: 0.5s all ease-in-out;
-
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-
-        }
-
-        .card-img-top {
-            height: 160px;
-            /* object-fit: contain; */
-            object-position: center;
-            width: 100%;
-        }
-
-
-
-        .card-body button {
-            padding: 3px 5px;
-            margin: 11px;
-            font-size: 14px;
-            font-weight: 600;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-left: -10px;
-            cursor: default;
-            margin-top: 0;
-        }
-
-        .card-body button:nth-child(1) {
-            background-color: #BAD5F5;
-        }
-
-        .card-body button:nth-child(2) {
-            background-color: #F2C986;
-        }
-
-        .card-body button:nth-child(3) {
-            background-color: #E1C1C1;
-        }
-
-        .card-title {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-        }
-
-        #toggle {
-            cursor: pointer;
-        }
-
-        .card-title h1 {
-            margin: 10px;
-            font-size: 26px;
-            font-weight: 650;
-            /* font-style: italic; */
-        }
-
-        .card-title i {
-            margin: 20px;
-            font-size: 18px;
-        }
-
-        .Website-url {
-            margin-top: -12px;
-            display: flex;
-            gap: 10px;
-            margin-left: 10px;
-        }
-
-        .Website-url a {
-            list-style: none;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .Website-url a:nth-child(1) {
-            color: rgba(0, 181, 252, 0.977);
-        }
-
-        .Website-url a:nth-child(2) {
-            color: rgb(104, 202, 104);
-        }
-
-        #menu-icon {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 14px;
-            position: relative;
-        }
-
-        #menu-icon i {
-            margin-top: 10px;
-        }
-
-        #menu-icon h2 {
-            font-size: 25px;
-            font-style: italic;
-        }
-
-        .in-devp {
-            margin-top: -25px;
-            margin-left: 15px;
-            font-style: italic;
-            color: #2d7edf;
-        }
-
-        .info {
-            margin: 10px;
-        }
-
-        .info p {
-            font-size: 17px;
-            color: #555555;
-
-        }
-
-        #information {
-            position: absolute;
-            width: 100%;
-            transition: 0.3s all ease-in-out;
-            background: white;
-            height: 300px;
-            top: 100%;
-        }
-
-        .need {
-            margin: 10px;
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        #cross {
-            cursor: pointer;
-        }
-
-
-        /* Hero section */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YnVpbGRpbmd8ZW58MHx8MHx8fDA%3D);
-            height: 100vh;
-            object-fit: cover;
-            object-position: top;
-            background-size: cover;
-            background-repeat: no-repeat;
-            font-family: "Open Sans", sans-serif;
-        }
-
-        .hero-title {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-title h4 {
-            font-size: 35px;
-            letter-spacing: 3px;
-            font-weight: 700;
-        }
-
-        .hero-title h1 {
-            font-size: 40px;
-            font-weight: 700;
-            letter-spacing: 2px;
-
-        }
-
-        .hero-title button {
-            width: 150px;
-            border-radius: 20px;
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        @media screen and (max-width:375px) {
-            .hero-title h4 {
-                font-size: 20px;
+        @media (max-width: 480px) {
+            header nav {
+                padding: 0.8rem 1rem;
             }
 
-            .hero-title h1 {
-                font-size: 30px;
-
+            .logo {
+                font-size: 0.85rem;
             }
 
-        }
-
-        .tab-header {
-            position: relative;
-            background-color: #e9ecef;
-            width: fit-content;
-            margin: auto;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            max-width: 95%;
-        }
-
-        .tabs {
-            max-width: 100%;
-            padding: 15px 50px;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            gap: 20px;
-            transition: 0.5s ease;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            white-space: nowrap;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .tabs::-webkit-scrollbar {
-            display: none;
-        }
-
-        .tabs .tabslinks {
-            border: none;
-            outline: none;
-            padding: 8px 16px;
-            background: transparent;
-            font-size: 23px;
-            color: #333;
-            font-weight: bold;
-            transition: 0.4s ease;
-            flex-shrink: 0;
-        }
-
-        .tabs .tabslinks.active {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-            transition: 1s ease;
-
-        }
-
-        .tabs .tabslinks:hover {
-            background-color: #007bff;
-            color: white;
-            border-radius: 50px;
-        }
-
-        .tab-content {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        @media screen and (max-width:664px) {
-            .tabs {
-                max-width: 100%;
-                padding: 13px 22px;
-                display: flex !important;
-                justify-content: flex-start !important;
-                align-items: center !important;
-                gap: 27px;
-
-            }
-
-            .tabs .tabslinks {
-                border: none;
-                outline: none;
-                padding: 8px 2px;
-                background: transparent;
-                font-size: 23px;
-                color: white;
-                font-weight: bold;
-
-            }
-
-            .tabs .tabslinks.active {
-                border-radius: 50px;
-                padding: 10px 25px;
-
-
-            }
-
-        }
-
-        /* Footer Section Start */
-        #footer {
-            background-color: #f1f0f2;
-            font-size: 14px;
-            color: #444444;
-        }
-
-        #footer .footer-top {
-            padding: 60px 0 30px 0;
-            background-color: #f9f8f8;
-        }
-
-        #footer .footer-contact,
-        #footer .footer-links {
-            margin-bottom: 30px;
-
-        }
-
-        #footer .footer-top .footer-contact p {
-            font-size: 14px;
-            line-height: 24px;
-            margin-bottom: 0;
-            font-family: "Raleway", sans-serif;
-            color: #777777;
-        }
-
-        #footer .footer-top h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #444444;
-            padding-bottom: 12px;
-        }
-
-        #footer .footer-top .footer-links ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #footer .footer-top .footer-links li {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-
-        }
-
-        #footer .footer-top .footer-links li:first-child {
-            padding-top: 0;
-        }
-
-        #footer .footer-top .footer-links ul i {
-            padding-right: 6px;
-            color: #00c28c;
-            font-size: 10px;
-
-        }
-
-        #footer .footer-top .footer-links ul a {
-            color: #777777;
-            font-family: "Open Sans", sans-serif;
-            display: inline-block;
-            line-height: 1;
-            transition: 0.3s ease-in-out;
-            font-size: 14px;
-        }
-
-        #footer .footer-top .footer-links ul a:hover {
-            color: #009970;
-        }
-
-        #footer .footer-top .footer-newsletter {
-            font-size: 15px;
-        }
-
-        #footer .footer-top .footer-newsletter form {
-            display: flex;
-            height: 44px;
-            margin-top: 30px;
-            background-color: #fff;
-            border-radius: 50px;
-            border: 1px solid #e4e3e6;
-        }
-
-        #footer .footer-top .footer-newsletter form input[type="email"] {
-
-            border: 0;
-            padding: 4px 23px;
-            width: 100%;
-            border-radius: 50px;
-
-        }
-
-        #footer .footer-top .footer-newsletter form input[type="email"]:focus {
-            outline: none;
-        }
-
-        #footer .footer-top .footer-newsletter form input[type="submit"] {
-            font-size: 16px;
-            border: none;
-            padding: 0 20px;
-            background-color: #009970;
-            color: #ffffff;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 50px;
-            transition: 0.3s ease-in-out;
-        }
-
-        #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-            background-color: #00805d;
-        }
-
-        #footer .copyright {
-            font-family: "Open Sans", sans-serif;
-        }
-
-        #footer .credits {
-            padding-top: 5px;
-            font-size: 13px;
-            color: #444444;
-            font-family: "Open Sans", sans-serif;
-        }
-
-        #footer .credits a {
-            color: #0bb386;
-        }
-
-        #footer .social {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #footer .social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: #009970;
-            margin: 0 3px;
-            transition: 0.3s ease-in-out;
-        }
-
-        #footer .social a:hover {
-            background-color: #68c8ae;
-        }
-
-        #footer .social a i {
-            color: white;
-            font-size: 16px;
-        }
-
-        /* TAB ARROWS STYLING */
-        .left-btn,
-        .right-btn {
-            position: absolute;
-            color: white;
-            font-size: 24px;
-            padding: 10px 15px;
-            cursor: pointer;
-            height: 100%;
-            background: rgba(85, 85, 85, 0.8);
-            border: none;
-            top: 0;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            transition: background 0.3s;
-            /* Default: hide on large screens */
-            display: none;
-        }
-
-        .left-btn:hover,
-        .right-btn:hover {
-            background: rgba(85, 85, 85, 1);
-        }
-
-        .left-btn {
-            left: 0;
-            border-radius: 50px 0 0 50px;
-        }
-
-        .right-btn {
-            right: 0;
-            border-radius: 0 50px 50px 0;
-        }
-
-        /* Show arrows only on mobile screens (860px and below) */
-        @media screen and (max-width: 860px) {
-
-            .left-btn,
-            .right-btn {
-                display: flex;
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
             }
         }
     </style>
-
 </head>
 
 <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
 
-    <nav>
-        <div class="logo">
-            <img src="./images/logo.webp" alt="Rehmat's Digital Studio Logo">
-        </div>
-        <ul id="menuList">
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Product</a></li>
-            <li><a href="">Contact Us</a></li>
-        </ul>
-        <div class="serch" id="searchContainer">
-            <button class="btn btn-light">Search <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-        <div class="menu-icon">
-            <i class="fa-solid fa-bars" id="menuToggle"></i>
-        </div>
-    </nav>
-
-    <div class="hero-section">
-        <div class="hero-title">
-            <h4> Rehmat's Digital Studio</h4>
-            <h1>
-                Web Development • Design • Innovation</h1>
-            <button class="btn btn-light">Buy Now</button>
-        </div>
-    </div>
+    <header id="header">
+        <nav>
+            <a href="#home" class="logo">
+                <div class="logo-icon">R</div>Rehmatullah
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+            <a href="#contact" class="btn-hire">Hire Me</a>
+        </nav>
+    </header>
 
     <main>
-        <section class="section">
-            <div class="tab-header">
-                <i class="fa-solid fa-angle-left left-btn"></i>
-                <i class="fa-solid fa-angle-right right-btn"></i>
-                <div class="tabs">
-                    <button class="tabslinks active" data-tab="all">ALL</button>
-                    <button class="tabslinks" data-tab="tab2">HTML CSS</button>
-                    <button class="tabslinks" data-tab="tab3">BOOtSTRAP</button>
-                    <button class="tabslinks" data-tab="tab4">JAVASCRIPT</button>
-                    <button class="tabslinks" data-tab="tab5">PHP</button>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-badge"><span class="dot"></span>Available for freelance work</div>
+                <h1><span class="line-top">Hi, I'm</span><span class="line-name">Rehmatullah</span></h1>
+                <div class="typing-container">// <span id="typed-text"></span><span class="typed-cursor"></span></div>
+                <p>Building scalable, high-performance web applications with elegant code and pixel-perfect design.
+                    Turning complex problems into seamless digital experiences.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                </div>
+                <div class="hero-socials"><a href="#"><i class="fab fa-github"></i></a><a href="#"><i
+                            class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a
+                        href="mailto:rehmatullah@example.com"><i class="fas fa-envelope"></i></a></div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-grid">
+                <div class="about-image-wrap reveal">
+                    <div class="about-img-frame"><img src="images/pro_image.png" alt="Rehmatullah"
+                            onerror="this.src='https://placehold.co/400x400/1a1f2e/00e5ff?text=Rehmatullah'"></div>
+                    <div class="floating-card">
+                        <div class="fc-label">Currently building</div>
+                        <div class="fc-value">Next big thing →</div>
+                    </div>
+                </div>
+                <div class="about-content reveal"><span class="section-label">ABOUT ME</span>
+                    <h2>Crafting digital experiences with <span>passion & precision</span></h2>
+                    <p>I'm a Full Stack Web Developer with 5+ years of experience designing and building modern web
+                        applications. I specialize in turning ambitious ideas into scalable, performant products that
+                        users love.</p>
+                    <p>From sleek front-end interfaces to robust back-end systems, I write clean, maintainable code and
+                        obsess over the details that make great software feel effortless.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap"><i class="fas fa-rocket"></i></div>
+                            <div class="stat-num">5+</div>
+                            <div class="stat-lbl">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap"><i class="fas fa-code"></i></div>
+                            <div class="stat-num">80+</div>
+                            <div class="stat-lbl">Projects Done</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap"><i class="fas fa-user-check"></i></div>
+                            <div class="stat-num">40+</div>
+                            <div class="stat-lbl">Happy Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon-wrap"><i class="fas fa-mug-hot"></i></div>
+                            <div class="stat-num">∞</div>
+                            <div class="stat-lbl">Cups of Coffee</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="container">
-                <div class="row">
-                    <!-- First Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12  pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 191358.png" class="card-img-top"
-                                alt="Calculator Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
+        <section id="skills">
+            <div class="section-heading reveal"><span class="section-label">SKILLS</span>
+                <h2>My <span>technical toolkit</span></h2>
+                <div class="divider"></div>
+                <p>A polished mix of front-end, back-end, and database expertise.</p>
+            </div>
+            <div class="skills-wrap reveal">
+                <div class="skills-box">
+                    <div class="skills-grid">
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">HTML5</span><span
+                                    class="skill-pct">98%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="98"></div>
                             </div>
-                            <div class="card-title">
-                                <h1>
-                                    Calculator
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">CSS3 / Tailwind</span><span
+                                    class="skill-pct">95%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="95"></div>
                             </div>
-                            <div class="Website-url">
-                                <a href="./Calculator.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">JavaScript</span><span
+                                    class="skill-pct">94%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="94"></div>
                             </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Calculator</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span> In Development </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        A calculator is a tool used to quickly and accurately perform basic or advanced
-                                        mathematical
-                                        calculations.</p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">PHP</span><span
+                                    class="skill-pct">90%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">MySQL</span><span
+                                    class="skill-pct">88%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">jQuery</span><span
+                                    class="skill-pct">92%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">AJAX</span><span
+                                    class="skill-pct">90%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-row">
+                            <div class="skill-meta"><span class="skill-name">REST APIs</span><span
+                                    class="skill-pct">93%</span></div>
+                            <div class="skill-track">
+                                <div class="skill-bar" data-pct="93"></div>
                             </div>
                         </div>
                     </div>
-                    <!-- Second Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3  tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190905.png" class="card-img-top"
-                                alt="Instagram Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Instagram
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Frist Proejct.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>CLick Event</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>buttons</span>
-                                </div>
-                                <div class="info">
-                                    <h5>Add Project</h5>
-                                    <p>
-                                        Use the add button to submit your new project with required details.</p>
-                                    <h5>Remove Project</h5>
-                                    <p>Click remove to delete this project from your submitted list permanently.</p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="services">
+            <div class="section-heading reveal"><span class="section-label">SERVICES</span>
+                <h2>What I can <span>do for you</span></h2>
+                <div class="divider"></div>
+                <p>A full suite of services to launch and scale your next product.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Responsive Web Design</h3>
+                    <p>Pixel-perfect interfaces that look stunning on every device.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3>Full Stack Development</h3>
+                    <p>End-to-end product builds — modern front-ends paired with rock-solid back-end systems.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-plug"></i></div>
+                    <h3>API Integration</h3>
+                    <p>Seamlessly connect third-party services and design clean REST APIs.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Database Design</h3>
+                    <p>Performant, normalized schemas for blazing-fast queries.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="section-heading reveal"><span class="section-label">PROJECTS</span>
+                <h2>Selected <span>recent work</span></h2>
+                <div class="divider"></div>
+                <p>A handful of projects I've designed, built, and shipped.</p>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card reveal">
+                    <div class="project-thumb"><img src="images/hubpro.png" alt="Hub Pro"
+                            onerror="this.src='https://placehold.co/600x400/1a1f2e/00e5ff?text=Hub+Pro'">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h4>Hub Pro</h4>
+                        <p>Real-time SaaS analytics dashboard with custom charting engine.</p>
+                        <div class="project-tags"><span class="tag">React</span><span class="tag">PHP</span><span
+                                class="tag">MySQL</span></div><a href="https://www.hubpro.com/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-thumb"><img src="images/irooze.png" alt="Irooze"
+                            onerror="this.src='https://placehold.co/600x400/1a1f2e/00e5ff?text=Irooze'">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h4>Irooze</h4>
+                        <p>Full-featured e-commerce platform with custom checkout, inventory.</p>
+                        <div class="project-tags"><span class="tag">JS</span><span class="tag">PHP</span><span
+                                class="tag">MySQL</span></div><a href="https://iroozedivorce.com/"
+                            class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-thumb"><img src="images/finance.png" alt="Finance Advisor"
+                            onerror="this.src='https://placehold.co/600x400/1a1f2e/00e5ff?text=Finance+Advisor'">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h4>Finance Advisor</h4>
+                        <p>Crypto trading platform with live order book, charts, and wallet integration.</p>
+                        <div class="project-tags"><span class="tag">jQuery</span><span class="tag">REST API</span></div>
+                        <a href="https://www.financeadvisornearme.com/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </article>
+                <article class="project-card reveal">
+                    <div class="project-thumb"><img src="images/hi tur.png" alt="Hi Turkiye"
+                            onerror="this.src='https://placehold.co/600x400/1a1f2e/00e5ff?text=Hi+Turkiye'">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h4>Hi Turkiye</h4>
+                        <p>Social network with real-time feeds, messaging, and rich media uploads.</p>
+                        <div class="project-tags"><span class="tag">PHP</span><span class="tag">MySQL</span></div><a
+                            href="https://www.hiturkiye.com/home" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-heading reveal"><span class="section-label">EXPERIENCE</span>
+                <h2>A <span>journey of growth</span></h2>
+                <div class="divider"></div>
+                <p>Delivering full stack solutions across various industries.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item odd reveal">
+                    <div class="timeline-left">
+                        <div class="tl-card">
+                            <div class="timeline-title">Senior Full Stack Developer</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Lead engineer on a multi-tenant SaaS used by 30k+ users.</li>
+                                    <li>Reduced page load times by 60% through query optimization.</li>
+                                    <li>Mentored a team of 4 engineers on best practices.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- Third CArd -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190931.png" class="card-img-top"
-                                alt="Mouse Over Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Mouse Over
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./3rd Project cursor.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Mouse Cursor</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Full Page Cursor</span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        "Click to submit your project for review and approval."<br>
-
-                                        "Make sure all project details are complete before submitting."<br>
-
-                                        "Final step to upload your project for evaluation."</p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                        <div class="timeline-date-badge">2023 — Present</div>
+                    </div>
+                </div>
+                <div class="timeline-item even reveal">
+                    <div class="timeline-left">
+                        <div class="timeline-date-badge">2021 — 2023</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                        <div class="tl-card">
+                            <div class="timeline-title">Full Stack Developer</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Delivered 25+ client projects with PHP, MySQL & modern JS.</li>
+                                    <li>Built a reusable component library adopted across client work.</li>
+                                    <li>Architected REST APIs powering web and mobile apps.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- Forth CArd -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190919.png" class="card-img-top"
-                                alt="Instagram Like Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Instagram Like
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Second Project.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Instagram Double Click</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Add The Like</span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Double-clicking the post triggers a heart animation, allowing users to quickly
-                                        express appreciation, just like Instagram's like system.</p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
+                </div>
+                <div class="timeline-item odd reveal">
+                    <div class="timeline-left">
+                        <div class="tl-card">
+                            <div class="timeline-title">Front-End Developer</div>
+                            <div class="timeline-desc">
+                                <ul>
+                                    <li>Designed and shipped responsive websites for 30+ small businesses.</li>
+                                    <li>Specialized in jQuery, AJAX, and conversion-focused landing pages.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                        <div class="timeline-date-badge">2019 — 2021</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Fifth Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 190748.png" class="card-img-top"
-                                alt="Instagram Story Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Instagram Story
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Fivth Project.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Click the Story</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Full Screen Show</span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Click the story to view it in full screen with complete details and submit your
-                                        project easily.</p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
+        <section id="contact">
+            <div class="section-heading reveal">
+                <span class="section-label">CONTACT</span>
+                <h2>Let's build something <span>great</span></h2>
+                <div class="divider"></div>
+                <p>Have a project in mind or just want to say hi? Drop me a message.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p>Email</p><strong>rehmatullah@example.com</strong>
                         </div>
                     </div>
-
-                    <!-- Six Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-06-30 185245.png" class="card-img-top"
-                                alt="Mouse Over Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Mouse Over
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Forth Project.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Mouse Cursor</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Hovering Image Change </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Hovering over the div changes the image, allowing interactive previews or visual
-                                        feedback before clicking or selecting.</p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <p>Phone</p><strong>+92 300 0000000</strong>
                         </div>
                     </div>
-
-                    <!-- Seventh Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-07-07 195912.png" class="card-img-top"
-                                alt="Validation Form Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Validation Form
-                                </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Validation Form.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>User Registration Form
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Please Fill Out All Required Fields Carefully
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        All fields are mandatory. Ensure your email and passwords are valid before
-                                        submitting the form.
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <p>Location</p><strong>Remote / Worldwide</strong>
                         </div>
                     </div>
-
-                    <!-- Eight Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab2">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-07-07 200302.png" class="card-img-top"
-                                alt="Button Hover Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <!-- <button>JAVASCRIPT</button> -->
-                            </div>
-                            <div class="card-title">
-                                <h1>
-                                    Button Hover </h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./buttons Effect.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Interactive Button Hover Effects
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Buttons Change Color on Hover for Better User Experience
-
-
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Buttons respond visually when hovered, changing colors to guide the user and
-                                        improve interactivity on the page.
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CArd no Nine -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 155727.png" class="card-img-top"
-                                alt="Slider Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>Slider</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Slider No 1.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Explore Dynamic Talent Cards
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Showcasing Developers, Designers, Marketers & More
-
-
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Discover a responsive and elegant slider that presents professional roles with
-                                        engaging visuals and concise summaries.
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CArd no 13 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/tabs.png" class="card-img-top" alt="Tabs Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>TABS</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./NewTAbs.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Tab Navigation Interface
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span></span>Organized Display of Categorized Content
-
-
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        This tab navigation system allows users to view different categories of content
-                                        without reloading the page. Each tab represents a specific topic, and when
-                                        clicked, it displays only the relevant information while hiding others
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CArd no ten -->
-
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab4">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 160704.png" class="card-img-top"
-                                alt="Slider Project">
-                            <div class="card-body">
-                                <button>HTML</button>
-                                <button>CSS</button>
-                                <button>JAVASCRIPT</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>Slider</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./NewSlider.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Meet Our Creative Forces
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Talent Behind the Work That Inspires</span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        From coding wizards to marketing strategists, our team blends passion and
-                                        expertise into everything we do. This slider highlights each individual's role,
-                                        skills
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Eleven -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 175812.png" class="card-img-top"
-                                alt="Home Page Project">
-                            <div class="card-body">
-                                <!-- <button>HTML</button> -->
-                                <!-- <button>CSS</button> -->
-                                <button>BOOTSTRAP</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>Home Page</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Techno-web.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Welcome to Our Digital Space
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Where Creativity Meets Functionality</span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        We craft user-focused experiences with smart design, robust development, and
-                                        purposeful strategy. Whether you're browsing our portfolio or exploring
-                                        services, this is the place where innovation starts and quality speaks.
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 12 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
-                        <div class="card">
-                            <img src="./images/Screenshot 2025-07-16 183631.png" class="card-img-top"
-                                alt="Furniture Project">
-                            <div class="card-body">
-                                <!-- <button>HTML</button> -->
-                                <!-- <button>CSS</button> -->
-                                <button>BOOtSTRAP</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>Furniture</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./newResponsive/E-commerce.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Timeless Furniture for Modern Living
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Crafted Comfort. Designed to Inspire.
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Explore our curated collection of premium furniture — where style meets
-                                        function. From cozy sofas to elegant dining sets, every piece is thoughtfully
-                                        crafted to elevate your home with beauty and durability.
-
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 13 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab3">
-                        <div class="card">
-                            <img src="./newResponsive/bootstrap-images/web.png" class="card-img-top"
-                                alt="Web Dev Project">
-                            <div class="card-body">
-                                <!-- <button>HTML</button> -->
-                                <!-- <button>CSS</button> -->
-                                <button>BOOtSTRAP</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>Web Dev</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./newResponsive/New-Responive-website.html">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Create Web Development Solutions
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Building Responsive, Modern, and User-Friendly Websites
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        This website showcases the core principles and practices of professional web
-                                        development. It includes modern design techniques, responsive layouts for all
-                                        devices.
-
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- card 14 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab5">
-                        <div class="card">
-                            <img src="./images/login-page.png" class="card-img-top" alt="Login Page Project">
-                            <div class="card-body">
-                                <!-- <button>HTML</button> -->
-                                <!-- <button>CSS</button> -->
-                                <!-- <button>BOOtSTRAP</button> -->
-                                <button>PHP</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>Web Dev</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./Login_form/">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334/desktop-tutorial">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>Create Web Development Solutions
-
-
-
-                                    </h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Building Responsive, Modern, and User-Friendly Websites
-
-                                    </span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        This website showcases the core principles and practices of professional web
-                                        development. It includes modern design techniques, responsive layouts for all
-                                        devices.
-
-
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- card 15 -->
-                    <div class="col-lg-4 col-md-6 col-sm-12 pt-sm-3 pt-3 tab-content tab5">
-                        <div class="card">
-                            <img src="./images/login-page.png" class="card-img-top" alt="CRM Project">
-                            <div class="card-body">
-                                <button>PHP</button>
-                            </div>
-                            <div class="card-title">
-                                <h1>CRM System</h1>
-                                <i class="fa-solid fa-ellipsis-vertical" id="toggle"></i>
-                            </div>
-                            <div class="Website-url">
-                                <a href="./CRM/">
-                                    <p>Website</p>
-                                </a>
-                                <a href="https://github.com/rehmikhan2334">
-                                    <p>Github</p>
-                                </a>
-                            </div>
-                            <div id="information" class="information-section">
-                                <div id="menu-icon">
-                                    <h2>CRM System</h2>
-                                    <i class="fa-solid fa-xmark" id="cross"></i>
-                                </div>
-                                <div class="in-devp">
-                                    <span>Customer Relationship Management (PHP & MySQL)</span>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        A simple CRM for user management and authentication. Includes login,
-                                        signup, dashboard, and database integration to manage customer records and
-                                        sessions.
-                                    </p>
-                                </div>
-                                <div class="need">
-                                    <p>Need:</p>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
+                </div>
+                <div class="contact-form-wrap reveal">
+                    <form>
+                        <div class="form-field"><label for="name">Name</label><input id="name" type="text"
+                                placeholder="John Doe"></div>
+                        <div class="form-field"><label for="email">Email</label><input id="email" type="email"
+                                placeholder="john@example.com"></div>
+                        <div class="form-field"><label for="message">Message</label><textarea id="message" rows="5"
+                                placeholder="Tell me about your project..."></textarea></div>
+                        <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send
+                            Message</button>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
-    <!-- Footer Sectio STart -->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Rehmat's Digital</h3>
-                        <p>Badami <br> Bagh Lahore <br> Khorkhar Road 2333 <br><br>
-                            <strong>Phone:</strong> +1234567890 <br>
-                            <strong> Email:</strong> info@gmail.com
 
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Servces</h4>
-                        <ul>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Web Design</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Web Development</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Product Management</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Marketing</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Graphic Desiner</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">About Us</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Team of services</a>
-                            </li>
-                            <li>
-                                <i class="fa fa-chevron-right"></i>
-                                <a href="#">Privacy policy</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, unde.</p>
-                        <form>
-                            <input type="email" name="email" id="" placeholder="Search">
-                            <input type="submit" name="email" value="Subscribe">
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <footer>
+        <div
+            style="display:flex;justify-content:space-between;padding:0 30px;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <a href="#home" class="logo">
+                <div class="logo-icon">R</div>Rehmatullah
+            </a>
+            <p>&copy; <span>Rehmatullah</span> 2026 — All rights reserved.</p>
         </div>
-        <div class="container d-md-flex py-4">
-            <div class="mr-md-auto text-center text-md-left">
-                <div class="copyright">
-                    <p class="md-0">&#169; Copyright <strong>webdev.</strong> All Right Reserved</p>
-                </div>
-                <div class="credits">
-                    <p class="md-0">
-                        Design By <a href="#">Webdev</a>
-                    </p>
-                </div>
-            </div>
-            <div class="social py-3 pt-md-0">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
-
     </footer>
-
+    <div class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></div>
 
     <script>
-        // HEADER TOGGLE MENU
-        const menuToggle = document.getElementById('menuToggle');
-        const menuList = document.getElementById('menuList');
-        const searchContainer = document.getElementById('searchContainer');
+        // Typing effect
+        const roles = ["Problem Solver", "Full Stack Developer", "UI/UX Designer"];
+        let roleIndex = 0, charIndex = 0;
+        const typedSpan = document.getElementById("typed-text");
+        function typeRole() { if (charIndex < roles[roleIndex].length) { typedSpan.textContent += roles[roleIndex].charAt(charIndex++); setTimeout(typeRole, 120); } else { setTimeout(eraseRole, 2000); } }
+        function eraseRole() { if (charIndex > 0) { typedSpan.textContent = roles[roleIndex].substring(0, --charIndex); setTimeout(eraseRole, 60); } else { roleIndex = (roleIndex + 1) % roles.length; setTimeout(typeRole, 300); } }
+        typeRole();
 
-        menuToggle.addEventListener('click', function () {
-            menuList.classList.toggle('show');
-            searchContainer.classList.toggle('show');
+        const toggle = document.getElementById('menuToggle');
+        const navEl = document.getElementById('navLinks');
+        if (toggle) toggle.addEventListener('click', () => { toggle.classList.toggle('active'); navEl.classList.toggle('active'); });
+        if (navEl) navEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (toggle) toggle.classList.remove('active'); navEl.classList.remove('active'); }));
 
-            // Change icon
-            if (menuList.classList.contains('show')) {
-                menuToggle.classList.remove('fa-bars');
-                menuToggle.classList.add('fa-times');
-            } else {
-                menuToggle.classList.remove('fa-times');
-                menuToggle.classList.add('fa-bars');
-            }
+        function animateSkillBars() { document.querySelectorAll('.skill-bar').forEach(bar => { const pct = bar.getAttribute('data-pct'); if (pct) bar.style.width = pct + '%'; }); }
+        window.addEventListener('load', () => setTimeout(animateSkillBars, 300));
+        const skillsSection = document.getElementById('skills');
+        let skillsAnimated = false;
+        const skillsObserver = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting && !skillsAnimated) { skillsAnimated = true; animateSkillBars(); } }); }, { threshold: 0.3 });
+        if (skillsSection) skillsObserver.observe(skillsSection);
+
+        const revealObs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } }); }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
         });
-
-        // CARD TOGGLE FUNCTIONALITY
-        document.querySelectorAll('.card').forEach(card => {
-            let information = card.querySelector('.information-section');
-            let toggle = card.querySelector('.card-title');
-            let cross = card.querySelector('#menu-icon');
-
-            // Toggle open
-            toggle.addEventListener('click', () => {
-                console.log(information, 'infomation')
-
-                document.querySelectorAll('.information-section').forEach(info => {
-
-                    if (info != information) {
-
-                        info.style.top = "100%";
-                    }
-                })
-                information.style.top = '0';
-            });
-
-            // Toggle close
-            cross.addEventListener('click', () => {
-                information.style.top = '100%';
-            });
-        });
-
-        // TABS FILTERING
-        let tabButtons = document.querySelectorAll(".tabslinks");
-
-        tabButtons.forEach(button => {
-            button.addEventListener("click", function () {
-                const tabName = this.dataset.tab;
-
-                // Show or hide content
-                let allTabContent = document.querySelectorAll(".tab-content");
-                allTabContent.forEach(content => {
-                    if (tabName === "all") {
-                        content.style.display = "block";
-                    } else {
-                        if (content.classList.contains(tabName)) {
-                            content.style.display = "block";
-                        } else {
-                            content.style.display = "none";
-                        }
-                    }
-                });
-
-                // Set active button
-                tabButtons.forEach(btn => btn.classList.remove("active"));
-                this.classList.add("active");
-            });
-        });
-
-        // Trigger default click on "All"
-        document.querySelector('.tabslinks[data-tab="all"]').click();
-
-        // TAB ARROWS FUNCTIONALITY
-        let btnLeft = document.querySelector(".left-btn");
-        let btnRight = document.querySelector(".right-btn");
-        let tabMenu = document.querySelector('.tabs');
-
-        // Update arrow visibility
-        const updateArrows = () => {
-            // Only update if on mobile screen
-            if (window.innerWidth <= 860) {
-                let scrollLeftValue = tabMenu.scrollLeft;
-                let scrollableWidth = tabMenu.scrollWidth - tabMenu.clientWidth;
-
-                btnLeft.style.display = scrollLeftValue > 0 ? 'flex' : 'none';
-                btnRight.style.display = scrollableWidth > scrollLeftValue ? 'flex' : 'none';
-            } else {
-                // Hide arrows on large screens
-                btnLeft.style.display = 'none';
-                btnRight.style.display = 'none';
-            }
-        };
-
-        // Right arrow click
-        btnRight.addEventListener('click', () => {
-            tabMenu.scrollLeft += 150;
-            setTimeout(updateArrows, 50);
-        });
-
-        // Left arrow click
-        btnLeft.addEventListener('click', () => {
-            tabMenu.scrollLeft -= 150;
-            setTimeout(updateArrows, 50);
-        });
-
-        // Initialize arrows
-        window.addEventListener('load', updateArrows);
-        window.addEventListener('resize', updateArrows);
-
-        // Also update on scroll
-        tabMenu.addEventListener('scroll', updateArrows);
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { if (window.scrollY > 300) backToTop.classList.add('show'); else backToTop.classList.remove('show'); });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     </script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
-
