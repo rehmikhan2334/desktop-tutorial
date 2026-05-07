@@ -133,7 +133,7 @@
             justify-content: space-between;
             gap: 1.5rem;
             border-radius: 15px;
-            background: rgba(8, 11, 20, 0.65);
+            background:rgba(8, 11, 20, -0.35);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
@@ -842,6 +842,7 @@
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
         }
 
         .timeline-date-badge {
@@ -861,6 +862,7 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: #fff;
+            text-align: left;
         }
 
         .timeline-desc ul {
@@ -997,7 +999,19 @@
         .skill-meta{
             display:flex;
             justify-content:space-between;
-            
+        }
+        .skill-track{
+            border:1px solid #3c3c3cb8;
+            border-radius:50px;
+        }
+        .fc-value{
+            background: linear-gradient(135deg, #00e5ff, #a855f7, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+        }
+        .timeline-left{
+            text-align: end;
         }
     </style>
 </head>
@@ -1030,8 +1044,8 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 <div class="hero-badge"><span class="dot"></span>Available for freelance work</div>
-                <h1><span class="line-top">Hi, I'm</span><span class="line-name">Rehmatullah</span></h1>
-                <div class="typing-container">// <span id="typed-text"></span><span class="typed-cursor"></span></div>
+                <h1><span class="line-top">Hi, I'm</span><span class="line-name">Rehmat Ullah</span></h1>
+                <div class="typing-container"><span id="typed-text"></span><span class="typed-cursor"></span></div>
                 <p>Building scalable, high-performance web applications with elegant code and pixel-perfect design.
                     Turning complex problems into seamless digital experiences.</p>
                 <div class="hero-actions"><a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View
@@ -1202,7 +1216,7 @@
                         <p style="font-size: 0.85rem; color: #b0b8c9; margin-bottom: 0.8rem;">Real-time SaaS analytics
                             dashboard for modern teams.</p>
                         <div class="project-tags"><span class="tag">React</span><span class="tag">PHP</span></div>
-                        <a href="https://hubpro.example.com" target="_blank" rel="noopener noreferrer"
+                        <a href="https://www.hubpro.com/" target="_blank" rel="noopener noreferrer"
                             class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </article>
@@ -1215,7 +1229,7 @@
                         <p style="font-size: 0.85rem; color: #b0b8c9; margin-bottom: 0.8rem;">Scalable e-commerce
                             platform with secure checkout & inventory mgmt.</p>
                         <div class="project-tags"><span class="tag">JS</span><span class="tag">PHP</span></div>
-                        <a href="https://irooze.example.com" target="_blank" rel="noopener noreferrer"
+                        <a href="https://irooze.com/" target="_blank" rel="noopener noreferrer"
                             class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </article>
@@ -1228,7 +1242,7 @@
                         <p style="font-size: 0.85rem; color: #b0b8c9; margin-bottom: 0.8rem;">Crypto trading platform
                             with live market data and portfolio tracker.</p>
                         <div class="project-tags"><span class="tag">jQuery</span><span class="tag">REST API</span></div>
-                        <a href="https://financeadvisor.example.com" target="_blank" rel="noopener noreferrer"
+                        <a href="https://www.financeadvisornearme.com/" target="_blank" rel="noopener noreferrer"
                             class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </article>
@@ -1241,7 +1255,7 @@
                         <p style="font-size: 0.85rem; color: #b0b8c9; margin-bottom: 0.8rem;">Social network with
                             real-time feeds and interactive community tools.</p>
                         <div class="project-tags"><span class="tag">PHP</span><span class="tag">MySQL</span></div>
-                        <a href="https://hiturkiye.example.com" target="_blank" rel="noopener noreferrer"
+                        <a href="https://www.hiturkiye.com/home" target="_blank" rel="noopener noreferrer"
                             class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                     </div>
                 </article>
@@ -1259,7 +1273,7 @@
                 <div class="timeline-item reveal">
                     <div class="timeline-left">
                         <div class="tl-card">
-                            <div class="timeline-title">Senior Full Stack Developer</div>
+                            <div class="timeline-title">Full Stack Developer</div>
                             <div class="timeline-desc">
                                 <ul>
                                     <li>Lead engineer on a multi-tenant SaaS used by 30k+ users.</li>
@@ -1271,17 +1285,17 @@
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-right">
-                        <div class="timeline-date-badge">2023 — Present</div>
+                        <div class="timeline-date-badge">2026 — Present</div>
                     </div>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-left">
-                        <div class="timeline-date-badge">2021 — 2023</div>
+                        <div class="timeline-date-badge">2023 — 2025</div>
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-right">
                         <div class="tl-card">
-                            <div class="timeline-title">Full Stack Developer</div>
+                            <div class="timeline-title">Juniour Developer</div>
                             <div class="timeline-desc">
                                 <ul>
                                     <li>Delivered 25+ client projects with PHP, MySQL & modern JS.</li>
@@ -1306,7 +1320,7 @@
                     </div>
                     <div class="timeline-dot"></div>
                     <div class="timeline-right">
-                        <div class="timeline-date-badge">2019 — 2021</div>
+                        <div class="timeline-date-badge">2022 — 2023</div>
                     </div>
                 </div>
             </div>
